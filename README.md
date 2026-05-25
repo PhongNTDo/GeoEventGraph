@@ -216,31 +216,6 @@ cd frontend
 npm run build
 ```
 
-## LeanBabel Notes
-
-For the LeanBabel environment, use the direct runner as the main entry point:
-
-```bash
-bash run_extract_leanbabel_direct.sh --gpus 2 --model gpt-oss-120b
-```
-
-Notes:
-
-- Do not point your local machine at `http://leanbabel:11434`.
-- The intended pattern is to start Ollama locally on the LeanBabel server at `127.0.0.1:<port>`.
-- The runner uses `OLLAMA_HOST`, `OLLAMA_MODELS`, and `ollama list` in the same style as existing LeanBabel Ollama workflows.
-- If the installed model tag differs from `gpt-oss-120b`, set `OLLAMA_MODEL_OVERRIDE` to the exact name shown by `ollama list`.
-
-## Data And Publishing Notes
-
-- The public repository should not publish raw BBC HTML from `corpus/`.
-- The public repository should publish the small synthetic examples in `samples/` so new users can understand the schemas without needing the private/local corpus.
-- `data/reference/entity_aliases.csv` and `data/reference/geocode_overrides.csv` should be versioned because they capture project logic.
-- `data/reference/geocode_cache.json` should stay local by default because it is a third-party lookup cache, not source code.
-- Generated artifacts under `data/normalized/`, `data/extractions/`, `data/postprocessed/`, `data/graph/`, and `frontend/dist/` should stay out of Git by default. Regenerate them locally with the pipeline or publish a curated release artifact later.
-- Runtime logs such as `logs_runner/`, local virtual environments, and local model files should stay out of Git.
-- The included `.gitignore` implements this policy for an initial GitHub push.
-
 ## Sample Data
 
 The `samples/` directory contains synthetic records for:
@@ -251,16 +226,6 @@ The `samples/` directory contains synthetic records for:
 
 These files are documentation and onboarding fixtures, not factual data or model-evaluation benchmarks.
 
-## Development Roadmap
-
-1. Generalize source ingestion with a small adapter interface for BBC, RSS, CSV/JSONL imports, and future non-news corpora.
-2. Add extraction evaluation: a gold sample, precision/recall metrics, model comparisons, prompt versioning, and regression tests for ontology compliance.
-3. Improve geospatial validation with Wikidata/GeoNames fallback, coordinate confidence, uncertainty radius, and a small manual review UI.
-4. Evolve the schema from entity-relation triples toward event records with participants, roles, time spans, locations, evidence, and confidence.
-5. Serve graph data through a backend API so the frontend can filter by date, source, entity type, relation type, and confidence without rebuilding.
-6. Add stronger provenance views: source article drill-down, evidence search, relation-level confidence, and exportable graph slices.
-7. Add CI tests, sample-backed documentation, and optional Docker/devcontainer setup for reproducible onboarding.
-8. Prepare an academic evaluation track covering LLM relation extraction quality, geocoding error types, and temporal graph analysis.
 
 ## License
 
