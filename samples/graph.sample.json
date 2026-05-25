@@ -1,0 +1,227 @@
+{
+  "nodes": [
+    {
+      "id": "NationState:iran",
+      "name": "Iran",
+      "type": "NationState",
+      "latitude": 32.4279,
+      "longitude": 53.688,
+      "geocode_source": "sample",
+      "geocode_display_name": "Iran",
+      "aliases": [],
+      "article_ids": ["sample-001"],
+      "article_count": 1,
+      "relation_count": 1,
+      "first_seen": "2026-04-01",
+      "last_seen": "2026-04-01",
+      "review_flags": []
+    },
+    {
+      "id": "StrategicLocation:strait-of-hormuz",
+      "name": "Strait of Hormuz",
+      "type": "StrategicLocation",
+      "latitude": 26.5667,
+      "longitude": 56.25,
+      "geocode_source": "sample",
+      "geocode_display_name": "Strait of Hormuz",
+      "aliases": [],
+      "article_ids": ["sample-001"],
+      "article_count": 1,
+      "relation_count": 1,
+      "first_seen": "2026-04-01",
+      "last_seen": "2026-04-01",
+      "review_flags": []
+    },
+    {
+      "id": "NationState:united-states",
+      "name": "United States",
+      "type": "NationState",
+      "latitude": 38.9072,
+      "longitude": -77.0369,
+      "geocode_source": "sample",
+      "geocode_display_name": "United States",
+      "aliases": ["US", "USA"],
+      "article_ids": ["sample-001", "sample-002"],
+      "article_count": 2,
+      "relation_count": 2,
+      "first_seen": "2026-04-01",
+      "last_seen": "2026-04-02",
+      "review_flags": []
+    },
+    {
+      "id": "NationState:oman",
+      "name": "Oman",
+      "type": "NationState",
+      "latitude": 21.4735,
+      "longitude": 55.9754,
+      "geocode_source": "sample",
+      "geocode_display_name": "Oman",
+      "aliases": [],
+      "article_ids": ["sample-001"],
+      "article_count": 1,
+      "relation_count": 1,
+      "first_seen": "2026-04-01",
+      "last_seen": "2026-04-01",
+      "review_flags": []
+    },
+    {
+      "id": "NationState:israel",
+      "name": "Israel",
+      "type": "NationState",
+      "latitude": 31.0461,
+      "longitude": 34.8516,
+      "geocode_source": "sample",
+      "geocode_display_name": "Israel",
+      "aliases": [],
+      "article_ids": ["sample-002"],
+      "article_count": 1,
+      "relation_count": 1,
+      "first_seen": "2026-04-02",
+      "last_seen": "2026-04-02",
+      "review_flags": []
+    },
+    {
+      "id": "MilitaryAsset:drone-unit",
+      "name": "Drone unit",
+      "type": "MilitaryAsset",
+      "latitude": null,
+      "longitude": null,
+      "geocode_source": null,
+      "geocode_display_name": null,
+      "aliases": [],
+      "article_ids": ["sample-002"],
+      "article_count": 1,
+      "relation_count": 1,
+      "first_seen": "2026-04-02",
+      "last_seen": "2026-04-02",
+      "review_flags": []
+    },
+    {
+      "id": "StrategicLocation:eilat",
+      "name": "Eilat",
+      "type": "StrategicLocation",
+      "latitude": 29.5577,
+      "longitude": 34.9519,
+      "geocode_source": "sample",
+      "geocode_display_name": "Eilat",
+      "aliases": [],
+      "article_ids": ["sample-002"],
+      "article_count": 1,
+      "relation_count": 1,
+      "first_seen": "2026-04-02",
+      "last_seen": "2026-04-02",
+      "review_flags": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "NationState:iran__BLOCKADED__StrategicLocation:strait-of-hormuz",
+      "source": "NationState:iran",
+      "target": "StrategicLocation:strait-of-hormuz",
+      "type": "BLOCKADED",
+      "weight": 1,
+      "article_ids": ["sample-001"],
+      "article_count": 1,
+      "dates": ["2026-04-01"],
+      "first_seen": "2026-04-01",
+      "last_seen": "2026-04-01",
+      "evidences": [
+        {
+          "article_id": "sample-001",
+          "published_at": "2026-04-01",
+          "title": "Regional officials meet after maritime warning",
+          "source_publication": "Synthetic Sample News",
+          "evidence": "Iran warned it could restrict traffic near the Strait of Hormuz."
+        }
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "NationState:united-states__NEGOTIATED_WITH__NationState:oman",
+      "source": "NationState:united-states",
+      "target": "NationState:oman",
+      "type": "NEGOTIATED_WITH",
+      "weight": 1,
+      "article_ids": ["sample-001"],
+      "article_count": 1,
+      "dates": ["2026-04-01"],
+      "first_seen": "2026-04-01",
+      "last_seen": "2026-04-01",
+      "evidences": [
+        {
+          "article_id": "sample-001",
+          "published_at": "2026-04-01",
+          "title": "Regional officials meet after maritime warning",
+          "source_publication": "Synthetic Sample News",
+          "evidence": "United States officials said they were negotiating with Oman to reduce tensions."
+        }
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "MilitaryAsset:drone-unit__ATTACKED__StrategicLocation:eilat",
+      "source": "MilitaryAsset:drone-unit",
+      "target": "StrategicLocation:eilat",
+      "type": "ATTACKED",
+      "weight": 1,
+      "article_ids": ["sample-002"],
+      "article_count": 1,
+      "dates": ["2026-04-02"],
+      "first_seen": "2026-04-02",
+      "last_seen": "2026-04-02",
+      "evidences": [
+        {
+          "article_id": "sample-002",
+          "published_at": "2026-04-02",
+          "title": "Security council reviews drone incident",
+          "source_publication": "Synthetic Sample News",
+          "evidence": "Israel said a drone unit attacked a military site near Eilat."
+        }
+      ],
+      "review_flags": []
+    },
+    {
+      "id": "NationState:united-states__SUPPORTED__NationState:israel",
+      "source": "NationState:united-states",
+      "target": "NationState:israel",
+      "type": "SUPPORTED",
+      "weight": 1,
+      "article_ids": ["sample-002"],
+      "article_count": 1,
+      "dates": ["2026-04-02"],
+      "first_seen": "2026-04-02",
+      "last_seen": "2026-04-02",
+      "evidences": [
+        {
+          "article_id": "sample-002",
+          "published_at": "2026-04-02",
+          "title": "Security council reviews drone incident",
+          "source_publication": "Synthetic Sample News",
+          "evidence": "The United States supported Israel with additional air defence equipment."
+        }
+      ],
+      "review_flags": []
+    }
+  ],
+  "metadata": {
+    "node_count": 7,
+    "edge_count": 4,
+    "node_type_counts": {
+      "NationState": 4,
+      "StrategicLocation": 2,
+      "MilitaryAsset": 1
+    },
+    "edge_type_counts": {
+      "BLOCKADED": 1,
+      "NEGOTIATED_WITH": 1,
+      "ATTACKED": 1,
+      "SUPPORTED": 1
+    },
+    "timeline": {
+      "available_dates": ["2026-04-01", "2026-04-02"],
+      "min_date": "2026-04-01",
+      "max_date": "2026-04-02"
+    },
+    "skipped_relations": 0
+  }
+}

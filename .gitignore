@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+
+# Local system files
+.DS_Store
+
+# Runtime logs
+*.log
+logs_runner/
+
+# Private planning notes
+DEVELOPMENT_PLAN.md
+
+# Source corpus and generated pipeline artifacts
+corpus/*.html
+corpus/crawl_manifest.jsonl
+corpus/crawl_summary.json
+data/normalized/
+data/extractions/
+data/postprocessed/
+data/graph/
+
+# Local third-party cache. Keep aliases and manual overrides versioned.
+data/reference/geocode_cache.json

@@ -1,0 +1,4 @@
+query,latitude,longitude,display_name,source,notes
+Berlin,52.5200,13.4050,"Berlin, Germany",override,manual city coordinate
+London,51.5074,-0.1278,"London, United Kingdom",override,manual city coordinate
+Paris,48.8566,2.3522,"Paris, France",override,manual city coordinate
