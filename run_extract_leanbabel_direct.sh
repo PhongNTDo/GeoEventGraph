@@ -15,7 +15,7 @@ Options:
   --project-root <path>     Optional. Defaults to the directory containing this script.
   --input <path>            Optional. Normalized article JSONL input.
   --output-dir <path>       Optional. Extraction output directory.
-  --model <value>           Optional. Ollama model tag. Default: gpt-oss-120b.
+  --model <value>           Optional. Ollama model tag. Default: gpt-oss:120b.
   --ollama-port <value>     Optional. Local Ollama port. Default: 11434.
   --gpus <value>            Optional. Number of GPUs to use. Default: 2.
   --cuda-visible <value>    Optional. Explicit CUDA_VISIBLE_DEVICES, e.g. 0 or 0,1.
@@ -31,7 +31,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$SCRIPT_DIR"
 INPUT_JSONL=""
 OUTPUT_DIR=""
-OLLAMA_MODEL="gpt-oss-120b"
+OLLAMA_MODEL="gpt-oss:120b"
 OLLAMA_PORT="11434"
 GPU_COUNT="2"
 CUDA_VISIBLE_VALUE="${CUDA_VISIBLE_DEVICES_OVERRIDE:-}"

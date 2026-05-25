@@ -1,6 +1,6 @@
 import unittest
 
-from geokg.aggregate_graph import build_graph_payload
+from geokg.aggregate_graph import build_events_payload, build_graph_payload
 
 
 class AggregateGraphTest(unittest.TestCase):
@@ -71,6 +71,70 @@ class AggregateGraphTest(unittest.TestCase):
         hormuz = next(node for node in payload["nodes"] if node["name"] == "Strait of Hormuz")
         self.assertEqual(hormuz["latitude"], 26.4)
         self.assertEqual(hormuz["relation_count"], 1)
+
+    def test_builds_event_payload_with_node_references(self) -> None:
+        records = [
+            {
+                "article_id": "a1",
+                "published_at": "2026-04-10T10:00:00+00:00",
+                "title": "Article One",
+                "source": "BBC News",
+                "entities": [
+                    {"name": "Iran", "type": "NationState"},
+                    {
+                        "name": "Strait of Hormuz",
+                        "type": "StrategicLocation",
+                        "latitude": 26.4,
+                        "longitude": 56.2,
+                    },
+                ],
+                "relations": [
+                    {
+                        "source": "Iran",
+                        "target": "Strait of Hormuz",
+                        "type": "BLOCKADED",
+                        "evidence": "blockade one",
+                    }
+                ],
+                "events": [
+                    {
+                        "event_id": "event:a1:001:blockadeevent",
+                        "event_type": "BlockadeEvent",
+                        "event_date": "2026-04-10",
+                        "date_precision": "day",
+                        "location": "Strait of Hormuz",
+                        "participants": [
+                            {"name": "Iran", "type": "NationState", "role": "initiator"},
+                            {
+                                "name": "Strait of Hormuz",
+                                "type": "StrategicLocation",
+                                "role": "affected_location",
+                            },
+                        ],
+                        "relations": [
+                            {
+                                "source": "Iran",
+                                "target": "Strait of Hormuz",
+                                "type": "BLOCKADED",
+                                "evidence": "blockade one",
+                            }
+                        ],
+                        "summary": "Iran blockaded the Strait of Hormuz.",
+                        "evidence": "blockade one",
+                        "confidence": 0.8,
+                    }
+                ],
+            }
+        ]
+
+        graph_payload = build_graph_payload(records)
+        event_payload = build_events_payload(records, graph_payload["nodes"])
+
+        self.assertEqual(event_payload["metadata"]["event_count"], 1)
+        event = event_payload["events"][0]
+        self.assertEqual(event["location_node_id"], "StrategicLocation:strait-of-hormuz")
+        self.assertEqual(event["participants"][0]["node_id"], "NationState:iran")
+        self.assertEqual(event["relations"][0]["target_id"], "StrategicLocation:strait-of-hormuz")
 
 
 if __name__ == "__main__":

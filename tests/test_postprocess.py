@@ -41,6 +41,59 @@ class PostprocessTest(unittest.TestCase):
             self.assertEqual(cleaned["entities"][0]["name"], "United States")
             self.assertEqual(cleaned["relations"][0]["source"], "United States")
 
+    def test_aliases_remap_event_participants_and_inner_relations(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            alias_path = Path(tmpdir) / "aliases.csv"
+            alias_path.write_text(
+                "alias,canonical_name,canonical_type\n"
+                "US,United States,NationState\n",
+                encoding="utf-8",
+            )
+            aliases = load_aliases(alias_path)
+            record = {
+                "article_id": "a1",
+                "entities": [
+                    {"name": "US", "type": "NationState"},
+                    {"name": "Iranian ports", "type": "StrategicLocation"},
+                ],
+                "relations": [],
+                "events": [
+                    {
+                        "event_id": "event:a1:001:blockadeevent",
+                        "event_type": "BlockadeEvent",
+                        "event_date": "2026-04-10",
+                        "date_precision": "day",
+                        "location": "Iranian ports",
+                        "participants": [
+                            {"name": "US", "type": "NationState", "role": "initiator"},
+                            {
+                                "name": "Iranian ports",
+                                "type": "StrategicLocation",
+                                "role": "affected_location",
+                            },
+                        ],
+                        "relations": [
+                            {
+                                "source": "US",
+                                "target": "Iranian ports",
+                                "type": "BLOCKADED",
+                                "evidence": "The US blocked Iranian ports.",
+                            }
+                        ],
+                        "summary": "The US blocked Iranian ports.",
+                        "evidence": "The US blocked Iranian ports.",
+                        "confidence": 0.8,
+                    }
+                ],
+            }
+
+            cleaned = clean_extraction_record(record, aliases)
+
+            event = cleaned["events"][0]
+            self.assertEqual(event["participants"][0]["name"], "United States")
+            self.assertEqual(event["relations"][0]["source"], "United States")
+            self.assertEqual(cleaned["relations"][0]["source"], "United States")
+
     def test_generic_location_gets_review_flag(self) -> None:
         aliases = load_aliases(Path("/tmp/does-not-exist.csv"))
         record = {

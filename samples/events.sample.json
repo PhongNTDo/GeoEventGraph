@@ -1,0 +1,61 @@
+{
+  "events": [
+    {
+      "id": "event:sample-001:001:blockadeevent",
+      "event_id": "event:sample-001:001:blockadeevent",
+      "event_type": "BlockadeEvent",
+      "event_date": "2026-04-01",
+      "date_precision": "article_date",
+      "location": "Strait of Hormuz",
+      "location_node_id": "StrategicLocation:strait-of-hormuz",
+      "latitude": 26.5667,
+      "longitude": 56.25,
+      "participants": [
+        {
+          "name": "Iran",
+          "type": "NationState",
+          "role": "initiator",
+          "node_id": "NationState:iran"
+        },
+        {
+          "name": "Strait of Hormuz",
+          "type": "StrategicLocation",
+          "role": "affected_location",
+          "node_id": "StrategicLocation:strait-of-hormuz"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Iran",
+          "target": "Strait of Hormuz",
+          "source_id": "NationState:iran",
+          "target_id": "StrategicLocation:strait-of-hormuz",
+          "type": "BLOCKADED",
+          "evidence": "Iran warned it could restrict traffic near the Strait of Hormuz."
+        }
+      ],
+      "summary": "Iran warned it could restrict traffic near the Strait of Hormuz.",
+      "evidence": "Iran warned it could restrict traffic near the Strait of Hormuz.",
+      "confidence": 0.86,
+      "review_status": "unreviewed",
+      "review_flags": [],
+      "article_id": "sample-001",
+      "published_at": "2026-04-01",
+      "title": "Regional officials meet after maritime warning",
+      "source_publication": "Synthetic Sample News",
+      "model": "sample-model",
+      "prompt_version": "event-v1"
+    }
+  ],
+  "metadata": {
+    "event_count": 1,
+    "event_type_counts": {
+      "BlockadeEvent": 1
+    },
+    "timeline": {
+      "available_dates": ["2026-04-01"],
+      "min_date": "2026-04-01",
+      "max_date": "2026-04-01"
+    }
+  }
+}

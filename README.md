@@ -10,9 +10,9 @@ The Python package and CLI modules are currently named `geokg`.
 
 - Crawls BBC topic pages and saves article HTML into a local corpus.
 - Normalizes saved BBC HTML into stable article-level JSONL.
-- Uses an Ollama-compatible local LLM endpoint for ontology-constrained entity and relation extraction.
+- Uses an Ollama-compatible local LLM endpoint for ontology-constrained entity, event, and relation extraction.
 - Canonicalizes entity names, applies geocode overrides, caches Nominatim lookups, and flags locations for review.
-- Aggregates cleaned extractions into weighted temporal graph artifacts.
+- Aggregates cleaned extractions into event artifacts and weighted temporal graph artifacts.
 - Provides a React dashboard with map and topology views, timeline filtering, flagged-location filtering, and article evidence inspection.
 
 ## Repository Layout
@@ -40,8 +40,8 @@ The Python package and CLI modules are currently named `geokg`.
 | Crawl | `geokg.crawl_bbc_topic` | `corpus/*.html`, `corpus/crawl_manifest.jsonl`, `corpus/crawl_summary.json` |
 | Normalize | `geokg.ingest_corpus` | `data/normalized/articles.jsonl`, `data/normalized/summary.json` |
 | Extract | `geokg.extract_relations` | `data/extractions/article_extractions.jsonl`, `data/extractions/failures.jsonl` |
-| Post-process + geocode | `geokg.postprocess_extractions` | `data/postprocessed/article_extractions_clean.jsonl`, `data/postprocessed/geocoded_locations.jsonl`, `data/postprocessed/location_review.csv` |
-| Aggregate graph | `geokg.aggregate_graph` | `data/graph/graph.json`, `data/graph/nodes.json`, `data/graph/edges.json`, `data/graph/summary.json` |
+| Post-process + geocode | `geokg.postprocess_extractions` | `data/postprocessed/article_extractions_clean.jsonl`, `data/postprocessed/events_clean.jsonl`, `data/postprocessed/geocoded_locations.jsonl`, `data/postprocessed/location_review.csv` |
+| Aggregate graph | `geokg.aggregate_graph` | `data/graph/graph.json`, `data/graph/events.json`, `data/graph/nodes.json`, `data/graph/edges.json`, `data/graph/summary.json` |
 | Visualize | `frontend/` | Local Vite dashboard or production build |
 
 ## Current Ontology
@@ -62,6 +62,15 @@ Allowed relation types:
 - `SUPPORTED`
 - `SANCTIONED`
 - `BLOCKADED`
+
+Allowed event types:
+
+- `AttackEvent`
+- `ThreatEvent`
+- `NegotiationEvent`
+- `SupportEvent`
+- `SanctionEvent`
+- `BlockadeEvent`
 
 ## Quick Start
 
@@ -114,7 +123,7 @@ Useful variables can be overridden at runtime:
 
 ```bash
 make crawl SINCE=2026-02-01 UNTIL=2026-04-15
-make extract OLLAMA_BASE_URL=http://127.0.0.1:11434 OLLAMA_MODEL=gpt-oss-120b
+make extract OLLAMA_BASE_URL=http://127.0.0.1:11434 OLLAMA_MODEL=gpt-oss:120b
 make postprocess-live GEOCODE_USER_AGENT="GeoEventGraph/0.1 (contact@example.com)"
 ```
 
@@ -142,13 +151,13 @@ python3 -m geokg.ingest_corpus \
 
 Later stages should consume `data/normalized/articles.jsonl` instead of reading raw HTML directly.
 
-### 3. Extract Entities And Relations
+### 3. Extract Entities, Events, And Relations
 
 Start an Ollama-compatible server first, then run:
 
 ```bash
 export GEOKG_OLLAMA_BASE_URL=http://127.0.0.1:11434
-export GEOKG_OLLAMA_MODEL=gpt-oss-120b
+export GEOKG_OLLAMA_MODEL=gpt-oss:120b
 
 python3 -m geokg.extract_relations \
   --input data/normalized/articles.jsonl \
@@ -157,6 +166,18 @@ python3 -m geokg.extract_relations \
 ```
 
 You can also pass `--base-url`, `--model`, `--limit`, `--timeout-seconds`, `--temperature`, and `--num-ctx` directly.
+
+Extraction is event-centric in the current schema. The model returns direct `events`, and each event keeps inner compatibility `relations`; the top-level `relations` array remains for the existing graph pipeline and older tooling.
+
+If you have older extraction outputs without `events`, rerun extraction into a fresh output directory or disable resume so existing article IDs are not skipped.
+
+For the LeanBabel server, the direct runner defaults to `gpt-oss:120b`:
+
+```bash
+bash run_extract_leanbabel_direct.sh --gpus 2 --model gpt-oss:120b
+```
+
+If the installed Ollama tag differs, pass the exact model name shown by `ollama list`.
 
 ### 4. Post-Process And Geocode
 
@@ -222,6 +243,8 @@ The `samples/` directory contains synthetic records for:
 
 - normalized article JSONL
 - extracted entity/relation JSONL
+- event-centric extraction records
+- frontend-style event JSON
 - frontend-style graph JSON
 
 These files are documentation and onboarding fixtures, not factual data or model-evaluation benchmarks.

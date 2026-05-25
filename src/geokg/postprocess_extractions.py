@@ -99,21 +99,26 @@ def main() -> int:
     cleaned_records = _attach_geocodes(cleaned_records, geocoded_locations)
 
     cleaned_path = args.output_dir / "article_extractions_clean.jsonl"
+    events_path = args.output_dir / "events_clean.jsonl"
     geocoded_path = args.output_dir / "geocoded_locations.jsonl"
     review_path = args.output_dir / "location_review.csv"
     summary_path = args.output_dir / "summary.json"
 
     _write_jsonl(cleaned_path, cleaned_records)
+    flattened_events = _flatten_events(cleaned_records)
+    _write_jsonl(events_path, flattened_events)
     _write_jsonl(geocoded_path, geocoded_locations.values())
     _write_review_csv(review_path, geocoded_locations)
-    _write_summary(summary_path, cleaned_records, geocoded_locations, review_path)
+    _write_summary(summary_path, cleaned_records, flattened_events, geocoded_locations, review_path)
 
     print(
         json.dumps(
             {
                 "cleaned_records": len(cleaned_records),
+                "cleaned_events": len(flattened_events),
                 "unique_locations": len(geocoded_locations),
                 "output_dir": str(args.output_dir),
+                "events_jsonl": str(events_path),
                 "review_csv": str(review_path),
             }
         )
@@ -146,6 +151,17 @@ def _collect_unique_locations(records: list[dict[str, Any]]) -> list[str]:
                 continue
             seen.add(key)
             locations.append(name)
+        for event in record.get("events", []):
+            if not isinstance(event, dict):
+                continue
+            location = event.get("location")
+            if not isinstance(location, str) or not location:
+                continue
+            key = location.casefold()
+            if key in seen:
+                continue
+            seen.add(key)
+            locations.append(location)
     return locations
 
 
@@ -199,8 +215,54 @@ def _attach_geocodes(
                                 flags.append(flag)
             entities.append(copied)
         enriched["entities"] = entities
+        events: list[dict[str, Any]] = []
+        for event in record.get("events", []):
+            if not isinstance(event, dict):
+                continue
+            copied_event = dict(event)
+            location = copied_event.get("location")
+            if isinstance(location, str) and location:
+                geo = geocoded_locations.get(location.casefold())
+                if geo is not None:
+                    copied_event["location_geocode"] = {
+                        "latitude": geo["latitude"],
+                        "longitude": geo["longitude"],
+                        "geocode_source": geo["geocode_source"],
+                        "geocode_display_name": geo["display_name"],
+                    }
+                    if geo["review_flags"]:
+                        flags = copied_event.setdefault("review_flags", [])
+                        existing = {
+                            (flag["code"], flag["message"])
+                            for flag in flags
+                            if isinstance(flag, dict)
+                        }
+                        for flag in geo["review_flags"]:
+                            key = (flag["code"], flag["message"])
+                            if key not in existing:
+                                flags.append(flag)
+            events.append(copied_event)
+        enriched["events"] = events
         enriched_records.append(enriched)
     return enriched_records
+
+
+def _flatten_events(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    events: list[dict[str, Any]] = []
+    for record in records:
+        for event in record.get("events", []):
+            if not isinstance(event, dict):
+                continue
+            copied = dict(event)
+            copied["article_id"] = record.get("article_id")
+            copied["title"] = record.get("title")
+            copied["source"] = record.get("source")
+            copied["published_at"] = record.get("published_at")
+            copied["model"] = record.get("model")
+            copied["prompt_version"] = record.get("prompt_version")
+            copied["extracted_at"] = record.get("extracted_at")
+            events.append(copied)
+    return events
 
 
 def _write_jsonl(path: Path, rows: Any) -> None:
@@ -244,24 +306,30 @@ def _write_review_csv(path: Path, geocoded_locations: dict[str, dict[str, Any]])
 def _write_summary(
     path: Path,
     records: list[dict[str, Any]],
+    events: list[dict[str, Any]],
     geocoded_locations: dict[str, dict[str, Any]],
     review_path: Path,
 ) -> None:
     relation_counts = Counter()
     entity_counts = Counter()
+    event_counts = Counter()
     review_count = 0
     for record in records:
         for entity in record.get("entities", []):
             entity_counts[entity.get("type", "unknown")] += 1
         for relation in record.get("relations", []):
             relation_counts[relation.get("type", "unknown")] += 1
+    for event in events:
+        event_counts[event.get("event_type", "unknown")] += 1
     for location in geocoded_locations.values():
         review_count += len(location.get("review_flags", []))
 
     summary = {
         "cleaned_record_count": len(records),
+        "cleaned_event_count": len(events),
         "entity_type_counts": dict(entity_counts),
         "relation_type_counts": dict(relation_counts),
+        "event_type_counts": dict(event_counts),
         "geocoded_location_count": len(geocoded_locations),
         "location_review_flag_count": review_count,
         "location_review_csv": str(review_path),

@@ -104,15 +104,22 @@ def main() -> int:
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
     graph_payload = build_graph_payload(records)
+    events_payload = build_events_payload(records, graph_payload["nodes"])
+    graph_payload["metadata"]["event_count"] = events_payload["metadata"]["event_count"]
+    graph_payload["metadata"]["event_type_counts"] = events_payload["metadata"][
+        "event_type_counts"
+    ]
 
     graph_path = args.output_dir / "graph.json"
     nodes_path = args.output_dir / "nodes.json"
     edges_path = args.output_dir / "edges.json"
+    events_path = args.output_dir / "events.json"
     summary_path = args.output_dir / "summary.json"
 
     _write_json(graph_path, graph_payload)
     _write_json(nodes_path, graph_payload["nodes"])
     _write_json(edges_path, graph_payload["edges"])
+    _write_json(events_path, events_payload)
     _write_json(summary_path, graph_payload["metadata"])
 
     networkx_path = None
@@ -126,7 +133,9 @@ def main() -> int:
         "records": len(records),
         "nodes": len(graph_payload["nodes"]),
         "edges": len(graph_payload["edges"]),
+        "events": len(events_payload["events"]),
         "graph_json": str(graph_path),
+        "events_json": str(events_path),
         "summary_json": str(summary_path),
     }
     if networkx_path is not None:
@@ -221,6 +230,99 @@ def build_graph_payload(records: list[dict[str, Any]]) -> dict[str, Any]:
     return {"nodes": nodes, "edges": edges, "metadata": metadata}
 
 
+def build_events_payload(
+    records: list[dict[str, Any]],
+    nodes: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
+    node_by_name = {
+        node.get("name", "").casefold(): node
+        for node in (nodes or [])
+        if isinstance(node.get("name"), str)
+    }
+    events: list[dict[str, Any]] = []
+    event_type_counts = Counter()
+    all_dates: set[str] = set()
+
+    for record in records:
+        article_id = record.get("article_id")
+        article_date = _normalize_date(record.get("published_at"))
+        title = record.get("title")
+        source_publication = record.get("source")
+        model = record.get("model")
+        prompt_version = record.get("prompt_version")
+
+        for index, event in enumerate(record.get("events", [])):
+            if not isinstance(event, dict):
+                continue
+            event_type = event.get("event_type")
+            if not isinstance(event_type, str) or not event_type:
+                continue
+
+            event_date = _normalize_event_date(event.get("event_date")) or article_date
+            if event_date:
+                all_dates.add(event_date)
+            event_type_counts[event_type] += 1
+
+            location = event.get("location") if isinstance(event.get("location"), str) else ""
+            location_node = node_by_name.get(location.casefold()) if location else None
+            location_geocode = event.get("location_geocode", {})
+            latitude = _pick_coordinate(None, location_geocode.get("latitude") if isinstance(location_geocode, dict) else None)
+            longitude = _pick_coordinate(None, location_geocode.get("longitude") if isinstance(location_geocode, dict) else None)
+            if latitude is None and location_node is not None:
+                latitude = _pick_coordinate(None, location_node.get("latitude"))
+            if longitude is None and location_node is not None:
+                longitude = _pick_coordinate(None, location_node.get("longitude"))
+
+            event_id = event.get("event_id")
+            if not isinstance(event_id, str) or not event_id:
+                event_id = _build_fallback_event_id(article_id, index, event_type)
+
+            events.append(
+                {
+                    "id": event_id,
+                    "event_id": event_id,
+                    "event_type": event_type,
+                    "event_date": event_date,
+                    "date_precision": event.get("date_precision"),
+                    "location": location,
+                    "location_node_id": location_node.get("id") if location_node else None,
+                    "latitude": latitude,
+                    "longitude": longitude,
+                    "participants": _enrich_event_participants(
+                        event.get("participants", []),
+                        node_by_name,
+                    ),
+                    "relations": _enrich_event_relations(
+                        event.get("relations", []),
+                        node_by_name,
+                    ),
+                    "summary": event.get("summary"),
+                    "evidence": event.get("evidence"),
+                    "confidence": event.get("confidence"),
+                    "review_status": event.get("review_status"),
+                    "review_flags": event.get("review_flags", []),
+                    "article_id": article_id,
+                    "published_at": article_date,
+                    "title": title,
+                    "source_publication": source_publication,
+                    "model": model,
+                    "prompt_version": prompt_version,
+                }
+            )
+
+    events.sort(key=lambda item: (item.get("event_date") or "", item["id"]))
+    metadata = {
+        "event_count": len(events),
+        "event_type_counts": dict(event_type_counts),
+        "timeline": {
+            "available_dates": sorted(all_dates),
+            "min_date": min(all_dates) if all_dates else None,
+            "max_date": max(all_dates) if all_dates else None,
+        },
+    }
+    return {"events": events, "metadata": metadata}
+
+
 def _upsert_node(
     node_map: dict[str, NodeAggregate],
     node_id_by_name: dict[str, str],
@@ -270,6 +372,67 @@ def build_edge_id(source_id: str, target_id: str, relation_type: str) -> str:
     return f"{source_id}|{relation_type}|{target_id}"
 
 
+def _enrich_event_participants(
+    participants: Any,
+    node_by_name: dict[str, dict[str, Any]],
+) -> list[dict[str, Any]]:
+    if not isinstance(participants, list):
+        return []
+
+    enriched: list[dict[str, Any]] = []
+    for participant in participants:
+        if not isinstance(participant, dict):
+            continue
+        name = participant.get("name")
+        if not isinstance(name, str) or not name:
+            continue
+        node = node_by_name.get(name.casefold())
+        enriched.append(
+            {
+                "name": name,
+                "type": participant.get("type"),
+                "role": participant.get("role"),
+                "node_id": node.get("id") if node else None,
+            }
+        )
+    return enriched
+
+
+def _enrich_event_relations(
+    relations: Any,
+    node_by_name: dict[str, dict[str, Any]],
+) -> list[dict[str, Any]]:
+    if not isinstance(relations, list):
+        return []
+
+    enriched: list[dict[str, Any]] = []
+    for relation in relations:
+        if not isinstance(relation, dict):
+            continue
+        source = relation.get("source")
+        target = relation.get("target")
+        if not isinstance(source, str) or not isinstance(target, str):
+            continue
+        source_node = node_by_name.get(source.casefold())
+        target_node = node_by_name.get(target.casefold())
+        enriched.append(
+            {
+                "source": source,
+                "target": target,
+                "source_id": source_node.get("id") if source_node else None,
+                "target_id": target_node.get("id") if target_node else None,
+                "type": relation.get("type"),
+                "evidence": relation.get("evidence"),
+            }
+        )
+    return enriched
+
+
+def _build_fallback_event_id(article_id: Any, index: int, event_type: str) -> str:
+    article_slug = _slugify(article_id if isinstance(article_id, str) else "article")
+    return f"event:{article_slug}:{index + 1:03d}:{_slugify(event_type)}"
+
+
 def _slugify(value: str) -> str:
     lowered = value.casefold()
     normalized = re.sub(r"[^a-z0-9]+", "-", lowered)
@@ -283,6 +446,15 @@ def _normalize_date(value: Any) -> str | None:
         return datetime.fromisoformat(value.replace("Z", "+00:00")).date().isoformat()
     except ValueError:
         return None
+
+
+def _normalize_event_date(value: Any) -> str | None:
+    if not isinstance(value, str) or not value:
+        return None
+    stripped = value.strip()
+    if re.match(r"^\d{4}(-\d{2}){0,2}$", stripped):
+        return stripped
+    return _normalize_date(stripped)
 
 
 def _min_date(left: str | None, right: str | None) -> str | None:

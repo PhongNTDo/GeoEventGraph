@@ -8,7 +8,7 @@ SINCE ?= 2026-02-01
 UNTIL ?= 2026-04-15
 
 OLLAMA_BASE_URL ?= http://127.0.0.1:11434
-OLLAMA_MODEL ?= gpt-oss-120b
+OLLAMA_MODEL ?= gpt-oss:120b
 EXTRACT_ARGS ?= --resume
 
 GEOCODE_USER_AGENT ?= GeoEventGraph/0.1

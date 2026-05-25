@@ -5,7 +5,8 @@ This directory contains small synthetic records that demonstrate the public data
 Files:
 
 - `articles.sample.jsonl`: normalized article records.
-- `extractions.sample.jsonl`: LLM extraction records after metadata attachment.
+- `extractions.sample.jsonl`: event-centric LLM extraction records after metadata attachment.
+- `events.sample.json`: frontend-style event artifact.
 - `graph.sample.json`: frontend-style graph payload with nodes, edges, metadata, and evidence fields.
 
 These files are intended for documentation, tests, examples, and community onboarding. They are not a benchmark and should not be treated as factual geopolitical data.

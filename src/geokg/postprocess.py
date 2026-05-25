@@ -1,4 +1,4 @@
-"""Post-processing helpers for extracted entities and relations."""
+"""Post-processing helpers for extracted entities, relations, and events."""
 
 from __future__ import annotations
 
@@ -7,7 +7,13 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from geokg.ontology import ALLOWED_ENTITY_TYPES, ALLOWED_RELATION_TYPES
+from geokg.ontology import (
+    ALLOWED_ENTITY_TYPES,
+    ALLOWED_EVENT_DATE_PRECISIONS,
+    ALLOWED_EVENT_PARTICIPANT_ROLES,
+    ALLOWED_EVENT_TYPES,
+    ALLOWED_RELATION_TYPES,
+)
 
 
 BUILTIN_ALIASES: dict[str, tuple[str, str | None]] = {
@@ -64,6 +70,7 @@ def clean_extraction_record(
 ) -> dict[str, Any]:
     original_entities = record.get("entities", [])
     original_relations = record.get("relations", [])
+    original_events = record.get("events", [])
 
     cleaned_entities: list[dict[str, Any]] = []
     canonical_lookup: dict[tuple[str, str], str] = {}
@@ -101,9 +108,57 @@ def clean_extraction_record(
                 )
             _append_alias(existing, entity_name)
 
+    cleaned_relations, relation_flags = _clean_relation_records(
+        original_relations,
+        name_index,
+        aliases,
+    )
+    review_flags.extend(relation_flags)
+
+    cleaned_events, event_flags = _clean_event_records(
+        original_events,
+        record,
+        name_index,
+        aliases,
+    )
+    review_flags.extend(event_flags)
+    cleaned_relations = _merge_relation_records(
+        cleaned_relations,
+        [
+            relation
+            for event in cleaned_events
+            for relation in event.get("relations", [])
+            if isinstance(relation, dict)
+        ],
+    )
+
+    for entity in cleaned_entities:
+        if entity["type"] == "StrategicLocation":
+            entity_flags = review_location_name(entity["name"])
+            if entity_flags:
+                entity["review_flags"] = [flag.to_dict() for flag in entity_flags]
+                review_flags.extend(entity_flags)
+
+    cleaned_record = dict(record)
+    cleaned_record["entities"] = cleaned_entities
+    cleaned_record["relations"] = cleaned_relations
+    cleaned_record["events"] = cleaned_events
+    cleaned_record["postprocess_review_flags"] = [flag.to_dict() for flag in _dedupe_flags(review_flags)]
+    return cleaned_record
+
+
+def _clean_relation_records(
+    relations: Any,
+    name_index: dict[str, dict[str, Any]],
+    aliases: dict[str, AliasEntry],
+) -> tuple[list[dict[str, Any]], list[ReviewFlag]]:
+    if not isinstance(relations, list):
+        return [], []
+
     cleaned_relations: list[dict[str, Any]] = []
+    review_flags: list[ReviewFlag] = []
     seen_relations: set[tuple[str, str, str, str]] = set()
-    for raw_relation in original_relations:
+    for raw_relation in relations:
         if not isinstance(raw_relation, dict):
             continue
         source = _normalize_name(raw_relation.get("source", ""))
@@ -152,19 +207,225 @@ def clean_extraction_record(
                 "evidence": evidence,
             }
         )
+    return cleaned_relations, review_flags
 
-    for entity in cleaned_entities:
-        if entity["type"] == "StrategicLocation":
-            entity_flags = review_location_name(entity["name"])
-            if entity_flags:
-                entity["review_flags"] = [flag.to_dict() for flag in entity_flags]
-                review_flags.extend(entity_flags)
 
-    cleaned_record = dict(record)
-    cleaned_record["entities"] = cleaned_entities
-    cleaned_record["relations"] = cleaned_relations
-    cleaned_record["postprocess_review_flags"] = [flag.to_dict() for flag in _dedupe_flags(review_flags)]
-    return cleaned_record
+def _clean_event_records(
+    events: Any,
+    record: dict[str, Any],
+    name_index: dict[str, dict[str, Any]],
+    aliases: dict[str, AliasEntry],
+) -> tuple[list[dict[str, Any]], list[ReviewFlag]]:
+    if not isinstance(events, list):
+        return [], []
+
+    cleaned_events: list[dict[str, Any]] = []
+    review_flags: list[ReviewFlag] = []
+    seen_events: set[tuple[Any, ...]] = set()
+
+    for index, raw_event in enumerate(events):
+        if not isinstance(raw_event, dict):
+            continue
+        event_type = raw_event.get("event_type")
+        if event_type not in ALLOWED_EVENT_TYPES:
+            continue
+
+        date_precision = raw_event.get("date_precision")
+        if date_precision not in ALLOWED_EVENT_DATE_PRECISIONS:
+            review_flags.append(
+                ReviewFlag(
+                    code="event_date_precision_invalid",
+                    message=(
+                        f"Event '{event_type}' used invalid date precision "
+                        f"'{date_precision}'."
+                    ),
+                )
+            )
+            date_precision = "unknown"
+
+        location = _normalize_name(raw_event.get("location", ""))
+        if location:
+            resolved_location = _resolve_relation_endpoint(location, name_index, aliases)
+            if resolved_location is None:
+                review_flags.append(
+                    ReviewFlag(
+                        code="event_location_missing_entity",
+                        message=(
+                            f"Event '{event_type}' location '{location}' was not found "
+                            "after canonicalization."
+                        ),
+                    )
+                )
+            else:
+                location = resolved_location
+
+        participants, participant_flags = _clean_event_participants(
+            raw_event.get("participants", []),
+            name_index,
+            aliases,
+            event_type,
+        )
+        review_flags.extend(participant_flags)
+
+        relations, relation_flags = _clean_relation_records(
+            raw_event.get("relations", []),
+            name_index,
+            aliases,
+        )
+        review_flags.extend(relation_flags)
+        if not participants or not relations:
+            review_flags.append(
+                ReviewFlag(
+                    code="event_incomplete",
+                    message=(
+                        f"Event '{event_type}' dropped because participants or relations "
+                        "were missing after canonicalization."
+                    ),
+                )
+            )
+            continue
+
+        event_id = _normalize_name(raw_event.get("event_id", ""))
+        if not event_id:
+            event_id = _build_event_id(record, index, event_type)
+
+        cleaned_event = {
+            "event_id": event_id,
+            "event_type": event_type,
+            "event_date": _normalize_name(raw_event.get("event_date", "")),
+            "date_precision": date_precision,
+            "location": location,
+            "participants": participants,
+            "relations": relations,
+            "summary": _normalize_name(raw_event.get("summary", "")),
+            "evidence": _normalize_name(raw_event.get("evidence", "")),
+            "confidence": _coerce_confidence(raw_event.get("confidence")),
+            "review_status": _normalize_name(raw_event.get("review_status", "")) or "unreviewed",
+        }
+
+        existing_flags = raw_event.get("review_flags", [])
+        if isinstance(existing_flags, list):
+            event_review_flags = [
+                flag
+                for flag in existing_flags
+                if isinstance(flag, dict)
+                and isinstance(flag.get("code"), str)
+                and isinstance(flag.get("message"), str)
+            ]
+            if event_review_flags:
+                cleaned_event["review_flags"] = event_review_flags
+
+        event_key = _event_key(cleaned_event)
+        if event_key in seen_events:
+            continue
+        seen_events.add(event_key)
+        cleaned_events.append(cleaned_event)
+
+    return cleaned_events, review_flags
+
+
+def _clean_event_participants(
+    participants: Any,
+    name_index: dict[str, dict[str, Any]],
+    aliases: dict[str, AliasEntry],
+    event_type: str,
+) -> tuple[list[dict[str, str]], list[ReviewFlag]]:
+    if not isinstance(participants, list):
+        return [], []
+
+    cleaned: list[dict[str, str]] = []
+    review_flags: list[ReviewFlag] = []
+    seen: set[tuple[str, str]] = set()
+    for participant in participants:
+        if not isinstance(participant, dict):
+            continue
+        name = _normalize_name(participant.get("name", ""))
+        role = participant.get("role")
+        if not name or role not in ALLOWED_EVENT_PARTICIPANT_ROLES:
+            continue
+
+        canonical_name = _resolve_relation_endpoint(name, name_index, aliases)
+        if canonical_name is None:
+            review_flags.append(
+                ReviewFlag(
+                    code="event_participant_missing_entity",
+                    message=(
+                        f"Event '{event_type}' participant '{name}' was not found "
+                        "after canonicalization."
+                    ),
+                )
+            )
+            continue
+
+        entity = name_index.get(canonical_name.casefold())
+        if entity is None:
+            continue
+        key = (canonical_name.casefold(), role)
+        if key in seen:
+            continue
+        seen.add(key)
+        cleaned.append({"name": canonical_name, "type": entity["type"], "role": role})
+
+    return cleaned, review_flags
+
+
+def _merge_relation_records(
+    left: list[dict[str, Any]],
+    right: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    merged: list[dict[str, Any]] = []
+    seen: set[tuple[str, str, str, str]] = set()
+    for relation in [*left, *right]:
+        source = relation.get("source")
+        target = relation.get("target")
+        relation_type = relation.get("type")
+        evidence = relation.get("evidence")
+        if not all(isinstance(value, str) and value for value in (source, target, relation_type, evidence)):
+            continue
+        key = (source.casefold(), target.casefold(), relation_type, evidence)
+        if key in seen:
+            continue
+        seen.add(key)
+        merged.append(
+            {
+                "source": source,
+                "target": target,
+                "type": relation_type,
+                "evidence": evidence,
+            }
+        )
+    return merged
+
+
+def _coerce_confidence(value: Any) -> float | None:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return None
+    return min(max(float(value), 0.0), 1.0)
+
+
+def _build_event_id(record: dict[str, Any], index: int, event_type: str) -> str:
+    article_id = _slugify(_normalize_name(record.get("article_id", "")) or "article")
+    return f"event:{article_id}:{index + 1:03d}:{_slugify(event_type)}"
+
+
+def _event_key(event: dict[str, Any]) -> tuple[Any, ...]:
+    relation_keys = tuple(
+        (
+            relation.get("source", "").casefold(),
+            relation.get("target", "").casefold(),
+            relation.get("type", ""),
+            relation.get("evidence", ""),
+        )
+        for relation in event.get("relations", [])
+        if isinstance(relation, dict)
+    )
+    return (
+        event.get("event_type"),
+        event.get("event_date"),
+        event.get("location", "").casefold(),
+        event.get("evidence", ""),
+        relation_keys,
+    )
 
 
 def canonicalize_entity(
@@ -257,3 +518,17 @@ def _normalize_name(value: Any) -> str:
     if not isinstance(value, str):
         return ""
     return " ".join(value.strip().strip("\"'").split())
+
+
+def _slugify(value: str) -> str:
+    slug = _normalize_name(value).casefold()
+    output = []
+    previous_dash = False
+    for character in slug:
+        if character.isalnum():
+            output.append(character)
+            previous_dash = False
+        elif not previous_dash:
+            output.append("-")
+            previous_dash = True
+    return "".join(output).strip("-")

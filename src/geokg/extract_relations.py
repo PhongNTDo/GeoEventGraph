@@ -1,4 +1,4 @@
-"""CLI for LLM-based entity and relation extraction using Ollama."""
+"""CLI for LLM-based entity, event, and relation extraction using Ollama."""
 
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ from geokg.ollama_client import OllamaClient, OllamaError
 
 
 DEFAULT_BASE_URL = os.environ.get("GEOKG_OLLAMA_BASE_URL", "http://localhost:11434")
-DEFAULT_MODEL = os.environ.get("GEOKG_OLLAMA_MODEL", "gpt-oss-120b")
+DEFAULT_MODEL = os.environ.get("GEOKG_OLLAMA_MODEL", "gpt-oss:120b")
 
 
 def build_parser() -> argparse.ArgumentParser:
