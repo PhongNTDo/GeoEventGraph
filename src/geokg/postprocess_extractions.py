@@ -22,6 +22,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Raw extraction JSONL input.",
     )
     parser.add_argument(
+        "--article-metadata",
+        type=Path,
+        default=Path("data/normalized/articles.jsonl"),
+        help="Optional normalized article JSONL used to backfill source URLs and metadata.",
+    )
+    parser.add_argument(
         "--output-dir",
         type=Path,
         default=Path("data/postprocessed"),
@@ -79,6 +85,8 @@ def build_parser() -> argparse.ArgumentParser:
 def main() -> int:
     args = build_parser().parse_args()
     records = _load_jsonl(args.input)
+    article_metadata = _load_article_metadata(args.article_metadata)
+    records = [_merge_article_metadata(record, article_metadata) for record in records]
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
     aliases = load_aliases(args.aliases)
@@ -134,6 +142,40 @@ def _load_jsonl(path: Path) -> list[dict[str, Any]]:
             if line:
                 rows.append(json.loads(line))
     return rows
+
+
+def _load_article_metadata(path: Path) -> dict[str, dict[str, Any]]:
+    if not path.exists():
+        return {}
+    metadata: dict[str, dict[str, Any]] = {}
+    for row in _load_jsonl(path):
+        article_id = row.get("article_id")
+        if not isinstance(article_id, str) or not article_id:
+            continue
+        metadata[article_id] = {
+            key: row.get(key)
+            for key in ("title", "source", "published_at", "url")
+            if row.get(key) is not None
+        }
+    return metadata
+
+
+def _merge_article_metadata(
+    record: dict[str, Any],
+    article_metadata: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
+    article_id = record.get("article_id")
+    if not isinstance(article_id, str):
+        return record
+    metadata = article_metadata.get(article_id)
+    if metadata is None:
+        return record
+
+    merged = dict(record)
+    for key, value in metadata.items():
+        if merged.get(key) in (None, ""):
+            merged[key] = value
+    return merged
 
 
 def _collect_unique_locations(records: list[dict[str, Any]]) -> list[str]:
@@ -257,6 +299,7 @@ def _flatten_events(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
             copied["article_id"] = record.get("article_id")
             copied["title"] = record.get("title")
             copied["source"] = record.get("source")
+            copied["source_url"] = record.get("url") or record.get("source_url")
             copied["published_at"] = record.get("published_at")
             copied["model"] = record.get("model")
             copied["prompt_version"] = record.get("prompt_version")

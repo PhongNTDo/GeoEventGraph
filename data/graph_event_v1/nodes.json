@@ -1,0 +1,7665 @@
+[
+  {
+    "id": "MilitaryAsset:501st-combat-support-wing",
+    "name": "501st Combat Support Wing",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cp854ez929yo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:a-10c-thunderbolt-ii",
+    "name": "A-10C Thunderbolt II",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "crl1jnk01g4o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:american-installations",
+    "name": "American installations",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvg3xk6xgyzo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:b-52h-stratofortress",
+    "name": "B-52H Stratofortress",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c17vdgxe54ko"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:ballistic-missile",
+    "name": "ballistic missile",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cr41evk126go"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-05",
+    "last_seen": "2026-04-05",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:ballistic-missiles",
+    "name": "ballistic missiles",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c9qdvnv13qdo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-21",
+    "last_seen": "2026-03-21",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:cluster-munition-missile",
+    "name": "cluster munition missile",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0ljl23plpzo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-19",
+    "last_seen": "2026-03-19",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:drone",
+    "name": "Drone",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "ce84ngmjz8zo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-09",
+    "last_seen": "2026-04-09",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:f-15-eagle",
+    "name": "F-15 Eagle",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0le69de645o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-04",
+    "last_seen": "2026-04-04",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:f-15-fighter-jet",
+    "name": "F-15 fighter jet",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c3r395l91l3o",
+      "cm2k1dgz142o",
+      "cy01vg7x5ppo"
+    ],
+    "article_count": 3,
+    "relation_count": 1,
+    "first_seen": "2026-04-03",
+    "last_seen": "2026-04-05",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:f-15e-strike-eagle",
+    "name": "F-15E Strike Eagle",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cx2vpz1kwreo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-05",
+    "last_seen": "2026-04-05",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:helicopter",
+    "name": "Helicopter",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cy01vg7x5ppo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-05",
+    "last_seen": "2026-04-05",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:hoveyzeh-cruise-missile",
+    "name": "Hoveyzeh cruise missile",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4gx8e1x5j3o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-03",
+    "last_seen": "2026-04-03",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:iran-s-energy-infrastructure",
+    "name": "Iran's energy infrastructure",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvgk8zk9epgo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-28",
+    "last_seen": "2026-03-28",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:iranian-anti-ship-cruise-missile-sites",
+    "name": "Iranian anti-ship cruise missile sites",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c78n6p09pzno"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2025-06-23",
+    "last_seen": "2025-06-23",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:iranian-ballistic-missile",
+    "name": "Iranian ballistic missile",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:iranian-drone",
+    "name": "Iranian drone",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5y90jl8veyo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-04",
+    "last_seen": "2026-04-04",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:iranian-drones",
+    "name": "Iranian drones",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cr41evk126go"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-05",
+    "last_seen": "2026-04-05",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:iranian-fast-attack-boats",
+    "name": "Iranian fast attack boats",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "crl1jnk01g4o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:iranian-mine-layers",
+    "name": "Iranian mine layers",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "crl1jnk01g4o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:iranian-mine-laying-boats",
+    "name": "Iranian mine-laying boats",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c8r17plnvy3o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:iranian-minelaying-ships",
+    "name": "Iranian minelaying ships",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c70k29914q4o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-17",
+    "last_seen": "2026-03-17",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:iranian-missile",
+    "name": "Iranian missile",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cr41evk126go"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-05",
+    "last_seen": "2026-04-05",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:iranian-missiles",
+    "name": "Iranian missiles",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cjd8jrd1vnyo",
+      "cly73y5e788o"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-03-23",
+    "last_seen": "2026-04-11",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:iranian-navy",
+    "name": "Iranian navy",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c2k3jgy9vq3o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-19",
+    "last_seen": "2026-03-19",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:iranian-warship",
+    "name": "Iranian warship",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c2d1dz14k51o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:israel-defense-forces",
+    "name": "Israel Defense Forces",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c93jz4gykwko",
+      "cj0vzvdldv0o"
+    ],
+    "article_count": 2,
+    "relation_count": 1,
+    "first_seen": "2026-03-15",
+    "last_seen": "2026-03-30",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:israeli-air-strike",
+    "name": "Israeli air strike",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cgqgxqekp89o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-17",
+    "last_seen": "2026-03-17",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:kc-135-stratotanker",
+    "name": "KC-135 Stratotanker",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cly0d510yz3o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-15",
+    "last_seen": "2026-03-15",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:missiles",
+    "name": "missiles",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cn53zvlglg7o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-23",
+    "last_seen": "2026-03-23",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:mt-valiant-roar",
+    "name": "MT Valiant Roar",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvgkn9379pqo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:operation-midnight-hammer",
+    "name": "Operation Midnight Hammer",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c74vqd8k3g1o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:precision-strike-missile-prsm",
+    "name": "Precision Strike Missile (PrSM)",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cx29mzmwdw2o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-28",
+    "last_seen": "2026-03-28",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:raf-akrotiri",
+    "name": "RAF Akrotiri",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5yljdgwppzo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-21",
+    "last_seen": "2026-03-21",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:sara-sky",
+    "name": "Sara Sky",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4glxn24gd6o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:seaborne-drones",
+    "name": "seaborne drones",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c8r17plnvy3o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:shipping-vessels",
+    "name": "Shipping vessels",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cyv9lzn0816o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:tomahawk-missile",
+    "name": "Tomahawk missile",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4gx8e1x5j3o",
+      "c75kzk3lgl5o"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-03-27",
+    "last_seen": "2026-04-03",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:united-states-aircraft",
+    "name": "United States aircraft",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cwy368j1e3lo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-30",
+    "last_seen": "2026-03-30",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:us-a-10-warthog-aircraft",
+    "name": "US A-10 Warthog aircraft",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5y90jl8veyo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-04",
+    "last_seen": "2026-04-04",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:us-aircraft",
+    "name": "US aircraft",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c79je4vldq5o"
+    ],
+    "article_count": 1,
+    "relation_count": 2,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:us-black-hawk-helicopter",
+    "name": "US Black Hawk helicopter",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cx2vpz1kwreo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-05",
+    "last_seen": "2026-04-05",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:us-bombers",
+    "name": "US bombers",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c74vqd8k3g1o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:us-c-130-transport-plane",
+    "name": "US C-130 transport plane",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cx2vpz1kwreo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-05",
+    "last_seen": "2026-04-05",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:us-central-command",
+    "name": "US Central Command",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "ckgw8w7mzxgo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-13",
+    "last_seen": "2026-04-13",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:us-drone",
+    "name": "US drone",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cx2vpz1kwreo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-05",
+    "last_seen": "2026-04-05",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:us-f-15-fighter-jet",
+    "name": "US F-15 fighter jet",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5y90jl8veyo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-04",
+    "last_seen": "2026-04-04",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:us-fighter-jet",
+    "name": "US fighter jet",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c93e9r62py4o",
+      "cjd8jrd1vnyo"
+    ],
+    "article_count": 2,
+    "relation_count": 1,
+    "first_seen": "2026-04-03",
+    "last_seen": "2026-04-11",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:us-navy",
+    "name": "US Navy",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "ckgw8w7mzxgo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-13",
+    "last_seen": "2026-04-13",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:us-special-forces",
+    "name": "US special forces",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cjd8jrd1vnyo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-11",
+    "last_seen": "2026-04-11",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:us-tomahawk",
+    "name": "US Tomahawk",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4g0pnnj8xyo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-02-28",
+    "last_seen": "2026-02-28",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:us-warplanes",
+    "name": "US warplanes",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c79je4vldq5o",
+      "cp86mrj40e2o"
+    ],
+    "article_count": 2,
+    "relation_count": 2,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-03",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:us-warship",
+    "name": "US warship",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c36rny6xgppo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-20",
+    "review_flags": []
+  },
+  {
+    "id": "MilitaryAsset:us-warships",
+    "name": "US warships",
+    "type": "MilitaryAsset",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c20ddnz4w5lo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-14",
+    "last_seen": "2026-04-14",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:armenia",
+    "name": "Armenia",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvgkn9379pqo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:australia",
+    "name": "Australia",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5yvyl5ve8lo",
+      "cdrm0rlv102o",
+      "clyxwgll758o",
+      "cx2d0md89v2o"
+    ],
+    "article_count": 4,
+    "relation_count": 4,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-04-02",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:bahrain",
+    "name": "Bahrain",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c1w4pdexxqpo",
+      "c2d1dz14k51o",
+      "c4g0pnnj8xyo",
+      "c4gjv02g54ko",
+      "c5y90jl8veyo",
+      "cql72qk97gpo",
+      "cr41evk126go",
+      "cvg0q6wdzp1o",
+      "cvg3xk6xgyzo",
+      "cy91x2n29nlo"
+    ],
+    "article_count": 10,
+    "relation_count": 2,
+    "first_seen": "2026-02-28",
+    "last_seen": "2026-04-05",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Bahrain'."
+      }
+    ]
+  },
+  {
+    "id": "NationState:bangladesh",
+    "name": "Bangladesh",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c8r45770p37o",
+      "cvgkn9379pqo"
+    ],
+    "article_count": 2,
+    "relation_count": 1,
+    "first_seen": "2026-03-29",
+    "last_seen": "2026-03-31",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:canada",
+    "name": "Canada",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cj0dlvl086eo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-15",
+    "last_seen": "2026-03-15",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:china",
+    "name": "China",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c5ywpe2yyg3o",
+      "c78lleelxj4o",
+      "ckgw8w7mzxgo",
+      "cy91vrzxn34o",
+      "cyv9lzn0816o",
+      "cze0kz7gr84o"
+    ],
+    "article_count": 7,
+    "relation_count": 6,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-04-14",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:cyprus",
+    "name": "Cyprus",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5yljdgwppzo",
+      "cql72qk97gpo"
+    ],
+    "article_count": 2,
+    "relation_count": 1,
+    "first_seen": "2026-03-21",
+    "last_seen": "2026-04-02",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:egypt",
+    "name": "Egypt",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c895xljyzewo",
+      "cly9nz5vyz4o"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-25",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:france",
+    "name": "France",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "cx2d0md89v2o"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-04-02",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:germany",
+    "name": "Germany",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "cx2d0md89v2o"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-04-02",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:india",
+    "name": "India",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c1d6vyy9v61o",
+      "cgrzr9ynpn1o",
+      "ckg2m8zp2n3o",
+      "crk1066npvzo",
+      "cvgkn9379pqo"
+    ],
+    "article_count": 6,
+    "relation_count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-31",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:iran",
+    "name": "Iran",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c0le69de645o",
+      "c0ljl23plpzo",
+      "c0q9nqz4g55o",
+      "c1450zj6n48o",
+      "c15d980nyw1o",
+      "c1d6vyy9v61o",
+      "c1mkr19j84go",
+      "c1w4pdexxqpo",
+      "c20ddnz4w5lo",
+      "c24deezq6meo",
+      "c2d1dz14k51o",
+      "c2k3jgy9vq3o",
+      "c36rny6xgppo",
+      "c393k28kvd1o",
+      "c393wxzw4yjo",
+      "c3ex39w09gzo",
+      "c3ex8ez3717o",
+      "c3r395l91l3o",
+      "c3w39lg84w2o",
+      "c3wlwnn05zqo",
+      "c4g0pnnj8xyo",
+      "c4g44gj7rgno",
+      "c4g4e6z9960o",
+      "c4g4px01380o",
+      "c4gjv02g54ko",
+      "c4gjxv5g19no",
+      "c4glxn24gd6o",
+      "c4gx8e1x5j3o",
+      "c5y721yqe6ro",
+      "c5y90jl8veyo",
+      "c5y943x2g8qo",
+      "c5yljdgwppzo",
+      "c5yvyl5ve8lo",
+      "c5ywpe2yyg3o",
+      "c6243nkg1w3o",
+      "c62l597wl0yo",
+      "c70k29914q4o",
+      "c74vqd8k3g1o",
+      "c78lleelxj4o",
+      "c78n6p09pzno",
+      "c895v5pq5p1o",
+      "c895xljyzewo",
+      "c8r40y3rv75o",
+      "c8r45770p37o",
+      "c93e9r62py4o",
+      "c93enywd10ro",
+      "c93j37egjdeo",
+      "c98kdyye33no",
+      "c9qdvnv13qdo",
+      "c9wqgjn7x89o",
+      "cddq7j48p35o",
+      "cdj7xye8knxo",
+      "ce84ngmjz8zo",
+      "ce84z6y3ke4o",
+      "ce8wl4rnprzo",
+      "ce9mvzpvr7xo",
+      "ce9mzn7k722o",
+      "cevkd2jzpxyo",
+      "cew72ll8245o",
+      "cg4g66r3z40o",
+      "cg7el0mvv2do",
+      "cge01w2dxe0o",
+      "cgl5w09ey30o",
+      "cgqgxqekp89o",
+      "cgrlwk29ppzo",
+      "cgrzr9ynpn1o",
+      "cj0dlvl086eo",
+      "cj0vzvdldv0o",
+      "cj401qvgg19o",
+      "cj4z7zr4kd8o",
+      "cj6dl175w01o",
+      "cjd8e4px12ro",
+      "cjd8jrd1vnyo",
+      "ckg2m8zp2n3o",
+      "ckgl58y5943o",
+      "ckgw8w7mzxgo",
+      "cly0d510yz3o",
+      "cly73y5e788o",
+      "cly9ggzy3ngo",
+      "cly9nz5vyz4o",
+      "clygdwqw5dvo",
+      "clyxgxyeqpgo",
+      "clyxv87zwwpo",
+      "clyxwgll758o",
+      "cm2k1dgz142o",
+      "cn0w1qxzd4xo",
+      "cn53zvlglg7o",
+      "cn89xl9xr34o",
+      "cn9e0wrglgdo",
+      "cn9qzl12537o",
+      "cnv81ven263o",
+      "cp3l4yk5rlgo",
+      "cp854ez929yo",
+      "cp86mrj40e2o",
+      "cpd5l00z7n6o",
+      "cpwj7r5yxv1o",
+      "cql72qk97gpo",
+      "cr41evk126go",
+      "cr516nmer5eo",
+      "crk1066npvzo",
+      "crl1jnk01g4o",
+      "crm120x4lzxo",
+      "crm1vj941x9o",
+      "cvg0q6wdzp1o",
+      "cvg0v4xd2z6o",
+      "cvg3xk6xgyzo",
+      "cvgk8zk9epgo",
+      "cvgkd3lqe2no",
+      "cvgkg8p7zlko",
+      "cvgkn9379pqo",
+      "cvgkv9y97n0o",
+      "cvgl0ng8z0do",
+      "cvgvg125q8ro",
+      "cwy368j1e3lo",
+      "cwygyvrwq89o",
+      "cwyk7xgkzvzo",
+      "cwyvp0yvv8xo",
+      "cwyvp55xrlro",
+      "cwyvxejqyx4o",
+      "cx29mzmwdw2o",
+      "cx2d0md89v2o",
+      "cx2vpz1kwreo",
+      "cx2w0v19gw8o",
+      "cx2wyn8wdz0o",
+      "cy01vg7x5ppo",
+      "cy410dq4gvno",
+      "cy81p99x07no",
+      "cy91x2n29nlo",
+      "cyv9lzn0816o",
+      "cze0kz7gr84o",
+      "czexw94rj5jo",
+      "czx99d7yjw4o"
+    ],
+    "article_count": 133,
+    "relation_count": 85,
+    "first_seen": "2025-06-23",
+    "last_seen": "2026-04-15",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:iraq",
+    "name": "Iraq",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c2d1dz14k51o",
+      "c4gjv02g54ko",
+      "c5y90jl8veyo",
+      "crl1jnk01g4o",
+      "cvgvg125q8ro"
+    ],
+    "article_count": 6,
+    "relation_count": 2,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-04-04",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Iraq'."
+      }
+    ]
+  },
+  {
+    "id": "NationState:ireland",
+    "name": "Ireland",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:israel",
+    "name": "Israel",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c0j6d538l6qo",
+      "c0q9nqz4g55o",
+      "c1450zj6n48o",
+      "c1d6vyy9v61o",
+      "c1mkr19j84go",
+      "c1w4pdexxqpo",
+      "c20ddnz4w5lo",
+      "c24deezq6meo",
+      "c2d1dz14k51o",
+      "c2k3jgy9vq3o",
+      "c393k28kvd1o",
+      "c3ex8ez3717o",
+      "c4g0pnnj8xyo",
+      "c4g4e6z9960o",
+      "c4gjv02g54ko",
+      "c5y90jl8veyo",
+      "c5ywpe2yyg3o",
+      "c78n6p09pzno",
+      "c895v5pq5p1o",
+      "c895xljyzewo",
+      "c93e9r62py4o",
+      "c93enywd10ro",
+      "c93j37egjdeo",
+      "c98kdyye33no",
+      "c9qdvnv13qdo",
+      "c9wqgjn7x89o",
+      "ce84ngmjz8zo",
+      "ce84z6y3ke4o",
+      "ce8wl4rnprzo",
+      "ce9mvzpvr7xo",
+      "ce9mzn7k722o",
+      "cew72ll8245o",
+      "cge01w2dxe0o",
+      "cgl5w09ey30o",
+      "cgqgxqekp89o",
+      "cgrlwk29ppzo",
+      "cgrzr9ynpn1o",
+      "cj401qvgg19o",
+      "cj4z7zr4kd8o",
+      "cj6dl175w01o",
+      "cjd8e4px12ro",
+      "cjd8jrd1vnyo",
+      "ckg2m8zp2n3o",
+      "cly9ggzy3ngo",
+      "cly9nz5vyz4o",
+      "clygdwqw5dvo",
+      "clyxgxyeqpgo",
+      "clyxv87zwwpo",
+      "clyxwgll758o",
+      "cn0w1qxzd4xo",
+      "cn53zvlglg7o",
+      "cn89xl9xr34o",
+      "cn9e0wrglgdo",
+      "cnv81ven263o",
+      "cp3l4yk5rlgo",
+      "cpd5l00z7n6o",
+      "cpwj7r5yxv1o",
+      "cr41evk126go",
+      "cr516nmer5eo",
+      "cvg0q6wdzp1o",
+      "cvg0v4xd2z6o",
+      "cvg3xk6xgyzo",
+      "cvgk8zk9epgo",
+      "cvgkg8p7zlko",
+      "cvgkn9379pqo",
+      "cwyk7xgkzvzo",
+      "cx2d0md89v2o",
+      "cx2vpz1kwreo",
+      "cx2w0v19gw8o",
+      "cx2wyn8wdz0o",
+      "cy01vg7x5ppo",
+      "cy81p99x07no",
+      "cy91x2n29nlo",
+      "cyv9lzn0816o"
+    ],
+    "article_count": 75,
+    "relation_count": 36,
+    "first_seen": "2025-06-23",
+    "last_seen": "2026-04-14",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:italy",
+    "name": "Italy",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c79je4vldq5o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:japan",
+    "name": "Japan",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cx2d0md89v2o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-02",
+    "last_seen": "2026-04-02",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:jersey",
+    "name": "Jersey",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "czx99d7yjw4o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-14",
+    "last_seen": "2026-04-14",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:jordan",
+    "name": "Jordan",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cql72qk97gpo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-02",
+    "last_seen": "2026-04-02",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:kuwait",
+    "name": "Kuwait",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c2d1dz14k51o",
+      "c4gjv02g54ko",
+      "c5y90jl8veyo",
+      "ce84z6y3ke4o",
+      "cjd8jrd1vnyo",
+      "cm2k1dgz142o",
+      "cr41evk126go",
+      "cvg0q6wdzp1o",
+      "cvg3xk6xgyzo",
+      "cy91x2n29nlo"
+    ],
+    "article_count": 11,
+    "relation_count": 2,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-04-11",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Kuwait'."
+      }
+    ]
+  },
+  {
+    "id": "NationState:lebanon",
+    "name": "Lebanon",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0j6d538l6qo",
+      "c20ddnz4w5lo",
+      "c4g0pnnj8xyo",
+      "c5yljdgwppzo",
+      "c93e9r62py4o",
+      "c93enywd10ro",
+      "cj0vzvdldv0o",
+      "cjd8jrd1vnyo",
+      "clyxgxyeqpgo",
+      "cp3l4yk5rlgo",
+      "cy91x2n29nlo"
+    ],
+    "article_count": 11,
+    "relation_count": 5,
+    "first_seen": "2026-02-28",
+    "last_seen": "2026-04-14",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:malaysia",
+    "name": "Malaysia",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5yvyl5ve8lo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:oman",
+    "name": "Oman",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4gjv02g54ko",
+      "c5yvyl5ve8lo",
+      "c895xljyzewo",
+      "c93j37egjdeo",
+      "cgrlwk29ppzo",
+      "cn9qzl12537o",
+      "cvg3xk6xgyzo",
+      "cy91x2n29nlo"
+    ],
+    "article_count": 8,
+    "relation_count": 2,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-04-10",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:pakistan",
+    "name": "Pakistan",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4g44gj7rgno",
+      "c5y943x2g8qo",
+      "c5ywpe2yyg3o",
+      "c62l597wl0yo",
+      "c895xljyzewo",
+      "c8r45770p37o",
+      "ce84ngmjz8zo",
+      "ce84z6y3ke4o",
+      "cj401qvgg19o",
+      "cly9nz5vyz4o",
+      "cp3l4yk5rlgo",
+      "cvgkv9y97n0o",
+      "cwyk7xgkzvzo",
+      "cx2wyn8wdz0o",
+      "cy91vrzxn34o",
+      "cze0kz7gr84o"
+    ],
+    "article_count": 16,
+    "relation_count": 7,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-04-15",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Pakistan'."
+      }
+    ]
+  },
+  {
+    "id": "NationState:philippines",
+    "name": "Philippines",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c3ex8ez3717o",
+      "c4glxn24gd6o"
+    ],
+    "article_count": 2,
+    "relation_count": 4,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:qatar",
+    "name": "Qatar",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c2d1dz14k51o",
+      "c2k3jgy9vq3o",
+      "c3wlwnn05zqo",
+      "c4g0pnnj8xyo",
+      "c4gjv02g54ko",
+      "c4gjxv5g19no",
+      "c93j37egjdeo",
+      "cql72qk97gpo",
+      "cvg3xk6xgyzo",
+      "cvgkd3lqe2no"
+    ],
+    "article_count": 11,
+    "relation_count": 3,
+    "first_seen": "2026-02-28",
+    "last_seen": "2026-04-02",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Qatar'."
+      }
+    ]
+  },
+  {
+    "id": "NationState:russia",
+    "name": "Russia",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4gjlezq80no",
+      "c4glxn24gd6o",
+      "c6243nkg1w3o",
+      "cddq7j48p35o",
+      "cjd8jrd1vnyo",
+      "cyv9lzn0816o"
+    ],
+    "article_count": 6,
+    "relation_count": 4,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-04-11",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:saudi-arabia",
+    "name": "Saudi Arabia",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c2d1dz14k51o",
+      "c3wlwnn05zqo",
+      "c4gjv02g54ko",
+      "cj401qvgg19o",
+      "cpd5l00z7n6o",
+      "cvg3xk6xgyzo",
+      "cwyk7xgkzvzo",
+      "cy91vrzxn34o",
+      "cy91x2n29nlo"
+    ],
+    "article_count": 9,
+    "relation_count": 4,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-04-08",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Saudi Arabia'."
+      }
+    ]
+  },
+  {
+    "id": "NationState:sierra-leone",
+    "name": "Sierra Leone",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4glxn24gd6o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:spain",
+    "name": "Spain",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c79je4vldq5o",
+      "cwy368j1e3lo"
+    ],
+    "article_count": 2,
+    "relation_count": 3,
+    "first_seen": "2026-03-30",
+    "last_seen": "2026-04-01",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:thailand",
+    "name": "Thailand",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c1450zj6n48o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:turkey",
+    "name": "Turkey",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5yvyl5ve8lo",
+      "c895xljyzewo",
+      "cly9nz5vyz4o",
+      "cvg3xk6xgyzo"
+    ],
+    "article_count": 4,
+    "relation_count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-25",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:ukraine",
+    "name": "Ukraine",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4gjlezq80no"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:united-arab-emirates",
+    "name": "United Arab Emirates",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c1w4pdexxqpo",
+      "c24deezq6meo",
+      "c4gjv02g54ko",
+      "c5y90jl8veyo",
+      "c93j37egjdeo",
+      "cevkd2jzpxyo",
+      "cql72qk97gpo",
+      "cr41evk126go",
+      "cvg0q6wdzp1o",
+      "cvg3xk6xgyzo",
+      "cy91x2n29nlo"
+    ],
+    "article_count": 12,
+    "relation_count": 3,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-04-05",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:united-kingdom",
+    "name": "United Kingdom",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c0q9nqz4g55o",
+      "c17vdgxe54ko",
+      "c36rny6xgppo",
+      "c393wxzw4yjo",
+      "c5yljdgwppzo",
+      "c79je4vldq5o",
+      "c8r17plnvy3o",
+      "c8r45770p37o",
+      "c98kdyye33no",
+      "cevkd2jzpxyo",
+      "cew72ll8245o",
+      "cj0dlvl086eo",
+      "cj4z7zr4kd8o",
+      "cp854ez929yo",
+      "cql72qk97gpo",
+      "cr516nmer5eo",
+      "crm120x4lzxo",
+      "cvg0v4xd2z6o",
+      "cvgkd3lqe2no",
+      "cvgvg125q8ro",
+      "cwyvp0yvv8xo",
+      "cx2d0md89v2o"
+    ],
+    "article_count": 23,
+    "relation_count": 17,
+    "first_seen": "2026-03-15",
+    "last_seen": "2026-04-13",
+    "review_flags": []
+  },
+  {
+    "id": "NationState:united-states",
+    "name": "United States",
+    "type": "NationState",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c0le69de645o",
+      "c0q9nqz4g55o",
+      "c1450zj6n48o",
+      "c15d980nyw1o",
+      "c17vdgxe54ko",
+      "c1d6vyy9v61o",
+      "c1mkr19j84go",
+      "c1w4pdexxqpo",
+      "c20ddnz4w5lo",
+      "c2d1dz14k51o",
+      "c2k3jgy9vq3o",
+      "c36rny6xgppo",
+      "c393k28kvd1o",
+      "c393wxzw4yjo",
+      "c3ex39w09gzo",
+      "c3ex8ez3717o",
+      "c3r395l91l3o",
+      "c3w39lg84w2o",
+      "c4g0pnnj8xyo",
+      "c4g44gj7rgno",
+      "c4g4e6z9960o",
+      "c4gjv02g54ko",
+      "c4gx8e1x5j3o",
+      "c5y721yqe6ro",
+      "c5y90jl8veyo",
+      "c5y943x2g8qo",
+      "c5yljdgwppzo",
+      "c5ywpe2yyg3o",
+      "c6243nkg1w3o",
+      "c62l597wl0yo",
+      "c70k29914q4o",
+      "c74vqd8k3g1o",
+      "c75kzk3lgl5o",
+      "c78lleelxj4o",
+      "c78n6p09pzno",
+      "c895v5pq5p1o",
+      "c895xljyzewo",
+      "c8jxzlwvd8ro",
+      "c8r17plnvy3o",
+      "c8r40y3rv75o",
+      "c93e9r62py4o",
+      "c93j37egjdeo",
+      "c98kdyye33no",
+      "cddq7j48p35o",
+      "ce84ngmjz8zo",
+      "ce84z6y3ke4o",
+      "ce8wl4rnprzo",
+      "ce9mvzpvr7xo",
+      "ce9mzn7k722o",
+      "cew72ll8245o",
+      "cg4g66r3z40o",
+      "cge01w2dxe0o",
+      "cgl5w09ey30o",
+      "cgrlwk29ppzo",
+      "cgrzr9ynpn1o",
+      "cj0dlvl086eo",
+      "cj0vzvdldv0o",
+      "cj401qvgg19o",
+      "cj4z7zr4kd8o",
+      "cj6dl175w01o",
+      "cjd8e4px12ro",
+      "cjd8jrd1vnyo",
+      "ckg2m8zp2n3o",
+      "ckgw8w7mzxgo",
+      "cly9ggzy3ngo",
+      "cly9nz5vyz4o",
+      "clyxv87zwwpo",
+      "clyxwgll758o",
+      "cm2k1dgz142o",
+      "cn0w1qxzd4xo",
+      "cn53zvlglg7o",
+      "cn89xl9xr34o",
+      "cn9e0wrglgdo",
+      "cn9qzl12537o",
+      "cnv81ven263o",
+      "cp3l4yk5rlgo",
+      "cp86mrj40e2o",
+      "cpd5l00z7n6o",
+      "cpwj7r5yxv1o",
+      "cql72qk97gpo",
+      "cr41evk126go",
+      "cr516nmer5eo",
+      "crl1jnk01g4o",
+      "cvg0q6wdzp1o",
+      "cvg0v4xd2z6o",
+      "cvg3xk6xgyzo",
+      "cvgk8zk9epgo",
+      "cvgkd3lqe2no",
+      "cvgkg8p7zlko",
+      "cvgkn9379pqo",
+      "cvgkv9y97n0o",
+      "cwy368j1e3lo",
+      "cwyk7xgkzvzo",
+      "cwyvp0yvv8xo",
+      "cwyvp55xrlro",
+      "cwyvxejqyx4o",
+      "cx29mzmwdw2o",
+      "cx2d0md89v2o",
+      "cx2vpz1kwreo",
+      "cx2w0v19gw8o",
+      "cx2wyn8wdz0o",
+      "cy01vg7x5ppo",
+      "cy410dq4gvno",
+      "cy81p99x07no",
+      "cy91vrzxn34o",
+      "cy91x2n29nlo",
+      "cyv9lzn0816o",
+      "cze0kz7gr84o",
+      "czexw94rj5jo",
+      "czx99d7yjw4o"
+    ],
+    "article_count": 111,
+    "relation_count": 52,
+    "first_seen": "2025-06-23",
+    "last_seen": "2026-04-15",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:alberto-persona",
+    "name": "Alberto Persona",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "crk1066npvzo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:alireza-farasati",
+    "name": "Alireza Farasati",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cwygyvrwq89o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:alireza-jafari",
+    "name": "Alireza Jafari",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "ce84ngmjz8zo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-09",
+    "last_seen": "2026-04-09",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:arezou-soltani",
+    "name": "Arezou Soltani",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c7952qyqwz4o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:atefeh-ramezanisadeh",
+    "name": "Atefeh Ramezanisadeh",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "clyxwgll758o"
+    ],
+    "article_count": 1,
+    "relation_count": 2,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:ayman-muhammad-ghazali",
+    "name": "Ayman Muhammad Ghazali",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cj0vzvdldv0o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-30",
+    "last_seen": "2026-03-30",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:basij",
+    "name": "Basij",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5ywpe2yyg3o",
+      "c9wqgjn7x89o",
+      "cn0w1qxzd4xo"
+    ],
+    "article_count": 3,
+    "relation_count": 1,
+    "first_seen": "2026-03-27",
+    "last_seen": "2026-04-08",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:bobby-vylan",
+    "name": "Bobby Vylan",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c93jz4gykwko"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-15",
+    "last_seen": "2026-03-15",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:boeing",
+    "name": "Boeing",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c17vdgxe54ko"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:brisbane-roar",
+    "name": "Brisbane Roar",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "clyxwgll758o"
+    ],
+    "article_count": 1,
+    "relation_count": 2,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:british-ambassador-to-tehran",
+    "name": "British ambassador to Tehran",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cwyvp0yvv8xo"
+    ],
+    "article_count": 1,
+    "relation_count": 2,
+    "first_seen": "2026-04-09",
+    "last_seen": "2026-04-09",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:c-cile-kohler",
+    "name": "Cécile Kohler",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cwyvp0yvv8xo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-09",
+    "last_seen": "2026-04-09",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:cia",
+    "name": "CIA",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cm2k1dgz142o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-04",
+    "last_seen": "2026-04-04",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:craig-foreman",
+    "name": "Craig Foreman",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cew72ll8245o",
+      "cn89xl9xr34o",
+      "cwyvp0yvv8xo"
+    ],
+    "article_count": 3,
+    "relation_count": 4,
+    "first_seen": "2026-03-23",
+    "last_seen": "2026-04-09",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:dr-emma-briant",
+    "name": "Dr Emma Briant",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cjd8jrd1vnyo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-11",
+    "last_seen": "2026-04-11",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:dr-tine-munk",
+    "name": "Dr Tine Munk",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cjd8jrd1vnyo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-11",
+    "last_seen": "2026-04-11",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:explosive-media",
+    "name": "Explosive Media",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cjd8jrd1vnyo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-11",
+    "last_seen": "2026-04-11",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:fatemeh-pasandideh",
+    "name": "Fatemeh Pasandideh",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "clyxwgll758o"
+    ],
+    "article_count": 1,
+    "relation_count": 2,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:fbi",
+    "name": "FBI",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cj0vzvdldv0o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-30",
+    "last_seen": "2026-03-30",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:fuel-companies",
+    "name": "Fuel companies",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cj4z7zr4kd8o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-15",
+    "last_seen": "2026-03-15",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:gen-ali-abdollahi-aliabadi",
+    "name": "Gen Ali Abdollahi Aliabadi",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5y90jl8veyo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-04",
+    "last_seen": "2026-04-04",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:george-floyd",
+    "name": "George Floyd",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cjd8jrd1vnyo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-11",
+    "last_seen": "2026-04-11",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:gloucestershire-constabulary",
+    "name": "Gloucestershire Constabulary",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cp854ez929yo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:gloucestershire-county-council",
+    "name": "Gloucestershire County Council",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cp854ez929yo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:hamas",
+    "name": "Hamas",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvg3xk6xgyzo"
+    ],
+    "article_count": 1,
+    "relation_count": 3,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:handala-hack-team",
+    "name": "Handala Hack Team",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvgl4yk7vgpo"
+    ],
+    "article_count": 1,
+    "relation_count": 2,
+    "first_seen": "2026-03-27",
+    "last_seen": "2026-03-27",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:hezbollah",
+    "name": "Hezbollah",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0j6d538l6qo",
+      "c4g0pnnj8xyo",
+      "c5yljdgwppzo",
+      "c93enywd10ro",
+      "c93j37egjdeo",
+      "cj0vzvdldv0o",
+      "cx2wyn8wdz0o"
+    ],
+    "article_count": 7,
+    "relation_count": 3,
+    "first_seen": "2026-02-28",
+    "last_seen": "2026-04-10",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:houthis",
+    "name": "Houthis",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cp3l4yk5rlgo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-09",
+    "last_seen": "2026-04-09",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:hrana",
+    "name": "Hrana",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cjd8jrd1vnyo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-11",
+    "last_seen": "2026-04-11",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:indian-embassy-in-tehran",
+    "name": "Indian embassy in Tehran",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvgkn9379pqo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:indian-foreign-ministry",
+    "name": "Indian foreign ministry",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvgkn9379pqo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:indian-seafarers",
+    "name": "Indian seafarers",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvgkn9379pqo"
+    ],
+    "article_count": 1,
+    "relation_count": 3,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:international-atomic-energy-agency",
+    "name": "International Atomic Energy Agency",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cn9qzl12537o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-10",
+    "last_seen": "2026-04-10",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:international-crisis-group",
+    "name": "International Crisis Group",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cn9qzl12537o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-10",
+    "last_seen": "2026-04-10",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:international-maritime-organisation",
+    "name": "International Maritime Organisation",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cx2d0md89v2o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-02",
+    "last_seen": "2026-04-02",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:iran-aligned-militias",
+    "name": "Iran-aligned militias",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c93e9r62py4o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-03",
+    "last_seen": "2026-04-03",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:iran-human-rights",
+    "name": "Iran Human Rights",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cly9ggzy3ngo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-13",
+    "last_seen": "2026-04-13",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:iran-revolutionary-guard-corps",
+    "name": "Iran Revolutionary Guard Corps",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cwyk7xgkzvzo"
+    ],
+    "article_count": 1,
+    "relation_count": 3,
+    "first_seen": "2026-04-07",
+    "last_seen": "2026-04-07",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:iran-women-s-national-football-team",
+    "name": "Iran women's national football team",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5yvyl5ve8lo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:iranian-americans",
+    "name": "Iranian-Americans",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cjd8e4px12ro"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-28",
+    "last_seen": "2026-03-28",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:iranian-backed-militias",
+    "name": "Iranian-backed militias",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "crl1jnk01g4o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:iranian-military",
+    "name": "Iranian military",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c8jxzlwvd8ro"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-14",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:iranian-regime",
+    "name": "Iranian regime",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cn9e0wrglgdo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:iranian-security-forces",
+    "name": "Iranian security forces",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "clygdwqw5dvo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:iranian-tourists",
+    "name": "Iranian tourists",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cdrm0rlv102o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:iranians",
+    "name": "Iranians",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "ckgl58y5943o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-15",
+    "last_seen": "2026-03-15",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:islamic-revolutionary-guard-corps",
+    "name": "Islamic Revolutionary Guard Corps",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c1w4pdexxqpo",
+      "c5ywpe2yyg3o",
+      "c9wqgjn7x89o",
+      "clygdwqw5dvo",
+      "cr41evk126go",
+      "cx2vpz1kwreo"
+    ],
+    "article_count": 6,
+    "relation_count": 3,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-04-08",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:islamic-revolutionary-guards",
+    "name": "Islamic Revolutionary Guards",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cn9qzl12537o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-10",
+    "last_seen": "2026-04-10",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:islamic-revolutionary-guards-corp",
+    "name": "Islamic Revolutionary Guards Corp",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cn53zvlglg7o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-23",
+    "last_seen": "2026-03-23",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:jacques-paris",
+    "name": "Jacques Paris",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cwyvp0yvv8xo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-09",
+    "last_seen": "2026-04-09",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:joe-bennett",
+    "name": "Joe Bennett",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cew72ll8245o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-23",
+    "last_seen": "2026-03-23",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:kilusang-mayo-uno",
+    "name": "Kilusang Mayo Uno",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c3ex8ez3717o",
+      "c4glxn24gd6o"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:lakenheath-alliance-for-peace",
+    "name": "Lakenheath Alliance for Peace",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvg0v4xd2z6o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-08",
+    "last_seen": "2026-04-08",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:lindsay-foreman",
+    "name": "Lindsay Foreman",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cew72ll8245o",
+      "cn89xl9xr34o",
+      "cwyvp0yvv8xo"
+    ],
+    "article_count": 3,
+    "relation_count": 6,
+    "first_seen": "2026-03-23",
+    "last_seen": "2026-04-09",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:logma",
+    "name": "Logma",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c393k28kvd1o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-22",
+    "last_seen": "2026-03-22",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:london-jewish-community",
+    "name": "London Jewish community",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cwygyvrwq89o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:manpreet-singh-grewal",
+    "name": "Manpreet Singh Grewal",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "crk1066npvzo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:manuel-v-pangilinan",
+    "name": "Manuel V. Pangilinan",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c3ex8ez3717o",
+      "c4glxn24gd6o"
+    ],
+    "article_count": 2,
+    "relation_count": 1,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:maral-s-father",
+    "name": "Maral's father",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "ce9mvzpvr7xo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:masood-masjoody",
+    "name": "Masood Masjoody",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c7952qyqwz4o"
+    ],
+    "article_count": 1,
+    "relation_count": 2,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:mehdi-ahmadzadeh-razavi",
+    "name": "Mehdi Ahmadzadeh Razavi",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c7952qyqwz4o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:mr-explosive",
+    "name": "Mr Explosive",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cjd8jrd1vnyo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-11",
+    "last_seen": "2026-04-11",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:mujahideen-e-khalq",
+    "name": "Mujahideen-e Khalq",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cly9ggzy3ngo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-13",
+    "last_seen": "2026-04-13",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:narges-mohammadi",
+    "name": "Narges Mohammadi",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cdj7xye8knxo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-02",
+    "last_seen": "2026-04-02",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:nato",
+    "name": "NATO",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c05d8j9r5ejo",
+      "cnv81ven263o"
+    ],
+    "article_count": 3,
+    "relation_count": 2,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-04-09",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:nematollah-shahsavani",
+    "name": "Nematollah Shahsavani",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cwygyvrwq89o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:nitrasol",
+    "name": "Nitrasol",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c8r45770p37o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-29",
+    "last_seen": "2026-03-29",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:petrol-retailers",
+    "name": "Petrol retailers",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cj4z7zr4kd8o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-15",
+    "last_seen": "2026-03-15",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:piston",
+    "name": "Piston",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c3ex8ez3717o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:planet-labs",
+    "name": "Planet Labs",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5y721yqe6ro"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-11",
+    "last_seen": "2026-04-11",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:prime-tankers-llc",
+    "name": "Prime Tankers LLC",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvgkn9379pqo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:pro-iran-demonstrators",
+    "name": "Pro-Iran demonstrators",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cy91vrzxn34o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:pro-iranian-militias",
+    "name": "Pro-Iranian militias",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cly0d510yz3o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-15",
+    "last_seen": "2026-03-15",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:qatarenergy",
+    "name": "QatarEnergy",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c93j37egjdeo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:s-p-global-energy",
+    "name": "S&P Global Energy",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "crk1066npvzo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:scottish-national-party",
+    "name": "Scottish National Party",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cn89xl9xr34o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:sina",
+    "name": "Sina",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "ce9mvzpvr7xo"
+    ],
+    "article_count": 1,
+    "relation_count": 2,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:siraj-hussain",
+    "name": "Siraj Hussain",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "crk1066npvzo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:stryker",
+    "name": "Stryker",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvgl4yk7vgpo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-27",
+    "last_seen": "2026-03-27",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:supreme-national-security-council",
+    "name": "Supreme National Security Council",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5ywpe2yyg3o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-08",
+    "last_seen": "2026-04-08",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:together-against-the-death-penalty",
+    "name": "Together Against the Death Penalty",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cly9ggzy3ngo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-13",
+    "last_seen": "2026-04-13",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:transport-workers",
+    "name": "Transport workers",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4glxn24gd6o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:united-nations",
+    "name": "United Nations",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cx2d0md89v2o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-02",
+    "last_seen": "2026-04-02",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:united-states-air-force",
+    "name": "United States Air Force",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c17vdgxe54ko",
+      "cp854ez929yo"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-24",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:unnamed-iranian-leader",
+    "name": "Unnamed Iranian leader",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c895v5pq5p1o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:us-airman",
+    "name": "US airman",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cm2k1dgz142o",
+      "cx2vpz1kwreo"
+    ],
+    "article_count": 2,
+    "relation_count": 1,
+    "first_seen": "2026-04-04",
+    "last_seen": "2026-04-05",
+    "review_flags": []
+  },
+  {
+    "id": "NonStateActor:us-national-guard",
+    "name": "US National Guard",
+    "type": "NonStateActor",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c895v5pq5p1o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:abbas-araghchi",
+    "name": "Abbas Araghchi",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c2k3jgy9vq3o",
+      "c36rny6xgppo",
+      "c5yljdgwppzo",
+      "c895xljyzewo",
+      "cly9nz5vyz4o",
+      "cp86mrj40e2o"
+    ],
+    "article_count": 6,
+    "relation_count": 1,
+    "first_seen": "2026-03-19",
+    "last_seen": "2026-04-03",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:ali-abdollahi",
+    "name": "Ali Abdollahi",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4g44gj7rgno"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-15",
+    "last_seen": "2026-04-15",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:ali-khamenei",
+    "name": "Ali Khamenei",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cn53zvlglg7o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-23",
+    "last_seen": "2026-03-23",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:ali-larijani",
+    "name": "Ali Larijani",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c24deezq6meo",
+      "c2d1dz14k51o",
+      "c895xljyzewo",
+      "cgqgxqekp89o",
+      "cn53zvlglg7o"
+    ],
+    "article_count": 6,
+    "relation_count": 1,
+    "first_seen": "2026-03-17",
+    "last_seen": "2026-03-24",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:alireza-tangsiri",
+    "name": "Alireza Tangsiri",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cy81p99x07no"
+    ],
+    "article_count": 1,
+    "relation_count": 2,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:anutin-charnvirakul",
+    "name": "Anutin Charnvirakul",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c1450zj6n48o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:ayatollah-ali-khamenei",
+    "name": "Ayatollah Ali Khamenei",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c2d1dz14k51o",
+      "c4g0pnnj8xyo",
+      "c5ywpe2yyg3o",
+      "cgl5w09ey30o",
+      "cj0vzvdldv0o",
+      "cly9nz5vyz4o"
+    ],
+    "article_count": 6,
+    "relation_count": 2,
+    "first_seen": "2026-02-28",
+    "last_seen": "2026-04-08",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:behnam-rezaei",
+    "name": "Behnam Rezaei",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cy81p99x07no"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:benjamin-netanyahu",
+    "name": "Benjamin Netanyahu",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c2d1dz14k51o",
+      "c2k3jgy9vq3o",
+      "c895v5pq5p1o",
+      "c9qdvnv13qdo",
+      "cgl5w09ey30o",
+      "cjd8jrd1vnyo",
+      "cly9nz5vyz4o",
+      "cn9qzl12537o",
+      "cnv81ven263o",
+      "cp3l4yk5rlgo",
+      "cx2wyn8wdz0o"
+    ],
+    "article_count": 11,
+    "relation_count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-04-11",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:brendan-o-hara",
+    "name": "Brendan O'Hara",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cn89xl9xr34o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:claire-castro",
+    "name": "Claire Castro",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4glxn24gd6o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:donald-trump",
+    "name": "Donald Trump",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c05d8j9r5ejo",
+      "c0le69de645o",
+      "c2k3jgy9vq3o",
+      "c36rny6xgppo",
+      "c393wxzw4yjo",
+      "c3ex39w09gzo",
+      "c3w39lg84w2o",
+      "c4g0pnnj8xyo",
+      "c4g44gj7rgno",
+      "c4g4e6z9960o",
+      "c4gjv02g54ko",
+      "c5y90jl8veyo",
+      "c5y943x2g8qo",
+      "c5ywpe2yyg3o",
+      "c62l597wl0yo",
+      "c74vqd8k3g1o",
+      "c78lleelxj4o",
+      "c79je4vldq5o",
+      "c895v5pq5p1o",
+      "c895xljyzewo",
+      "c8jxzlwvd8ro",
+      "c8r17plnvy3o",
+      "c93enywd10ro",
+      "c93j37egjdeo",
+      "c98kdyye33no",
+      "ce84z6y3ke4o",
+      "ce9mzn7k722o",
+      "cg4g66r3z40o",
+      "cj0dlvl086eo",
+      "cjd8jrd1vnyo",
+      "ckg2m8zp2n3o",
+      "cly9nz5vyz4o",
+      "clyxv87zwwpo",
+      "cn53zvlglg7o",
+      "cn9qzl12537o",
+      "cnv81ven263o",
+      "cp3l4yk5rlgo",
+      "cp86mrj40e2o",
+      "cql72qk97gpo",
+      "cr41evk126go",
+      "crm1vj941x9o",
+      "cvg0q6wdzp1o",
+      "cvgk8zk9epgo",
+      "cvgkd3lqe2no",
+      "cvgkv9y97n0o",
+      "cvgl0ng8z0do",
+      "cwy368j1e3lo",
+      "cwyk7xgkzvzo",
+      "cwyvp55xrlro",
+      "cx2d0md89v2o",
+      "cx2w0v19gw8o",
+      "cx2wyn8wdz0o",
+      "cy01vg7x5ppo",
+      "cy91x2n29nlo",
+      "cze0kz7gr84o",
+      "czexw94rj5jo"
+    ],
+    "article_count": 57,
+    "relation_count": 16,
+    "first_seen": "2026-02-28",
+    "last_seen": "2026-04-15",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:ebrahim-raisi",
+    "name": "Ebrahim Raisi",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c2d1dz14k51o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:ed-davey",
+    "name": "Ed Davey",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c93enywd10ro"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-09",
+    "last_seen": "2026-04-09",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:ed-miliband",
+    "name": "Ed Miliband",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cj4z7zr4kd8o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-15",
+    "last_seen": "2026-03-15",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:emmanuel-macron",
+    "name": "Emmanuel Macron",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "cwyvp0yvv8xo",
+      "cx2d0md89v2o"
+    ],
+    "article_count": 3,
+    "relation_count": 2,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-04-09",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:esmail-khatib",
+    "name": "Esmail Khatib",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c2d1dz14k51o"
+    ],
+    "article_count": 1,
+    "relation_count": 2,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:ferdinand-marcos",
+    "name": "Ferdinand Marcos",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c3ex8ez3717o",
+      "c4glxn24gd6o"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:field-marshall-asim-munir",
+    "name": "Field Marshall Asim Munir",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cj401qvgg19o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-08",
+    "last_seen": "2026-04-08",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:general-dan-caine",
+    "name": "General Dan Caine",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "crl1jnk01g4o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:gholamhossein-mohseni-ejei",
+    "name": "Gholamhossein Mohseni Ejei",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5ywpe2yyg3o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-08",
+    "last_seen": "2026-04-08",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:gholamreza-soleimani",
+    "name": "Gholamreza Soleimani",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c24deezq6meo",
+      "c2d1dz14k51o"
+    ],
+    "article_count": 3,
+    "relation_count": 1,
+    "first_seen": "2026-03-17",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:hassan-rouhani",
+    "name": "Hassan Rouhani",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cn9qzl12537o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-10",
+    "last_seen": "2026-04-10",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:iranian-president",
+    "name": "Iranian President",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c74vqd8k3g1o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:isaac-herzog",
+    "name": "Isaac Herzog",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c9qdvnv13qdo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-21",
+    "last_seen": "2026-03-21",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:ishaq-dar",
+    "name": "Ishaq Dar",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cj401qvgg19o",
+      "cy91vrzxn34o"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-04-08",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:israel-katz",
+    "name": "Israel Katz",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c2d1dz14k51o",
+      "c4g0pnnj8xyo"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-02-28",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:jd-vance",
+    "name": "JD Vance",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4g44gj7rgno",
+      "c5ywpe2yyg3o",
+      "c78lleelxj4o",
+      "cn9qzl12537o",
+      "cx2wyn8wdz0o"
+    ],
+    "article_count": 5,
+    "relation_count": 3,
+    "first_seen": "2026-04-08",
+    "last_seen": "2026-04-15",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:jerome-gorgon",
+    "name": "Jerome Gorgon",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cj0vzvdldv0o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-30",
+    "last_seen": "2026-03-30",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:joe-biden",
+    "name": "Joe Biden",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cn9qzl12537o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-10",
+    "last_seen": "2026-04-10",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:joe-harris",
+    "name": "Joe Harris",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cp854ez929yo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:joe-kent",
+    "name": "Joe Kent",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:jose-manuel-romualdez",
+    "name": "Jose Manuel Romualdez",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c3ex8ez3717o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:kaja-kallas",
+    "name": "Kaja Kallas",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:kash-patel",
+    "name": "Kash Patel",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvgl4yk7vgpo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-27",
+    "last_seen": "2026-03-27",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:keir-starmer",
+    "name": "Keir Starmer",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c393wxzw4yjo",
+      "c98kdyye33no",
+      "cj0dlvl086eo",
+      "cj4z7zr4kd8o",
+      "cx2d0md89v2o"
+    ],
+    "article_count": 6,
+    "relation_count": 3,
+    "first_seen": "2026-03-15",
+    "last_seen": "2026-04-13",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:lord-john-fuller",
+    "name": "Lord John Fuller",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c8r45770p37o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-29",
+    "last_seen": "2026-03-29",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:mahmood-amiry-moghaddam",
+    "name": "Mahmood Amiry-Moghaddam",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cly9ggzy3ngo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-13",
+    "last_seen": "2026-04-13",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:marco-rubio",
+    "name": "Marco Rubio",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4g4e6z9960o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-03",
+    "last_seen": "2026-04-03",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:mark-carney",
+    "name": "Mark Carney",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cj0dlvl086eo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-15",
+    "last_seen": "2026-03-15",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:mark-rutte",
+    "name": "Mark Rutte",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c05d8j9r5ejo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-09",
+    "last_seen": "2026-04-09",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:masoud-pezeshkian",
+    "name": "Masoud Pezeshkian",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c2d1dz14k51o",
+      "c5ywpe2yyg3o",
+      "c93j37egjdeo",
+      "cn53zvlglg7o",
+      "cx2wyn8wdz0o"
+    ],
+    "article_count": 5,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-04-10",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:miche-l-martin",
+    "name": "Micheál Martin",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:mohammad-bagher-ghalaf",
+    "name": "Mohammad-Bagher Ghalaf",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c895xljyzewo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:mohammad-bagher-ghalibaf",
+    "name": "Mohammad Bagher Ghalibaf",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4g44gj7rgno",
+      "c4g4px01380o",
+      "c5ywpe2yyg3o",
+      "c8jxzlwvd8ro",
+      "cge01w2dxe0o",
+      "cn9qzl12537o"
+    ],
+    "article_count": 6,
+    "relation_count": 4,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-04-15",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:mohammad-bagher-qalibaf",
+    "name": "Mohammad Bagher Qalibaf",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cx2wyn8wdz0o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-10",
+    "last_seen": "2026-04-10",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:mohammad-javad-zarif",
+    "name": "Mohammad Javad Zarif",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5ywpe2yyg3o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-08",
+    "last_seen": "2026-04-08",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:mohammed-bin-abdurrahman-al-thani",
+    "name": "Mohammed bin Abdurrahman Al-Thani",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c2k3jgy9vq3o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-19",
+    "last_seen": "2026-03-19",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:mojtaba-khamenei",
+    "name": "Mojtaba Khamenei",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c5ywpe2yyg3o",
+      "c895xljyzewo",
+      "cj0dlvl086eo",
+      "cn53zvlglg7o"
+    ],
+    "article_count": 5,
+    "relation_count": 0,
+    "first_seen": "2026-03-15",
+    "last_seen": "2026-04-08",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:mojtada-khamenei",
+    "name": "Mojtada Khamenei",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cly9nz5vyz4o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-25",
+    "last_seen": "2026-03-25",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:naim-qassem",
+    "name": "Naim Qassem",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cj0vzvdldv0o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-30",
+    "last_seen": "2026-03-30",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:narendra-modi",
+    "name": "Narendra Modi",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "crk1066npvzo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:nir-barkat",
+    "name": "Nir Barkat",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cly9nz5vyz4o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-25",
+    "last_seen": "2026-03-25",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:pete-hegseth",
+    "name": "Pete Hegseth",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4g4e6z9960o",
+      "cn53zvlglg7o",
+      "cx2wyn8wdz0o"
+    ],
+    "article_count": 3,
+    "relation_count": 0,
+    "first_seen": "2026-03-23",
+    "last_seen": "2026-04-10",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:president-trump",
+    "name": "President Trump",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4g4px01380o",
+      "cj401qvgg19o"
+    ],
+    "article_count": 2,
+    "relation_count": 1,
+    "first_seen": "2026-03-25",
+    "last_seen": "2026-04-08",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:prime-minister-of-pakistan",
+    "name": "Prime Minister of Pakistan",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cj401qvgg19o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-08",
+    "last_seen": "2026-04-08",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:rachel-reeves",
+    "name": "Rachel Reeves",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cj4z7zr4kd8o",
+      "cr516nmer5eo"
+    ],
+    "article_count": 2,
+    "relation_count": 1,
+    "first_seen": "2026-03-15",
+    "last_seen": "2026-03-24",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:rafael-grossi",
+    "name": "Rafael Grossi",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cn9qzl12537o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-10",
+    "last_seen": "2026-04-10",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:rapha-l-chenuil-hazan",
+    "name": "Raphaël Chenuil-Hazan",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cly9ggzy3ngo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-13",
+    "last_seen": "2026-04-13",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:reza-amiri-moghadam",
+    "name": "Reza Amiri Moghadam",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cj401qvgg19o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-08",
+    "last_seen": "2026-04-08",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:reza-pahlavi",
+    "name": "Reza Pahlavi",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "ce9mvzpvr7xo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:s-jaishankar",
+    "name": "S Jaishankar",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cgrzr9ynpn1o",
+      "ckg2m8zp2n3o"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-19",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:scott-bessent",
+    "name": "Scott Bessent",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c6243nkg1w3o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-20",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:seyyed-abbas-araghchi",
+    "name": "Seyyed Abbas Araghchi",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvgkd3lqe2no"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-20",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:sharon-garin",
+    "name": "Sharon Garin",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c3ex8ez3717o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:shehbaz-sharif",
+    "name": "Shehbaz Sharif",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5ywpe2yyg3o",
+      "cx2wyn8wdz0o"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-04-08",
+    "last_seen": "2026-04-10",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:shivraj-singh-chouhan",
+    "name": "Shivraj Singh Chouhan",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "crk1066npvzo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:sir-keir-starmer",
+    "name": "Sir Keir Starmer",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0q9nqz4g55o",
+      "c36rny6xgppo",
+      "c5yljdgwppzo",
+      "c8r17plnvy3o",
+      "cvgkd3lqe2no",
+      "cwyvp0yvv8xo"
+    ],
+    "article_count": 6,
+    "relation_count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-04-09",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:sir-mel-stride",
+    "name": "Sir Mel Stride",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cr516nmer5eo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:steve-witkoff",
+    "name": "Steve Witkoff",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c895xljyzewo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:tony-burke",
+    "name": "Tony Burke",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5yvyl5ve8lo",
+      "cdrm0rlv102o"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-26",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:tulsi-gabbard",
+    "name": "Tulsi Gabbard",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "cg4g66r3z40o"
+    ],
+    "article_count": 2,
+    "relation_count": 1,
+    "first_seen": "2026-03-17",
+    "last_seen": "2026-03-18",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:wang-yi",
+    "name": "Wang Yi",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cy91vrzxn34o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "review_flags": []
+  },
+  {
+    "id": "PoliticalLeader:yvette-cooper",
+    "name": "Yvette Cooper",
+    "type": "PoliticalLeader",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": null,
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0q9nqz4g55o",
+      "c36rny6xgppo",
+      "c5yljdgwppzo",
+      "cew72ll8245o",
+      "cvgkd3lqe2no",
+      "cwyvp0yvv8xo",
+      "cx2d0md89v2o"
+    ],
+    "article_count": 7,
+    "relation_count": 2,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-04-09",
+    "review_flags": []
+  },
+  {
+    "id": "StrategicLocation:abbasabad-police-station",
+    "name": "Abbasabad police station",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cn0w1qxzd4xo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-27",
+    "last_seen": "2026-03-27",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Abbasabad police station'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:abu-dhabi",
+    "name": "Abu Dhabi",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c24deezq6meo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-17",
+    "last_seen": "2026-03-17",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Abu Dhabi'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:africa",
+    "name": "Africa",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c8r45770p37o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-29",
+    "last_seen": "2026-03-29",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Africa'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:amazon-cloud-computing-centre",
+    "name": "Amazon Cloud Computing Centre",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c1w4pdexxqpo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-02",
+    "last_seen": "2026-04-02",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Amazon Cloud Computing Centre'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:arad",
+    "name": "Arad",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c9qdvnv13qdo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-21",
+    "last_seen": "2026-03-21",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Arad'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:asia",
+    "name": "Asia",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c8r45770p37o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-29",
+    "last_seen": "2026-03-29",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Asia'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:b1-bridge-karaj",
+    "name": "B1 bridge, Karaj",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cx2w0v19gw8o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-07",
+    "last_seen": "2026-04-07",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'B1 bridge, Karaj'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:b1-suspension-bridge",
+    "name": "B1 suspension bridge",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cp86mrj40e2o"
+    ],
+    "article_count": 1,
+    "relation_count": 2,
+    "first_seen": "2026-04-03",
+    "last_seen": "2026-04-03",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'B1 suspension bridge'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:bab-al-mandab",
+    "name": "Bab al-Mandab",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cp3l4yk5rlgo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-09",
+    "last_seen": "2026-04-09",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Bab al-Mandab'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:baghdad",
+    "name": "Baghdad",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c93e9r62py4o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-03",
+    "last_seen": "2026-04-03",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Baghdad'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:bandar-abbas",
+    "name": "Bandar Abbas",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvgkn9379pqo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Bandar Abbas'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:beirut",
+    "name": "Beirut",
+    "type": "StrategicLocation",
+    "latitude": 33.8892265,
+    "longitude": 35.5025585,
+    "geocode_source": "nominatim",
+    "geocode_display_name": "بيروت, البسطة التحتا, باشورة, محافظة بيروت, لبنان",
+    "aliases": [],
+    "article_ids": [
+      "c93e9r62py4o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-03",
+    "last_seen": "2026-04-03",
+    "review_flags": []
+  },
+  {
+    "id": "StrategicLocation:beit-awwa",
+    "name": "Beit Awwa",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0ljl23plpzo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-19",
+    "last_seen": "2026-03-19",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Beit Awwa'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:borouge-petrochemical-facility",
+    "name": "Borouge petrochemical facility",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cr41evk126go",
+      "cvg0q6wdzp1o"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-04-05",
+    "last_seen": "2026-04-05",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Borouge petrochemical facility'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:brisbane",
+    "name": "Brisbane",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "clyxwgll758o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Brisbane'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:bushehr",
+    "name": "Bushehr",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cn53zvlglg7o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-23",
+    "last_seen": "2026-03-23",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Bushehr'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:caspian-sea",
+    "name": "Caspian Sea",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c2k3jgy9vq3o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-19",
+    "last_seen": "2026-03-19",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Caspian Sea'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:chagos-islands",
+    "name": "Chagos Islands",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c36rny6xgppo",
+      "c5yljdgwppzo",
+      "c98kdyye33no"
+    ],
+    "article_count": 3,
+    "relation_count": 0,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-22",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Chagos Islands'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:cpac",
+    "name": "CPAC",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cjd8e4px12ro"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-28",
+    "last_seen": "2026-03-28",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'CPAC'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:damavand",
+    "name": "Damavand",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvgkg8p7zlko"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-20",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Damavand'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:damavand-power-plant",
+    "name": "Damavand power plant",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4g0pnnj8xyo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-02-28",
+    "last_seen": "2026-02-28",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Damavand power plant'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:dehdasht",
+    "name": "Dehdasht",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5y90jl8veyo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-04",
+    "last_seen": "2026-04-04",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Dehdasht'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:diego-garcia",
+    "name": "Diego Garcia",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c36rny6xgppo",
+      "c5yljdgwppzo",
+      "cly73y5e788o",
+      "cn53zvlglg7o",
+      "crm120x4lzxo"
+    ],
+    "article_count": 5,
+    "relation_count": 1,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-23",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Diego Garcia'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:dimona",
+    "name": "Dimona",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c9qdvnv13qdo",
+      "cn53zvlglg7o"
+    ],
+    "article_count": 2,
+    "relation_count": 1,
+    "first_seen": "2026-03-21",
+    "last_seen": "2026-03-23",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Dimona'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:down-ampney",
+    "name": "Down Ampney",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c17vdgxe54ko"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Down Ampney'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:downing-street",
+    "name": "Downing Street",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cj4z7zr4kd8o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-15",
+    "last_seen": "2026-03-15",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Downing Street'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:dubai",
+    "name": "Dubai",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c2d1dz14k51o",
+      "cevkd2jzpxyo",
+      "cvgkn9379pqo"
+    ],
+    "article_count": 3,
+    "relation_count": 1,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-31",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Dubai'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:eastern-bekaa-valley",
+    "name": "Eastern Bekaa Valley",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0j6d538l6qo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-08",
+    "last_seen": "2026-04-08",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Eastern Bekaa Valley'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:evin-prison",
+    "name": "Evin prison",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0q9nqz4g55o",
+      "cew72ll8245o",
+      "cwyvp0yvv8xo"
+    ],
+    "article_count": 3,
+    "relation_count": 1,
+    "first_seen": "2026-03-23",
+    "last_seen": "2026-04-09",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Evin prison'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:florida",
+    "name": "Florida",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4g4e6z9960o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-03",
+    "last_seen": "2026-04-03",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Florida'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:geneva",
+    "name": "Geneva",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cn53zvlglg7o",
+      "cn9qzl12537o"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-03-23",
+    "last_seen": "2026-04-10",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Geneva'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:gloucestershire",
+    "name": "Gloucestershire",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c17vdgxe54ko"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Gloucestershire'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:gold-coast",
+    "name": "Gold Coast",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5yvyl5ve8lo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Gold Coast'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:graceland",
+    "name": "Graceland",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c895v5pq5p1o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Graceland'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:greenland",
+    "name": "Greenland",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c79je4vldq5o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-01",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Greenland'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:gulf",
+    "name": "Gulf",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "crk1066npvzo",
+      "cvgkg8p7zlko"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-26",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Gulf'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:haifa",
+    "name": "Haifa",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c2k3jgy9vq3o",
+      "cr41evk126go"
+    ],
+    "article_count": 2,
+    "relation_count": 1,
+    "first_seen": "2026-03-19",
+    "last_seen": "2026-04-05",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Haifa'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:haryana",
+    "name": "Haryana",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "crk1066npvzo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Haryana'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:high-rise-in-bahrain",
+    "name": "high-rise in Bahrain",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cgl5w09ey30o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'high-rise in Bahrain'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:igdir",
+    "name": "Igdir",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5yvyl5ve8lo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Igdir'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:iranian-coastline",
+    "name": "Iranian coastline",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c8r17plnvy3o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": [
+      {
+        "code": "adjectival_location_name",
+        "message": "Location 'Iranian coastline' starts with a demonym and may need a manual canonical form or override."
+      },
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Iranian coastline'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:iranian-ports",
+    "name": "Iranian ports",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c20ddnz4w5lo",
+      "c8r17plnvy3o",
+      "ckgw8w7mzxgo"
+    ],
+    "article_count": 3,
+    "relation_count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-04-14",
+    "review_flags": [
+      {
+        "code": "generic_location_name",
+        "message": "Location 'Iranian ports' looks generic and should be manually reviewed."
+      },
+      {
+        "code": "adjectival_location_name",
+        "message": "Location 'Iranian ports' starts with a demonym and may need a manual canonical form or override."
+      },
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Iranian ports'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:iranian-railway",
+    "name": "Iranian railway",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cx2w0v19gw8o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-07",
+    "last_seen": "2026-04-07",
+    "review_flags": [
+      {
+        "code": "adjectival_location_name",
+        "message": "Location 'Iranian railway' starts with a demonym and may need a manual canonical form or override."
+      },
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Iranian railway'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:isfahan",
+    "name": "Isfahan",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cx2vpz1kwreo",
+      "cx2w0v19gw8o"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-04-05",
+    "last_seen": "2026-04-07",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Isfahan'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:isfahan-mobarakeh-steel-company",
+    "name": "Isfahan Mobarakeh Steel company",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cx2w0v19gw8o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-04-07",
+    "last_seen": "2026-04-07",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Isfahan Mobarakeh Steel company'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:islamabad",
+    "name": "Islamabad",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c20ddnz4w5lo",
+      "c393wxzw4yjo",
+      "c4g44gj7rgno",
+      "c5y943x2g8qo",
+      "c5ywpe2yyg3o",
+      "ce84z6y3ke4o",
+      "cj401qvgg19o",
+      "ckgw8w7mzxgo",
+      "cn9qzl12537o",
+      "cvgkv9y97n0o",
+      "cx2wyn8wdz0o"
+    ],
+    "article_count": 11,
+    "relation_count": 0,
+    "first_seen": "2026-04-08",
+    "last_seen": "2026-04-15",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Islamabad'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:jolfa",
+    "name": "Jolfa",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvgkn9379pqo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Jolfa'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:karaj",
+    "name": "Karaj",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cp86mrj40e2o",
+      "cx2w0v19gw8o"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-04-03",
+    "last_seen": "2026-04-07",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Karaj'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:kerman",
+    "name": "Kerman",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cew72ll8245o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-23",
+    "last_seen": "2026-03-23",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Kerman'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:kharg-island",
+    "name": "Kharg Island",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c8jxzlwvd8ro",
+      "clyxv87zwwpo",
+      "cpd5l00z7n6o",
+      "cwyk7xgkzvzo",
+      "cy01vg7x5ppo"
+    ],
+    "article_count": 5,
+    "relation_count": 2,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-04-07",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Kharg Island'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:khuzestan-steel-plant",
+    "name": "Khuzestan Steel Plant",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c1w4pdexxqpo"
+    ],
+    "article_count": 1,
+    "relation_count": 2,
+    "first_seen": "2026-04-02",
+    "last_seen": "2026-04-02",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Khuzestan Steel Plant'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:lamerd",
+    "name": "Lamerd",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4gx8e1x5j3o",
+      "cx29mzmwdw2o"
+    ],
+    "article_count": 2,
+    "relation_count": 2,
+    "first_seen": "2026-03-28",
+    "last_seen": "2026-04-03",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Lamerd'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:litani-river",
+    "name": "Litani river",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4g0pnnj8xyo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-02-28",
+    "last_seen": "2026-02-28",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Litani river'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:london",
+    "name": "London",
+    "type": "StrategicLocation",
+    "latitude": 51.5074,
+    "longitude": -0.1278,
+    "geocode_source": "override",
+    "geocode_display_name": "London, United Kingdom",
+    "aliases": [],
+    "article_ids": [
+      "c93jz4gykwko",
+      "cly73y5e788o",
+      "cwygyvrwq89o"
+    ],
+    "article_count": 3,
+    "relation_count": 1,
+    "first_seen": "2026-03-15",
+    "last_seen": "2026-03-23",
+    "review_flags": []
+  },
+  {
+    "id": "StrategicLocation:manchester",
+    "name": "Manchester",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvgvg125q8ro"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-19",
+    "last_seen": "2026-03-19",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Manchester'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:manila",
+    "name": "Manila",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4glxn24gd6o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Manila'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:memphis-tennessee",
+    "name": "Memphis, Tennessee",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c895v5pq5p1o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Memphis, Tennessee'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:middle-east",
+    "name": "Middle East",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c5y721yqe6ro",
+      "crk1066npvzo"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-04-11",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Middle East'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:minab",
+    "name": "Minab",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4g0pnnj8xyo",
+      "c4gx8e1x5j3o",
+      "c5y721yqe6ro",
+      "cy91x2n29nlo"
+    ],
+    "article_count": 4,
+    "relation_count": 2,
+    "first_seen": "2026-02-28",
+    "last_seen": "2026-04-11",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Minab'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:mission-british-columbia",
+    "name": "Mission, British Columbia",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c7952qyqwz4o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Mission, British Columbia'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:mobarakeh-steel-plant",
+    "name": "Mobarakeh Steel Plant",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c1w4pdexxqpo"
+    ],
+    "article_count": 1,
+    "relation_count": 2,
+    "first_seen": "2026-04-02",
+    "last_seen": "2026-04-02",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Mobarakeh Steel Plant'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:natanz",
+    "name": "Natanz",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c9qdvnv13qdo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-21",
+    "last_seen": "2026-03-21",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Natanz'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:natanz-nuclear-facility",
+    "name": "Natanz nuclear facility",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4g0pnnj8xyo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-02-28",
+    "last_seen": "2026-02-28",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Natanz nuclear facility'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:niloufar-square",
+    "name": "Niloufar Square",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cn0w1qxzd4xo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-27",
+    "last_seen": "2026-03-27",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Niloufar Square'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:paris",
+    "name": "Paris",
+    "type": "StrategicLocation",
+    "latitude": 48.8566,
+    "longitude": 2.3522,
+    "geocode_source": "override",
+    "geocode_display_name": "Paris, France",
+    "aliases": [],
+    "article_ids": [
+      "cly73y5e788o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-23",
+    "last_seen": "2026-03-23",
+    "review_flags": []
+  },
+  {
+    "id": "StrategicLocation:persian-gulf",
+    "name": "Persian Gulf",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4g44gj7rgno"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-15",
+    "last_seen": "2026-04-15",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Persian Gulf'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:punjab",
+    "name": "Punjab",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "crk1066npvzo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-26",
+    "last_seen": "2026-03-26",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Punjab'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:qasem-soleimani-international-airport",
+    "name": "Qasem Soleimani international airport",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvg0q6wdzp1o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-05",
+    "last_seen": "2026-04-05",
+    "review_flags": [
+      {
+        "code": "generic_location_name",
+        "message": "Location 'Qasem Soleimani international airport' looks generic and should be manually reviewed."
+      },
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Qasem Soleimani international airport'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:qasmiye-bridge",
+    "name": "Qasmiye bridge",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4g0pnnj8xyo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-02-28",
+    "last_seen": "2026-02-28",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Qasmiye bridge'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:raf-fairford",
+    "name": "RAF Fairford",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c17vdgxe54ko",
+      "c36rny6xgppo",
+      "cp854ez929yo"
+    ],
+    "article_count": 3,
+    "relation_count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-24",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'RAF Fairford'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:raf-lakenheath",
+    "name": "RAF Lakenheath",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "crl1jnk01g4o",
+      "cvg0v4xd2z6o"
+    ],
+    "article_count": 2,
+    "relation_count": 1,
+    "first_seen": "2026-04-01",
+    "last_seen": "2026-04-08",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'RAF Lakenheath'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:ras-laffan",
+    "name": "Ras Laffan",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c93j37egjdeo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-18",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Ras Laffan'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:ras-laffan-industrial-area",
+    "name": "Ras Laffan industrial area",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c2k3jgy9vq3o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-19",
+    "last_seen": "2026-03-19",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Ras Laffan industrial area'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:ras-laffan-industrial-city",
+    "name": "Ras Laffan Industrial City",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4g0pnnj8xyo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-02-28",
+    "last_seen": "2026-02-28",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Ras Laffan Industrial City'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:ras-laffan-industrial-hub",
+    "name": "Ras Laffan industrial hub",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c3wlwnn05zqo"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-20",
+    "last_seen": "2026-03-20",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Ras Laffan industrial hub'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:ras-laffan-plant",
+    "name": "Ras Laffan plant",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4gjxv5g19no"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-27",
+    "last_seen": "2026-03-27",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Ras Laffan plant'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:red-sea",
+    "name": "Red Sea",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c8jxzlwvd8ro",
+      "clyxv87zwwpo"
+    ],
+    "article_count": 2,
+    "relation_count": 1,
+    "first_seen": "2026-03-14",
+    "last_seen": "2026-03-21",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Red Sea'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:resalat",
+    "name": "Resalat",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cn0w1qxzd4xo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-27",
+    "last_seen": "2026-03-27",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Resalat'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:school",
+    "name": "school",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cgl5w09ey30o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-16",
+    "last_seen": "2026-03-16",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'school'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:shajareh-tayyebeh-school",
+    "name": "Shajareh Tayyebeh school",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c75kzk3lgl5o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-27",
+    "last_seen": "2026-03-27",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Shajareh Tayyebeh school'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:shimon-peres-negev-nuclear-research-center",
+    "name": "Shimon Peres Negev Nuclear Research Center",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c9qdvnv13qdo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-21",
+    "last_seen": "2026-03-21",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Shimon Peres Negev Nuclear Research Center'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:solent",
+    "name": "Solent",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c17vdgxe54ko"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Solent'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:south-pars",
+    "name": "South Pars",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c2k3jgy9vq3o",
+      "c4g0pnnj8xyo"
+    ],
+    "article_count": 2,
+    "relation_count": 1,
+    "first_seen": "2026-02-28",
+    "last_seen": "2026-03-19",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'South Pars'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:south-pars-gas-field",
+    "name": "South Pars Gas Field",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c4gjv02g54ko",
+      "c93j37egjdeo"
+    ],
+    "article_count": 2,
+    "relation_count": 2,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-24",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'South Pars Gas Field'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:southampton",
+    "name": "Southampton",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c17vdgxe54ko"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-24",
+    "last_seen": "2026-03-24",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Southampton'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:southern-iran",
+    "name": "Southern Iran",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cm2k1dgz142o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-04",
+    "last_seen": "2026-04-04",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Southern Iran'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:southern-lebanon",
+    "name": "Southern Lebanon",
+    "type": "StrategicLocation",
+    "latitude": 33.5393039,
+    "longitude": 35.3716495,
+    "geocode_source": "nominatim",
+    "geocode_display_name": "تقاطع صيدا جنوبي, أتستراد البحر, صيدا الدكرمان, صيدا, قضاء صيدا, محافظة الجنوب, 1600, لبنان",
+    "aliases": [],
+    "article_ids": [
+      "c0j6d538l6qo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-08",
+    "last_seen": "2026-04-08",
+    "review_flags": [
+      {
+        "code": "low_importance_match",
+        "message": "'Southern Lebanon' resolved with low Nominatim importance (0.0001); review manually."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:southern-suburbs-of-beirut",
+    "name": "Southern suburbs of Beirut",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0j6d538l6qo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-08",
+    "last_seen": "2026-04-08",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Southern suburbs of Beirut'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:spanish-airspace",
+    "name": "Spanish airspace",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cwy368j1e3lo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-30",
+    "last_seen": "2026-03-30",
+    "review_flags": [
+      {
+        "code": "generic_location_name",
+        "message": "Location 'Spanish airspace' looks generic and should be manually reviewed."
+      },
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Spanish airspace'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:sri-lanka",
+    "name": "Sri Lanka",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c2d1dz14k51o",
+      "cvgkn9379pqo"
+    ],
+    "article_count": 2,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-03-31",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Sri Lanka'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:st-aubin-s-bay",
+    "name": "St Aubin's Bay",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "czx99d7yjw4o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-14",
+    "last_seen": "2026-04-14",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'St Aubin's Bay'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:strait-of-hormuz",
+    "name": "Strait of Hormuz",
+    "type": "StrategicLocation",
+    "latitude": 26.4494061,
+    "longitude": 56.2027702,
+    "geocode_source": "nominatim",
+    "geocode_display_name": "تنگه هرمز - مضیق هرمز, عمان",
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c0le69de645o",
+      "c1450zj6n48o",
+      "c15d980nyw1o",
+      "c1d6vyy9v61o",
+      "c20ddnz4w5lo",
+      "c2k3jgy9vq3o",
+      "c393wxzw4yjo",
+      "c3ex39w09gzo",
+      "c3ex8ez3717o",
+      "c3w39lg84w2o",
+      "c3wlwnn05zqo",
+      "c4g0pnnj8xyo",
+      "c4g44gj7rgno",
+      "c4gjv02g54ko",
+      "c4gjxv5g19no",
+      "c5y90jl8veyo",
+      "c5ywpe2yyg3o",
+      "c62l597wl0yo",
+      "c70k29914q4o",
+      "c74vqd8k3g1o",
+      "c78n6p09pzno",
+      "c895v5pq5p1o",
+      "c895xljyzewo",
+      "c8r40y3rv75o",
+      "c8r45770p37o",
+      "c93enywd10ro",
+      "c93j37egjdeo",
+      "c98kdyye33no",
+      "ce84z6y3ke4o",
+      "cg7el0mvv2do",
+      "cgrlwk29ppzo",
+      "cj0dlvl086eo",
+      "cj401qvgg19o",
+      "ckg2m8zp2n3o",
+      "clyxv87zwwpo",
+      "cn53zvlglg7o",
+      "cn9qzl12537o",
+      "cnv81ven263o",
+      "cp3l4yk5rlgo",
+      "cpd5l00z7n6o",
+      "cpwj7r5yxv1o",
+      "cr516nmer5eo",
+      "crk1066npvzo",
+      "cvg0q6wdzp1o",
+      "cvgkd3lqe2no",
+      "cwy368j1e3lo",
+      "cwyk7xgkzvzo",
+      "cwyvp55xrlro",
+      "cwyvxejqyx4o",
+      "cx2d0md89v2o",
+      "cx2wyn8wdz0o",
+      "cy01vg7x5ppo",
+      "cy410dq4gvno",
+      "cy81p99x07no",
+      "cyv9lzn0816o",
+      "cze0kz7gr84o",
+      "czexw94rj5jo"
+    ],
+    "article_count": 58,
+    "relation_count": 8,
+    "first_seen": "2025-06-23",
+    "last_seen": "2026-04-15",
+    "review_flags": []
+  },
+  {
+    "id": "StrategicLocation:tehran",
+    "name": "Tehran",
+    "type": "StrategicLocation",
+    "latitude": 35.6892523,
+    "longitude": 51.3896004,
+    "geocode_source": "nominatim",
+    "geocode_display_name": "شهر تهران, بخش مرکزی شهرستان تهران, شهرستان تهران, استان تهران, ایران",
+    "aliases": [],
+    "article_ids": [
+      "c0q9nqz4g55o",
+      "c24deezq6meo",
+      "c2d1dz14k51o",
+      "c4g0pnnj8xyo",
+      "c4gjv02g54ko",
+      "c5ywpe2yyg3o",
+      "c93e9r62py4o",
+      "c9wqgjn7x89o",
+      "ce84ngmjz8zo",
+      "cly9nz5vyz4o",
+      "clygdwqw5dvo",
+      "cn0w1qxzd4xo",
+      "cn89xl9xr34o",
+      "cn9e0wrglgdo",
+      "cp86mrj40e2o",
+      "cvgkg8p7zlko",
+      "cvgkn9379pqo"
+    ],
+    "article_count": 17,
+    "relation_count": 3,
+    "first_seen": "2026-02-28",
+    "last_seen": "2026-04-09",
+    "review_flags": []
+  },
+  {
+    "id": "StrategicLocation:tel-aviv",
+    "name": "Tel Aviv",
+    "type": "StrategicLocation",
+    "latitude": 32.0852997,
+    "longitude": 34.7818064,
+    "geocode_source": "nominatim",
+    "geocode_display_name": "תל־אביב–יפו, נפת תל אביב, מחוז תל אביב, ישראל",
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c4g0pnnj8xyo",
+      "c9qdvnv13qdo",
+      "clyxgxyeqpgo",
+      "cnv81ven263o"
+    ],
+    "article_count": 5,
+    "relation_count": 1,
+    "first_seen": "2026-02-28",
+    "last_seen": "2026-04-13",
+    "review_flags": []
+  },
+  {
+    "id": "StrategicLocation:temple-israel",
+    "name": "Temple Israel",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cj0vzvdldv0o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-30",
+    "last_seen": "2026-03-30",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Temple Israel'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:tofigh-daru-research-engineering-company",
+    "name": "Tofigh Daru Research & Engineering Company",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c1w4pdexxqpo",
+      "cx2w0v19gw8o"
+    ],
+    "article_count": 2,
+    "relation_count": 1,
+    "first_seen": "2026-04-02",
+    "last_seen": "2026-04-07",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Tofigh Daru Research & Engineering Company'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:turaibil",
+    "name": "Turaibil",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cly0d510yz3o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-15",
+    "last_seen": "2026-03-15",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Turaibil'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:us-consulate-in-karachi",
+    "name": "US consulate in Karachi",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cy91vrzxn34o"
+    ],
+    "article_count": 1,
+    "relation_count": 1,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'US consulate in Karachi'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:washington",
+    "name": "Washington",
+    "type": "StrategicLocation",
+    "latitude": 38.8950982,
+    "longitude": -77.0363849,
+    "geocode_source": "nominatim",
+    "geocode_display_name": "Washington, District of Columbia, United States",
+    "aliases": [],
+    "article_ids": [
+      "c20ddnz4w5lo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-14",
+    "last_seen": "2026-04-14",
+    "review_flags": []
+  },
+  {
+    "id": "StrategicLocation:washington-dc",
+    "name": "Washington DC",
+    "type": "StrategicLocation",
+    "latitude": 38.8950982,
+    "longitude": -77.0363849,
+    "geocode_source": "nominatim",
+    "geocode_display_name": "Washington, District of Columbia, United States",
+    "aliases": [],
+    "article_ids": [
+      "clyxgxyeqpgo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-13",
+    "last_seen": "2026-04-13",
+    "review_flags": []
+  },
+  {
+    "id": "StrategicLocation:western-iran",
+    "name": "Western Iran",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c3r395l91l3o"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-03",
+    "last_seen": "2026-04-03",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Western Iran'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:white-house",
+    "name": "White House",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "c0434932w44o",
+      "c05d8j9r5ejo",
+      "c4g4e6z9960o",
+      "cnv81ven263o"
+    ],
+    "article_count": 4,
+    "relation_count": 0,
+    "first_seen": "2026-03-18",
+    "last_seen": "2026-04-09",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'White House'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:yerevan",
+    "name": "Yerevan",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cvgkn9379pqo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-03-31",
+    "last_seen": "2026-03-31",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Yerevan'."
+      }
+    ]
+  },
+  {
+    "id": "StrategicLocation:zanjan-prison",
+    "name": "Zanjan Prison",
+    "type": "StrategicLocation",
+    "latitude": null,
+    "longitude": null,
+    "geocode_source": "missing",
+    "geocode_display_name": null,
+    "aliases": [],
+    "article_ids": [
+      "cdj7xye8knxo"
+    ],
+    "article_count": 1,
+    "relation_count": 0,
+    "first_seen": "2026-04-02",
+    "last_seen": "2026-04-02",
+    "review_flags": [
+      {
+        "code": "missing_coordinates",
+        "message": "No coordinates found for 'Zanjan Prison'."
+      }
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "cleaned_record_count": 154,
+  "cleaned_event_count": 417,
+  "entity_type_counts": {
+    "NonStateActor": 110,
+    "NationState": 481,
+    "MilitaryAsset": 61,
+    "StrategicLocation": 239,
+    "PoliticalLeader": 203
+  },
+  "relation_type_counts": {
+    "SUPPORTED": 57,
+    "ATTACKED": 252,
+    "THREATENED": 114,
+    "NEGOTIATED_WITH": 56,
+    "BLOCKADED": 32,
+    "SANCTIONED": 9
+  },
+  "event_type_counts": {
+    "SupportEvent": 49,
+    "AttackEvent": 175,
+    "ThreatEvent": 96,
+    "NegotiationEvent": 57,
+    "BlockadeEvent": 31,
+    "SanctionEvent": 9
+  },
+  "geocoded_location_count": 116,
+  "location_review_flag_count": 108,
+  "location_review_csv": "data/postprocessed_event_v1/location_review.csv"
+}

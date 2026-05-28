@@ -203,6 +203,8 @@ python3 -m geokg.postprocess_extractions \
 
 Review `data/postprocessed/location_review.csv` before treating the graph as spatially final.
 
+`postprocess_extractions` also reads `data/normalized/articles.jsonl` by default to backfill article URLs into event provenance. Use `--article-metadata <path>` if your normalized article metadata lives elsewhere.
+
 ### 5. Aggregate Graph Artifacts
 
 ```bash

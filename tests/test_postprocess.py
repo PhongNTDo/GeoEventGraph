@@ -7,6 +7,7 @@ from urllib.error import HTTPError
 
 from geokg.geocoding import GeocodeRecord, Geocoder, review_geocode_result
 from geokg.postprocess import clean_extraction_record, load_aliases
+from geokg.postprocess_extractions import _flatten_events, _merge_article_metadata
 
 
 class PostprocessTest(unittest.TestCase):
@@ -93,6 +94,46 @@ class PostprocessTest(unittest.TestCase):
             self.assertEqual(event["participants"][0]["name"], "United States")
             self.assertEqual(event["relations"][0]["source"], "United States")
             self.assertEqual(cleaned["relations"][0]["source"], "United States")
+
+    def test_flatten_events_carries_source_url(self) -> None:
+        rows = _flatten_events(
+            [
+                {
+                    "article_id": "a1",
+                    "title": "Article One",
+                    "source": "BBC News",
+                    "url": "https://example.invalid/a1",
+                    "published_at": "2026-04-10",
+                    "model": "test-model",
+                    "prompt_version": "event-v1",
+                    "extracted_at": "2026-04-10T12:00:00+00:00",
+                    "events": [
+                        {
+                            "event_id": "event:a1:001:blockadeevent",
+                            "event_type": "BlockadeEvent",
+                            "event_date": "2026-04-10",
+                        }
+                    ],
+                }
+            ]
+        )
+
+        self.assertEqual(rows[0]["source_url"], "https://example.invalid/a1")
+
+    def test_merge_article_metadata_backfills_missing_url(self) -> None:
+        merged = _merge_article_metadata(
+            {"article_id": "a1", "title": "Existing title"},
+            {
+                "a1": {
+                    "title": "Normalized title",
+                    "url": "https://example.invalid/a1",
+                    "published_at": "2026-04-10",
+                }
+            },
+        )
+
+        self.assertEqual(merged["title"], "Existing title")
+        self.assertEqual(merged["url"], "https://example.invalid/a1")
 
     def test_generic_location_gets_review_flag(self) -> None:
         aliases = load_aliases(Path("/tmp/does-not-exist.csv"))

@@ -1,0 +1,55 @@
+[run-leanbabel-geokg] project_root=/dcs/pg25/u5728153/Projects/GeoKG
+[run-leanbabel-geokg] input_jsonl=data/normalized/articles.jsonl
+[run-leanbabel-geokg] output_dir=data/extractions_event_v1
+[run-leanbabel-geokg] ollama_model=gpt-oss:120b
+[run-leanbabel-geokg] ollama_port=11434
+[run-leanbabel-geokg] gpu_count=2
+[run-leanbabel-geokg] cuda_visible_devices=0,1
+[run-leanbabel-geokg] run_ingestion=0
+[run-leanbabel-geokg] extract_resume=0
+[run-leanbabel-geokg] extract_limit=<unset>
+[run-leanbabel-geokg] dry_run=0
+[geokg-leanbabel] project_root=/dcs/pg25/u5728153/Projects/GeoKG
+[geokg-leanbabel] input_jsonl=data/normalized/articles.jsonl
+[geokg-leanbabel] output_dir=data/extractions_event_v1
+[geokg-leanbabel] ollama_base_url=http://127.0.0.1:11434
+[geokg-leanbabel] ollama_model=gpt-oss:120b
+[geokg-leanbabel] cuda_visible_devices=0,1
+[geokg-leanbabel] ollama_models=/dcs/large/u5728153/ollama/models
+[geokg-leanbabel] run_ingestion=0
+[geokg-leanbabel] extract_resume=0
+[geokg-leanbabel] extract_limit=<unset>
+[geokg-leanbabel] GPU status:
+Mon May 25 20:17:31 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.142                Driver Version: 580.142        CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     Off |   00000000:01:00.0 Off |                    0 |
+|  0%   41C    P0             81W /  300W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A40                     Off |   00000000:C3:00.0 Off |                    0 |
+|  0%   38C    P0             73W /  300W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+[geokg-leanbabel] Starting Ollama server on 127.0.0.1:11434
+[geokg-leanbabel] Ollama is ready.
+[geokg-leanbabel] Checking Ollama model availability via 'ollama list' ...
+NAME            ID              SIZE     MODIFIED    
+gpt-oss:120b    a951a23b46a1    65 GB    2 weeks ago    
+[geokg-leanbabel] Running extraction command:
+ /dcs/large/u5728153/envs/promptgraph_vllm/bin/python3.11 -m geokg.extract_relations --input data/normalized/articles.jsonl --output-dir data/extractions_event_v1 --base-url http://127.0.0.1:11434 --model gpt-oss:120b --max-retries 2 --timeout-seconds 1800 --temperature 0 --num-ctx 16384
+{"processed": 170, "succeeded": 154, "failed": 16, "output": "data/extractions_event_v1/article_extractions.jsonl", "failures": "data/extractions_event_v1/failures.jsonl"}
+[geokg-leanbabel] Completed successfully.

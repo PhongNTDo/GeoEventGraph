@@ -1,6 +1,7 @@
 import { Suspense, lazy, useEffect, useMemo, useState } from "react";
+import eventData from "../../data/graph/events.json";
 import graphData from "../../data/graph/graph.json";
-import { TYPE_COLORS } from "./graphStyle";
+import { EVENT_COLORS, TYPE_COLORS } from "./graphStyle";
 
 const MapView = lazy(() => import("./MapView").then((module) => ({ default: module.MapView })));
 const TopologyView = lazy(() =>
@@ -32,23 +33,52 @@ const COUNTRY_CENTROIDS = {
   "NationState:Ukraine": [50.4014325, 30.2030549],
 };
 
+const TIMELINE_DATES = [
+  ...new Set([
+    ...(graphData.metadata.timeline.available_dates ?? []),
+    ...(eventData.metadata.timeline.available_dates ?? []),
+  ]),
+].sort();
+
+const EVENT_TYPES = Object.entries(eventData.metadata.event_type_counts ?? {})
+  .sort((left, right) => right[1] - left[1])
+  .map(([eventType]) => eventType);
+
 export function App() {
   const [mode, setMode] = useState("map");
-  const [selectedDateIndex, setSelectedDateIndex] = useState(
-    graphData.metadata.timeline.available_dates.length - 1,
-  );
+  const [selectedDateIndex, setSelectedDateIndex] = useState(TIMELINE_DATES.length - 1);
   const [selectedEdgeId, setSelectedEdgeId] = useState(null);
+  const [selectedEventId, setSelectedEventId] = useState(null);
+  const [selectedEventType, setSelectedEventType] = useState("all");
+  const [minConfidence, setMinConfidence] = useState(0);
   const [showFlaggedOnly, setShowFlaggedOnly] = useState(false);
 
-  const activeDate = graphData.metadata.timeline.available_dates[selectedDateIndex] ?? null;
+  const activeDate = TIMELINE_DATES[selectedDateIndex] ?? null;
 
   const filteredGraph = useMemo(() => {
     return filterGraph(graphData, activeDate, showFlaggedOnly);
   }, [activeDate, showFlaggedOnly]);
 
+  const filteredEvents = useMemo(
+    () =>
+      filterEvents({
+        events: eventData.events,
+        activeDate,
+        eventType: selectedEventType,
+        minConfidence,
+        showFlaggedOnly,
+      }),
+    [activeDate, selectedEventType, minConfidence, showFlaggedOnly],
+  );
+
   const selectedEdge = useMemo(
     () => filteredGraph.edges.find((edge) => edge.id === selectedEdgeId) ?? null,
     [filteredGraph.edges, selectedEdgeId],
+  );
+
+  const selectedEvent = useMemo(
+    () => filteredEvents.find((event) => event.id === selectedEventId) ?? null,
+    [filteredEvents, selectedEventId],
   );
 
   useEffect(() => {
@@ -57,22 +87,20 @@ export function App() {
     }
   }, [filteredGraph.edges, selectedEdgeId]);
 
+  useEffect(() => {
+    if (selectedEventId && !filteredEvents.some((event) => event.id === selectedEventId)) {
+      setSelectedEventId(null);
+    }
+  }, [filteredEvents, selectedEventId]);
+
   const statItems = useMemo(
     () => [
+      { label: "Visible Events", value: filteredEvents.length },
       { label: "Visible Nodes", value: filteredGraph.nodes.length },
       { label: "Visible Edges", value: filteredGraph.edges.length },
       { label: "Timeline Date", value: activeDate ?? "N/A" },
-      {
-        label: "Flagged Locations",
-        value: filteredGraph.nodes.filter((node) => node.review_flags.length > 0).length,
-      },
     ],
-    [filteredGraph, activeDate],
-  );
-
-  const nodesById = useMemo(
-    () => Object.fromEntries(filteredGraph.nodes.map((node) => [node.id, node])),
-    [filteredGraph.nodes],
+    [filteredEvents.length, filteredGraph, activeDate],
   );
 
   return (
@@ -83,8 +111,8 @@ export function App() {
           <p className="eyebrow">Event-Driven Geospatial Knowledge Graph</p>
           <h1>GeoKG Conflict Monitor</h1>
           <p className="lede">
-            Explore how military, diplomatic, and blockade relationships evolve across time
-            and geography in the extracted corpus.
+            Explore extracted geopolitical events, compatibility relations, article evidence,
+            and geospatial review signals across the corpus timeline.
           </p>
         </div>
         <div className="hero-stats">
@@ -111,6 +139,12 @@ export function App() {
           >
             Topology View
           </button>
+          <button
+            className={mode === "events" ? "toggle active" : "toggle"}
+            onClick={() => setMode("events")}
+          >
+            Event View
+          </button>
         </div>
 
         <label className="checkbox-row">
@@ -119,9 +153,55 @@ export function App() {
             checked={showFlaggedOnly}
             onChange={(event) => setShowFlaggedOnly(event.target.checked)}
           />
-          Show only flagged geospatial nodes
+          Show only flagged records
         </label>
       </section>
+
+      {mode === "events" ? (
+        <section className="event-filter-card">
+          <label className="filter-field">
+            <span>Event type</span>
+            <select
+              value={selectedEventType}
+              onChange={(event) => setSelectedEventType(event.target.value)}
+            >
+              <option value="all">All event types</option>
+              {EVENT_TYPES.map((eventType) => (
+                <option key={eventType} value={eventType}>
+                  {formatEventType(eventType)} ({eventData.metadata.event_type_counts[eventType]})
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="filter-field confidence-field">
+            <span>Minimum confidence</span>
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.05"
+              value={minConfidence}
+              onChange={(event) => setMinConfidence(Number(event.target.value))}
+            />
+            <strong>{formatConfidence(minConfidence)}</strong>
+          </label>
+          <div className="event-type-strip">
+            {EVENT_TYPES.map((eventType) => (
+              <button
+                key={eventType}
+                className={selectedEventType === eventType ? "event-type-pill active" : "event-type-pill"}
+                style={{ "--event-color": EVENT_COLORS[eventType] ?? "#111723" }}
+                onClick={() =>
+                  setSelectedEventType(selectedEventType === eventType ? "all" : eventType)
+                }
+              >
+                <span>{formatEventType(eventType)}</span>
+                <strong>{eventData.metadata.event_type_counts[eventType]}</strong>
+              </button>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="timeline-card">
         <div className="timeline-labels">
@@ -130,97 +210,318 @@ export function App() {
             <strong>{activeDate ?? "No date"}</strong>
           </div>
           <p>
-            Scrub the corpus date boundary. Nodes and edges remain visible only if first seen on
-            or before the selected date.
+            {mode === "events"
+              ? "Scrub the event boundary. Event records remain visible only if dated on or before the selected date."
+              : "Scrub the corpus date boundary. Nodes and edges remain visible only if first seen on or before the selected date."}
           </p>
         </div>
         <input
           className="timeline-slider"
           type="range"
           min="0"
-          max={Math.max(graphData.metadata.timeline.available_dates.length - 1, 0)}
+          max={Math.max(TIMELINE_DATES.length - 1, 0)}
           value={selectedDateIndex}
           onChange={(event) => setSelectedDateIndex(Number(event.target.value))}
         />
         <div className="timeline-ticks">
-          {graphData.metadata.timeline.available_dates.map((date) => (
+          {timelineTicks(TIMELINE_DATES).map((date) => (
             <span key={date}>{date}</span>
           ))}
         </div>
       </section>
 
-      <main className="main-grid">
-        <section className="viewport-card">
-          <Suspense fallback={<div className="viewport-loading">Loading visualization…</div>}>
-            {mode === "map" ? (
-              <MapView
-                graph={filteredGraph}
-                selectedEdgeId={selectedEdgeId}
-                onSelectEdge={setSelectedEdgeId}
-              />
-            ) : (
-              <TopologyView
-                graph={filteredGraph}
-                selectedEdgeId={selectedEdgeId}
-                onSelectEdge={setSelectedEdgeId}
-              />
-            )}
-          </Suspense>
-        </section>
+      {mode === "events" ? (
+        <EventWorkspace
+          events={filteredEvents}
+          selectedEvent={selectedEvent}
+          selectedEventId={selectedEventId}
+          onSelectEvent={setSelectedEventId}
+        />
+      ) : (
+        <main className="main-grid">
+          <section className="viewport-card">
+            <Suspense fallback={<div className="viewport-loading">Loading visualization...</div>}>
+              {mode === "map" ? (
+                <MapView
+                  graph={filteredGraph}
+                  selectedEdgeId={selectedEdgeId}
+                  onSelectEdge={setSelectedEdgeId}
+                />
+              ) : (
+                <TopologyView
+                  graph={filteredGraph}
+                  selectedEdgeId={selectedEdgeId}
+                  onSelectEdge={setSelectedEdgeId}
+                />
+              )}
+            </Suspense>
+          </section>
 
-        <aside className="inspector-card">
-          <div className="inspector-header">
-            <span className="eyebrow">Evidence Panel</span>
-            <h2>{selectedEdge ? selectedEdge.type : "Select an edge"}</h2>
-            <p>
-              {selectedEdge
-                ? `${selectedEdge.source_name} → ${selectedEdge.target_name}`
-                : "Click an edge in the map or topology view to inspect article evidence."}
-            </p>
+          <EdgeInspector selectedEdge={selectedEdge} />
+        </main>
+      )}
+    </div>
+  );
+}
+
+function EdgeInspector({ selectedEdge }) {
+  return (
+    <aside className="inspector-card">
+      <div className="inspector-header">
+        <span className="eyebrow">Evidence Panel</span>
+        <h2>{selectedEdge ? selectedEdge.type : "Select an edge"}</h2>
+        <p>
+          {selectedEdge
+            ? `${selectedEdge.source_name} -> ${selectedEdge.target_name}`
+            : "Click an edge in the map or topology view to inspect article evidence."}
+        </p>
+      </div>
+
+      {selectedEdge ? (
+        <>
+          <div className="edge-meta-grid">
+            <MetaBlock label="Weight" value={selectedEdge.weight} />
+            <MetaBlock label="Articles" value={selectedEdge.article_count} />
+            <MetaBlock label="First Seen" value={selectedEdge.first_seen ?? "N/A"} />
+            <MetaBlock label="Last Seen" value={selectedEdge.last_seen ?? "N/A"} />
           </div>
-
-          {selectedEdge ? (
-            <>
-              <div className="edge-meta-grid">
-                <MetaBlock label="Weight" value={selectedEdge.weight} />
-                <MetaBlock label="Articles" value={selectedEdge.article_count} />
-                <MetaBlock label="First Seen" value={selectedEdge.first_seen ?? "N/A"} />
-                <MetaBlock label="Last Seen" value={selectedEdge.last_seen ?? "N/A"} />
-              </div>
-              {selectedEdge.review_flags.length > 0 ? (
-                <div className="flag-box">
-                  {selectedEdge.review_flags.map((flag) => (
-                    <p key={`${flag.code}-${flag.message}`}>
-                      <strong>{flag.code}</strong>: {flag.message}
-                    </p>
-                  ))}
+          {selectedEdge.review_flags.length > 0 ? (
+            <FlagBox flags={selectedEdge.review_flags} />
+          ) : null}
+          <div className="evidence-list">
+            {selectedEdge.evidences.map((evidence, index) => (
+              <article key={`${selectedEdge.id}-${index}`} className="evidence-card">
+                <div className="evidence-meta">
+                  <span>{evidence.published_at ?? "Unknown date"}</span>
+                  <span>{evidence.source_publication ?? "Unknown source"}</span>
                 </div>
-              ) : null}
-              <div className="evidence-list">
-                {selectedEdge.evidences.map((evidence, index) => (
-                  <article key={`${selectedEdge.id}-${index}`} className="evidence-card">
-                    <div className="evidence-meta">
-                      <span>{evidence.published_at ?? "Unknown date"}</span>
-                      <span>{evidence.source_publication ?? "Unknown source"}</span>
-                    </div>
-                    <h3>{evidence.title}</h3>
-                    <blockquote>{evidence.evidence}</blockquote>
-                  </article>
-                ))}
-              </div>
-            </>
+                <h3>{evidence.title}</h3>
+                <blockquote>{evidence.evidence}</blockquote>
+              </article>
+            ))}
+          </div>
+        </>
+      ) : (
+        <div className="empty-state">
+          <p>Nothing selected yet.</p>
+          <p>Try a high-weight blockade or negotiation edge first.</p>
+        </div>
+      )}
+    </aside>
+  );
+}
+
+function EventWorkspace({ events, selectedEvent, selectedEventId, onSelectEvent }) {
+  return (
+    <main className="main-grid event-main-grid">
+      <section className="event-list-card">
+        <div className="event-list-header">
+          <div>
+            <span className="eyebrow">Event Timeline</span>
+            <h2>{events.length} events</h2>
+          </div>
+          <div className="event-list-summary">
+            <span>{events.filter((event) => event.latitude != null).length} mapped</span>
+            <span>{events.filter((event) => event.review_flags?.length > 0).length} flagged</span>
+          </div>
+        </div>
+
+        <div className="event-list">
+          {events.length > 0 ? (
+            events.map((event) => (
+              <button
+                key={event.id}
+                className={event.id === selectedEventId ? "event-row active" : "event-row"}
+                style={{ "--event-color": EVENT_COLORS[event.event_type] ?? "#111723" }}
+                onClick={() => onSelectEvent(event.id)}
+              >
+                <div className="event-row-main">
+                  <span className="event-type-chip">{formatEventType(event.event_type)}</span>
+                  <strong>{event.summary}</strong>
+                  <p>{formatParticipants(event.participants)}</p>
+                </div>
+                <div className="event-row-side">
+                  <span>{event.event_date ?? "No date"}</span>
+                  <strong>{formatConfidence(event.confidence)}</strong>
+                </div>
+              </button>
+            ))
           ) : (
             <div className="empty-state">
-              <p>Nothing selected yet.</p>
-              <p>
-                Try the high-weight blockade and negotiation edges first. They are the most
-                informative in this dataset.
-              </p>
+              <p>No events match the current filters.</p>
             </div>
           )}
-        </aside>
-      </main>
-    </div>
+        </div>
+      </section>
+
+      <EventInspector event={selectedEvent} />
+    </main>
+  );
+}
+
+function EventInspector({ event }) {
+  if (!event) {
+    return (
+      <aside className="inspector-card">
+        <div className="inspector-header">
+          <span className="eyebrow">Event Inspector</span>
+          <h2>Select an event</h2>
+          <p>Choose an event from the timeline to inspect evidence and provenance.</p>
+        </div>
+        <div className="empty-state">
+          <p>Nothing selected yet.</p>
+        </div>
+      </aside>
+    );
+  }
+
+  return (
+    <aside className="inspector-card event-inspector-card">
+      <div className="inspector-header">
+        <span className="eyebrow">Event Inspector</span>
+        <h2>{formatEventType(event.event_type)}</h2>
+        <p>{event.summary}</p>
+      </div>
+
+      <div className="edge-meta-grid">
+        <MetaBlock label="Event Date" value={event.event_date ?? "N/A"} />
+        <MetaBlock label="Confidence" value={formatConfidence(event.confidence)} />
+        <MetaBlock label="Location" value={event.location || "N/A"} />
+        <MetaBlock label="Review" value={event.review_status ?? "unreviewed"} />
+      </div>
+
+      <TrustPanel event={event} />
+
+      {event.review_flags?.length > 0 ? <FlagBox flags={event.review_flags} /> : null}
+
+      <section className="event-section">
+        <h3>Participants</h3>
+        <div className="participant-grid">
+          {event.participants.map((participant) => (
+            <article
+              key={`${participant.name}-${participant.role}`}
+              className="participant-card"
+              style={{ "--type-color": TYPE_COLORS[participant.type] ?? "#111723" }}
+            >
+              <span>{participant.role}</span>
+              <strong>{participant.name}</strong>
+              <small>{participant.type}</small>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="event-section">
+        <h3>Compatibility Relations</h3>
+        <div className="relation-list">
+          {event.relations.map((relation, index) => (
+            <article key={`${event.id}-relation-${index}`} className="relation-card">
+              <strong>{relation.type}</strong>
+              <span>
+                {relation.source} {"->"} {relation.target}
+              </span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="event-section">
+        <h3>Evidence</h3>
+        <blockquote>{event.evidence}</blockquote>
+      </section>
+
+      <section className="event-section">
+        <h3>Provenance</h3>
+        <div className="provenance-grid">
+          <MetaBlock label="Article" value={event.article_id ?? "N/A"} />
+          <MetaBlock label="Source" value={event.source_publication ?? "N/A"} />
+          <MetaBlock label="Published" value={event.published_at ?? "N/A"} />
+          <MetaBlock label="Model" value={event.model ?? "N/A"} />
+          <MetaBlock label="Prompt" value={event.prompt_version ?? "N/A"} />
+          <MetaBlock label="Precision" value={event.date_precision ?? "N/A"} />
+        </div>
+        {event.source_url ? (
+          <a className="source-link" href={event.source_url} target="_blank" rel="noreferrer">
+            Open source article
+          </a>
+        ) : null}
+        <article className="evidence-card compact">
+          <h3>{event.title}</h3>
+        </article>
+      </section>
+    </aside>
+  );
+}
+
+function TrustPanel({ event }) {
+  const validationStatus = event.validation_status ?? deriveValidationStatus(event);
+  const geocodeSource = geocodeSourceLabel(event);
+  const confidenceLevel = confidenceLevelLabel(event.confidence);
+  const reviewFlagCount = event.review_flags?.length ?? 0;
+
+  const signals = [
+    {
+      label: "Validation",
+      value: formatStatus(validationStatus),
+      detail: validationDetail(validationStatus),
+      tone: validationStatus === "schema_validated" ? "good" : "warn",
+    },
+    {
+      label: "Evidence",
+      value: event.evidence ? "Exact quote" : "Missing",
+      detail: event.evidence ? "Validated during extraction" : "No supporting quote",
+      tone: event.evidence ? "good" : "bad",
+    },
+    {
+      label: "Source",
+      value: event.source_url ? "Linked" : "Missing URL",
+      detail: event.source_publication ?? "Unknown source",
+      tone: event.source_url ? "good" : "warn",
+    },
+    {
+      label: "Model",
+      value: event.model ?? "N/A",
+      detail: `Prompt ${event.prompt_version ?? "N/A"}`,
+      tone: event.model && event.prompt_version ? "good" : "warn",
+    },
+    {
+      label: "Confidence",
+      value: formatConfidence(event.confidence),
+      detail: confidenceLevel,
+      tone: confidenceTone(event.confidence),
+    },
+    {
+      label: "Geocode",
+      value: geocodeSource.value,
+      detail: geocodeSource.detail,
+      tone: geocodeSource.tone,
+    },
+    {
+      label: "Review Flags",
+      value: String(reviewFlagCount),
+      detail: reviewFlagCount > 0 ? "Manual review recommended" : "No flags",
+      tone: reviewFlagCount > 0 ? "warn" : "good",
+    },
+  ];
+
+  return (
+    <section className="trust-panel">
+      <div className="trust-panel-header">
+        <h3>Trust Signals</h3>
+        <span className={`status-badge ${validationStatus}`}>
+          {formatStatus(validationStatus)}
+        </span>
+      </div>
+      <div className="trust-grid">
+        {signals.map((signal) => (
+          <article key={signal.label} className={`trust-card ${signal.tone}`}>
+            <span>{signal.label}</span>
+            <strong>{signal.value}</strong>
+            <small>{signal.detail}</small>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -231,6 +532,154 @@ function MetaBlock({ label, value }) {
       <strong>{value}</strong>
     </article>
   );
+}
+
+function FlagBox({ flags }) {
+  return (
+    <div className="flag-box">
+      {flags.map((flag) => (
+        <p key={`${flag.code}-${flag.message}`}>
+          <strong>{flag.code}</strong>: {flag.message}
+        </p>
+      ))}
+    </div>
+  );
+}
+
+function filterEvents({ events, activeDate, eventType, minConfidence, showFlaggedOnly }) {
+  return [...events]
+    .filter((event) => {
+      const visibleByDate = !activeDate || !event.event_date || event.event_date <= activeDate;
+      const visibleByType = eventType === "all" || event.event_type === eventType;
+      const confidence = typeof event.confidence === "number" ? event.confidence : 0;
+      const visibleByConfidence = confidence >= minConfidence;
+      const visibleByFlag = !showFlaggedOnly || event.review_flags?.length > 0;
+      return visibleByDate && visibleByType && visibleByConfidence && visibleByFlag;
+    })
+    .sort((left, right) => {
+      const dateCompare = String(right.event_date ?? "").localeCompare(String(left.event_date ?? ""));
+      if (dateCompare !== 0) {
+        return dateCompare;
+      }
+      return String(left.event_id ?? left.id).localeCompare(String(right.event_id ?? right.id));
+    });
+}
+
+function timelineTicks(dates) {
+  if (dates.length <= 8) {
+    return dates;
+  }
+  const indexes = new Set([0, dates.length - 1]);
+  for (let index = 1; index < 6; index += 1) {
+    indexes.add(Math.round((index * (dates.length - 1)) / 6));
+  }
+  return [...indexes].sort((left, right) => left - right).map((index) => dates[index]);
+}
+
+function formatEventType(eventType) {
+  return String(eventType ?? "Event").replace(/Event$/, " Event");
+}
+
+function formatConfidence(value) {
+  if (typeof value !== "number") {
+    return "N/A";
+  }
+  return `${Math.round(value * 100)}%`;
+}
+
+function confidenceLevelLabel(value) {
+  if (typeof value !== "number") {
+    return "Unknown confidence";
+  }
+  if (value >= 0.8) {
+    return "High confidence";
+  }
+  if (value >= 0.55) {
+    return "Medium confidence";
+  }
+  return "Low confidence";
+}
+
+function confidenceTone(value) {
+  if (typeof value !== "number") {
+    return "warn";
+  }
+  if (value >= 0.8) {
+    return "good";
+  }
+  if (value >= 0.55) {
+    return "warn";
+  }
+  return "bad";
+}
+
+function deriveValidationStatus(event) {
+  if (!event.evidence) {
+    return "missing_evidence";
+  }
+  if (!Array.isArray(event.participants) || event.participants.length === 0) {
+    return "missing_participants";
+  }
+  if (!Array.isArray(event.relations) || event.relations.length === 0) {
+    return "missing_relations";
+  }
+  if (!event.source_url) {
+    return "missing_source_url";
+  }
+  if (event.location && (event.latitude == null || event.longitude == null)) {
+    return "missing_geocode";
+  }
+  if (event.review_flags?.length > 0) {
+    return "needs_review";
+  }
+  return "schema_validated";
+}
+
+function validationDetail(status) {
+  const details = {
+    schema_validated: "Schema, evidence, and provenance present",
+    needs_review: "Review flags are attached",
+    missing_evidence: "Supporting quote is missing",
+    missing_participants: "Participant roles are missing",
+    missing_relations: "Compatibility relations are missing",
+    missing_source_url: "Article URL is missing",
+    missing_geocode: "Located event has no coordinates",
+  };
+  return details[status] ?? "Validation status unknown";
+}
+
+function formatStatus(status) {
+  return String(status ?? "unknown")
+    .split("_")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+function geocodeSourceLabel(event) {
+  if (!event.location) {
+    return { value: "Not applicable", detail: "No event location", tone: "good" };
+  }
+  if (event.location_geocode_source) {
+    return {
+      value: event.location_geocode_source,
+      detail: event.location_geocode_display_name ?? event.location,
+      tone: event.latitude != null && event.longitude != null ? "good" : "warn",
+    };
+  }
+  if (event.latitude != null && event.longitude != null) {
+    return { value: "Coordinates only", detail: event.location, tone: "warn" };
+  }
+  return { value: "Missing", detail: event.location, tone: "bad" };
+}
+
+function formatParticipants(participants) {
+  if (!Array.isArray(participants) || participants.length === 0) {
+    return "No participants";
+  }
+  return participants
+    .slice(0, 3)
+    .map((participant) => `${participant.name} (${participant.role})`)
+    .join(" / ");
 }
 
 function filterGraph(payload, activeDate, showFlaggedOnly) {

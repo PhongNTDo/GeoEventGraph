@@ -10,6 +10,8 @@
       "location_node_id": "StrategicLocation:strait-of-hormuz",
       "latitude": 26.5667,
       "longitude": 56.25,
+      "location_geocode_source": "sample",
+      "location_geocode_display_name": "Strait of Hormuz",
       "participants": [
         {
           "name": "Iran",
@@ -39,10 +41,12 @@
       "confidence": 0.86,
       "review_status": "unreviewed",
       "review_flags": [],
+      "validation_status": "schema_validated",
       "article_id": "sample-001",
       "published_at": "2026-04-01",
       "title": "Regional officials meet after maritime warning",
       "source_publication": "Synthetic Sample News",
+      "source_url": "https://example.invalid/sample-001",
       "model": "sample-model",
       "prompt_version": "event-v1"
     }

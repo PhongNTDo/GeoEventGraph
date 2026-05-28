@@ -7,6 +7,15 @@ export const RELATION_COLORS = {
   BLOCKADED: "#b9165f",
 };
 
+export const EVENT_COLORS = {
+  AttackEvent: "#d9472f",
+  ThreatEvent: "#ff8f1f",
+  NegotiationEvent: "#1f9d7a",
+  SupportEvent: "#5f52d9",
+  SanctionEvent: "#232946",
+  BlockadeEvent: "#b9165f",
+};
+
 export const RELATION_STYLES = {
   ATTACKED: { dashArray: null, weight: 3.5 },
   THREATENED: { dashArray: "8 8", weight: 3 },

@@ -16,7 +16,7 @@ set -euo pipefail
 
 # CHANGE ME: LeanBabel machine-specific defaults.
 PROJECT_ROOT_DEFAULT="/dcs/pg25/u5728153/Projects/GeoKG"
-PYTHON_BIN_DEFAULT="python3"
+PYTHON_BIN_DEFAULT="/dcs/large/u5728153/envs/promptgraph_vllm/bin/python3.11"
 OLLAMA_BIN_DEFAULT="/dcs/pg25/u5728153/ollama/bin/ollama"
 OLLAMA_MODELS_DEFAULT="/dcs/large/u5728153/ollama/models"
 

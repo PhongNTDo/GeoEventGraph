@@ -248,6 +248,7 @@ def build_events_payload(
         article_date = _normalize_date(record.get("published_at"))
         title = record.get("title")
         source_publication = record.get("source")
+        source_url = record.get("url") or record.get("source_url")
         model = record.get("model")
         prompt_version = record.get("prompt_version")
 
@@ -268,10 +269,20 @@ def build_events_payload(
             location_geocode = event.get("location_geocode", {})
             latitude = _pick_coordinate(None, location_geocode.get("latitude") if isinstance(location_geocode, dict) else None)
             longitude = _pick_coordinate(None, location_geocode.get("longitude") if isinstance(location_geocode, dict) else None)
+            location_geocode_source = (
+                location_geocode.get("geocode_source") if isinstance(location_geocode, dict) else None
+            )
+            location_geocode_display_name = (
+                location_geocode.get("geocode_display_name") if isinstance(location_geocode, dict) else None
+            )
             if latitude is None and location_node is not None:
                 latitude = _pick_coordinate(None, location_node.get("latitude"))
             if longitude is None and location_node is not None:
                 longitude = _pick_coordinate(None, location_node.get("longitude"))
+            if location_geocode_source is None and location_node is not None:
+                location_geocode_source = location_node.get("geocode_source")
+            if location_geocode_display_name is None and location_node is not None:
+                location_geocode_display_name = location_node.get("geocode_display_name")
 
             event_id = event.get("event_id")
             if not isinstance(event_id, str) or not event_id:
@@ -288,6 +299,8 @@ def build_events_payload(
                     "location_node_id": location_node.get("id") if location_node else None,
                     "latitude": latitude,
                     "longitude": longitude,
+                    "location_geocode_source": location_geocode_source,
+                    "location_geocode_display_name": location_geocode_display_name,
                     "participants": _enrich_event_participants(
                         event.get("participants", []),
                         node_by_name,
@@ -301,10 +314,17 @@ def build_events_payload(
                     "confidence": event.get("confidence"),
                     "review_status": event.get("review_status"),
                     "review_flags": event.get("review_flags", []),
+                    "validation_status": _event_validation_status(
+                        event=event,
+                        source_url=source_url,
+                        latitude=latitude,
+                        longitude=longitude,
+                    ),
                     "article_id": article_id,
                     "published_at": article_date,
                     "title": title,
                     "source_publication": source_publication,
+                    "source_url": source_url,
                     "model": model,
                     "prompt_version": prompt_version,
                 }
@@ -426,6 +446,28 @@ def _enrich_event_relations(
             }
         )
     return enriched
+
+
+def _event_validation_status(
+    *,
+    event: dict[str, Any],
+    source_url: Any,
+    latitude: float | None,
+    longitude: float | None,
+) -> str:
+    if not event.get("evidence"):
+        return "missing_evidence"
+    if not isinstance(event.get("participants"), list) or not event["participants"]:
+        return "missing_participants"
+    if not isinstance(event.get("relations"), list) or not event["relations"]:
+        return "missing_relations"
+    if not source_url:
+        return "missing_source_url"
+    if event.get("location") and (latitude is None or longitude is None):
+        return "missing_geocode"
+    if event.get("review_flags"):
+        return "needs_review"
+    return "schema_validated"
 
 
 def _build_fallback_event_id(article_id: Any, index: int, event_type: str) -> str:

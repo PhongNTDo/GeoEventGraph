@@ -194,7 +194,8 @@ def build_extraction_prompt(article: dict[str, Any]) -> str:
         f"- article_id: {article['article_id']}\n"
         f"- source: {article.get('source', '')}\n"
         f"- title: {article.get('title', '')}\n"
-        f"- published_at: {article.get('published_at', '')}\n\n"
+        f"- published_at: {article.get('published_at', '')}\n"
+        f"- url: {article.get('url', '')}\n\n"
         "Article text:\n"
         f"{article.get('text', '')}\n"
     )
@@ -340,6 +341,7 @@ def attach_extraction_metadata(
         "title": article.get("title"),
         "source": article.get("source"),
         "published_at": article.get("published_at"),
+        "url": article.get("url"),
         "model": model,
         "prompt_version": PROMPT_VERSION,
         "extracted_at": datetime.now(tz=UTC).isoformat(),

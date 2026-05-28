@@ -11,6 +11,7 @@ class AggregateGraphTest(unittest.TestCase):
                 "published_at": "2026-04-10T10:00:00+00:00",
                 "title": "Article One",
                 "source": "BBC News",
+                "url": "https://example.invalid/a1",
                 "entities": [
                     {"name": "United States", "type": "NationState"},
                     {"name": "Iran", "type": "NationState"},
@@ -79,6 +80,7 @@ class AggregateGraphTest(unittest.TestCase):
                 "published_at": "2026-04-10T10:00:00+00:00",
                 "title": "Article One",
                 "source": "BBC News",
+                "url": "https://example.invalid/a1",
                 "entities": [
                     {"name": "Iran", "type": "NationState"},
                     {
@@ -133,6 +135,9 @@ class AggregateGraphTest(unittest.TestCase):
         self.assertEqual(event_payload["metadata"]["event_count"], 1)
         event = event_payload["events"][0]
         self.assertEqual(event["location_node_id"], "StrategicLocation:strait-of-hormuz")
+        self.assertEqual(event["source_url"], "https://example.invalid/a1")
+        self.assertEqual(event["location_geocode_source"], None)
+        self.assertEqual(event["validation_status"], "schema_validated")
         self.assertEqual(event["participants"][0]["node_id"], "NationState:iran")
         self.assertEqual(event["relations"][0]["target_id"], "StrategicLocation:strait-of-hormuz")
 

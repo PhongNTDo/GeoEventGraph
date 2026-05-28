@@ -1,11 +1,16 @@
 import unittest
 
-from geokg.extraction import normalize_model_json, validate_extraction_payload
+from geokg.extraction import (
+    attach_extraction_metadata,
+    normalize_model_json,
+    validate_extraction_payload,
+)
 
 
 ARTICLE = {
     "article_id": "test-1",
     "published_at": "2026-04-10T10:00:00+00:00",
+    "url": "https://example.invalid/test-1",
     "text": (
         'The US military said it would stop all maritime traffic entering and exiting '
         'Iranian ports from Monday morning.'
@@ -115,6 +120,13 @@ class ExtractionValidationTest(unittest.TestCase):
         parsed = normalize_model_json(raw)
 
         self.assertEqual(parsed, {"entities": [], "relations": []})
+
+    def test_attach_metadata_preserves_article_url(self) -> None:
+        extraction = {"entities": [], "relations": [], "events": []}
+
+        record = attach_extraction_metadata(ARTICLE, extraction, "test-model")
+
+        self.assertEqual(record["url"], "https://example.invalid/test-1")
 
 
 if __name__ == "__main__":
