@@ -21,6 +21,12 @@ frontend/dist/
 *.log
 logs_runner/
 
+# Local secrets
+OpenAI_key.txt
+
+# Generated evaluation reports and annotation drafts
+data/eval/
+
 # Private planning notes
 DEVELOPMENT_PLAN.md
 
@@ -35,3 +41,5 @@ data/graph/
 
 # Local third-party cache. Keep aliases and manual overrides versioned.
 data/reference/geocode_cache.json
+
+OpenAI_key.txt

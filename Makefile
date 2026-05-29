@@ -15,7 +15,24 @@ GEOCODE_USER_AGENT ?= GeoEventGraph/0.1
 GEOCODE_DELAY_SECONDS ?= 1.5
 GEOCODE_MAX_RETRIES ?= 3
 
-.PHONY: help install test crawl normalize extract postprocess-offline postprocess-live graph graph-networkx frontend-install frontend-dev frontend-build pipeline-from-extractions
+EVAL_PREDICTIONS ?= data/postprocessed_event_v1/article_extractions_clean.jsonl
+EVAL_FAILURES ?= data/extractions_event_v1/failures.jsonl
+EVAL_GOLD ?= data/gold/event_mentions.gold.jsonl
+EVAL_CANDIDATES ?= data/eval/annotation_candidates.jsonl
+EVAL_REPORT ?= data/eval/report.json
+EVAL_MARKDOWN_REPORT ?= data/eval/report.md
+EVAL_LIMIT ?= 10
+EVAL_ARTICLES ?= data/normalized/articles.jsonl
+EVAL_PACKET_DIR ?= data/eval/annotation_packets
+EVAL_REVIEW_DIR ?= data/eval/model_review
+EVAL_MODEL_JSONL ?= data/eval/model_review/event_mentions.model_reviewed.jsonl
+EVAL_LOG ?= EVALUATION_LOG.md
+EVAL_RUN_LABEL ?= baseline
+EVAL_RUN_NOTES ?=
+OPENAI_API_KEY_FILE ?= OpenAI_key.txt
+OPENAI_ANNOTATION_MODEL ?= gpt-5.4
+
+.PHONY: help install test crawl normalize extract postprocess-offline postprocess-live graph graph-networkx eval-candidates eval-packets eval-model-drafts eval-gold-from-reviewed eval eval-log eval-and-log frontend-install frontend-dev frontend-build pipeline-from-extractions
 
 help:
 	@printf '%s\n' 'GeoEventGraph workflow targets:'
@@ -28,6 +45,13 @@ help:
 	@printf '%s\n' '  make postprocess-live        Clean and geocode with live Nominatim lookups'
 	@printf '%s\n' '  make graph                   Build frontend graph artifacts'
 	@printf '%s\n' '  make graph-networkx          Build graph artifacts plus NetworkX export'
+	@printf '%s\n' '  make eval-candidates         Generate draft gold annotation candidates'
+	@printf '%s\n' '  make eval-packets            Build per-article model annotation packets'
+	@printf '%s\n' '  make eval-model-drafts       Ask OpenAI model to draft final-format annotations'
+	@printf '%s\n' '  make eval-gold-from-reviewed Combine human-reviewed model drafts into gold JSONL'
+	@printf '%s\n' '  make eval                    Score predictions against curated gold data'
+	@printf '%s\n' '  make eval-log                Append data/eval/report.json to EVALUATION_LOG.md'
+	@printf '%s\n' '  make eval-and-log            Run eval, then append the result to the log'
 	@printf '%s\n' '  make frontend-install        Install frontend dependencies'
 	@printf '%s\n' '  make frontend-dev            Start Vite dev server'
 	@printf '%s\n' '  make frontend-build          Build frontend'
@@ -86,6 +110,48 @@ graph-networkx:
 		--input data/postprocessed/article_extractions_clean.jsonl \
 		--output-dir data/graph \
 		--export-networkx
+
+eval-candidates:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.evaluate generate-candidates \
+		--predictions $(EVAL_PREDICTIONS) \
+		--failures $(EVAL_FAILURES) \
+		--output $(EVAL_CANDIDATES) \
+		--limit $(EVAL_LIMIT)
+
+eval-packets:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.annotation_packets build-packets \
+		--candidates $(EVAL_CANDIDATES) \
+		--articles $(EVAL_ARTICLES) \
+		--output-dir $(EVAL_PACKET_DIR)
+
+eval-model-drafts:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.annotation_packets model-review \
+		--packet-dir $(EVAL_PACKET_DIR) \
+		--review-dir $(EVAL_REVIEW_DIR) \
+		--jsonl-output $(EVAL_MODEL_JSONL) \
+		--api-key-file $(OPENAI_API_KEY_FILE) \
+		--model "$(OPENAI_ANNOTATION_MODEL)"
+
+eval-gold-from-reviewed:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.annotation_packets finalize-gold \
+		--review-dir $(EVAL_REVIEW_DIR) \
+		--output $(EVAL_GOLD)
+
+eval:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.evaluate score \
+		--gold $(EVAL_GOLD) \
+		--predictions $(EVAL_PREDICTIONS) \
+		--output $(EVAL_REPORT) \
+		--markdown-output $(EVAL_MARKDOWN_REPORT)
+
+eval-log:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.eval_log \
+		--report $(EVAL_REPORT) \
+		--log $(EVAL_LOG) \
+		--label "$(EVAL_RUN_LABEL)" \
+		--notes "$(EVAL_RUN_NOTES)"
+
+eval-and-log: eval eval-log
 
 frontend-install:
 	cd frontend && $(NPM) install

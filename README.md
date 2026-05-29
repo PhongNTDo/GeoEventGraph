@@ -103,6 +103,59 @@ Or from a source checkout without installing the package:
 make test
 ```
 
+### Phase 1 Evaluation Scaffold
+
+Generate draft annotation candidates from the current event-v1 predictions:
+
+```bash
+make eval-candidates EVAL_LIMIT=10
+```
+
+This writes `data/eval/annotation_candidates.jsonl`. Copy selected rows into
+`data/gold/event_mentions.gold.jsonl`, manually correct them, and set each
+row's `annotation_status` to `gold`.
+
+For model-assisted annotation, generate per-article packets that include the
+source article text and candidate row:
+
+```bash
+make eval-packets
+```
+
+Then ask the configured OpenAI model to draft final-format annotation rows:
+
+```bash
+make eval-model-drafts OPENAI_API_KEY_FILE=OpenAI_key.txt OPENAI_ANNOTATION_MODEL=gpt-5.4
+```
+
+Review and edit the per-article JSON files in `data/eval/model_review/`. When a
+row is correct, set `annotation_status` to `gold`, then combine reviewed rows:
+
+```bash
+make eval-gold-from-reviewed
+```
+
+Then score current predictions against the curated gold file:
+
+```bash
+make eval
+```
+
+The report is written to `data/eval/report.json` and `data/eval/report.md`.
+Append a compact accuracy snapshot to the tracked evaluation history with:
+
+```bash
+make eval-log EVAL_RUN_LABEL="event-v1 baseline" EVAL_RUN_NOTES="10 reviewed gold articles"
+```
+
+Or run scoring and logging together:
+
+```bash
+make eval-and-log EVAL_RUN_LABEL="event-v1 baseline"
+```
+
+See `data/gold/README.md` for annotation details.
+
 ## Makefile Shortcuts
 
 Common workflow commands are available through `make`:
@@ -116,6 +169,8 @@ make normalize
 make extract
 make postprocess-offline
 make graph
+make eval-candidates
+make eval
 make frontend-build
 ```
 
