@@ -55,6 +55,21 @@ def build_parser() -> argparse.ArgumentParser:
         help="Optional limit for the number of articles to process.",
     )
     parser.add_argument(
+        "--article-id",
+        action="append",
+        default=[],
+        help="Specific article ID to process. Can be passed multiple times.",
+    )
+    parser.add_argument(
+        "--article-ids-file",
+        type=Path,
+        default=None,
+        help=(
+            "Optional file containing article IDs to process. Supports plain text, "
+            "JSON arrays, or JSONL rows with an article_id field."
+        ),
+    )
+    parser.add_argument(
         "--resume",
         action="store_true",
         help="Skip article IDs already present in the output JSONL.",
@@ -89,6 +104,11 @@ def build_parser() -> argparse.ArgumentParser:
 def main() -> int:
     args = build_parser().parse_args()
     articles = list(_load_jsonl(args.input))
+    selected_article_ids = set(args.article_id)
+    if args.article_ids_file is not None:
+        selected_article_ids.update(_load_article_ids(args.article_ids_file))
+    if selected_article_ids:
+        articles = _filter_articles_by_ids(articles, selected_article_ids)
     if args.limit is not None:
         articles = articles[: args.limit]
 
@@ -145,6 +165,7 @@ def main() -> int:
                 "processed": processed,
                 "succeeded": succeeded,
                 "failed": failed,
+                "selected_article_count": len(articles),
                 "output": str(output_path),
                 "failures": str(failures_path),
             }
@@ -171,6 +192,7 @@ def _extract_single_article(
     options = {"temperature": temperature, "num_ctx": num_ctx}
 
     last_error = "Unknown extraction failure."
+    last_payload: dict[str, Any] | None = None
     for _attempt in range(max_retries + 1):
         response = client.chat(
             model=model,
@@ -192,6 +214,7 @@ def _extract_single_article(
             continue
 
         validation = validate_extraction_payload(payload, article)
+        last_payload = payload
         if validation.ok:
             return attach_extraction_metadata(article, validation.normalized, model)
 
@@ -202,6 +225,26 @@ def _extract_single_article(
                 {"role": "user", "content": build_repair_prompt(validation.errors)},
             ]
         )
+
+    if last_payload is not None:
+        partial_validation = validate_extraction_payload(
+            last_payload,
+            article,
+            allow_partial=True,
+        )
+        if (
+            partial_validation.normalized is not None
+            and partial_validation.normalized.get("events")
+            and not partial_validation.errors
+        ):
+            extraction = attach_extraction_metadata(
+                article,
+                partial_validation.normalized,
+                model,
+            )
+            extraction["validation_status"] = "partial"
+            extraction["validation_warnings"] = partial_validation.dropped_errors[:50]
+            return extraction
 
     raise OllamaError(last_error)
 
@@ -214,6 +257,50 @@ def _load_jsonl(path: Path) -> list[dict[str, Any]]:
             if line:
                 rows.append(json.loads(line))
     return rows
+
+
+def _load_article_ids(path: Path) -> set[str]:
+    text = path.read_text(encoding="utf-8").strip()
+    if not text:
+        return set()
+
+    ids: set[str] = set()
+    if text.startswith("["):
+        data = json.loads(text)
+        if not isinstance(data, list):
+            raise ValueError(f"{path} must contain a JSON array when it starts with '['.")
+        for item in data:
+            if isinstance(item, str):
+                ids.add(item)
+            elif isinstance(item, dict) and isinstance(item.get("article_id"), str):
+                ids.add(item["article_id"])
+        return ids
+
+    for line_number, line in enumerate(text.splitlines(), start=1):
+        line = line.strip()
+        if not line:
+            continue
+        if line.startswith("{"):
+            row = json.loads(line)
+            article_id = row.get("article_id")
+            if not isinstance(article_id, str):
+                raise ValueError(f"Missing article_id in {path}:{line_number}")
+            ids.add(article_id)
+        else:
+            ids.add(line)
+    return ids
+
+
+def _filter_articles_by_ids(
+    articles: list[dict[str, Any]],
+    article_ids: set[str],
+) -> list[dict[str, Any]]:
+    return [
+        article
+        for article in articles
+        if isinstance(article.get("article_id"), str)
+        and article["article_id"] in article_ids
+    ]
 
 
 def _existing_ids(path: Path) -> set[str]:

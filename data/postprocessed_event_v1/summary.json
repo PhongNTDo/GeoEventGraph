@@ -26,5 +26,6 @@
   },
   "geocoded_location_count": 116,
   "location_review_flag_count": 108,
-  "location_review_csv": "data/postprocessed_event_v1/location_review.csv"
+  "location_review_csv": "data/postprocessed_event_v1/location_review.csv",
+  "geocode_review_csv": "data/postprocessed_event_v1/geocode_review.csv"
 }

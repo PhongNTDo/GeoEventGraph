@@ -21,8 +21,23 @@ EVAL_GOLD ?= data/gold/event_mentions.gold.jsonl
 EVAL_CANDIDATES ?= data/eval/annotation_candidates.jsonl
 EVAL_REPORT ?= data/eval/report.json
 EVAL_MARKDOWN_REPORT ?= data/eval/report.md
+EVAL_ERROR_ANALYSIS ?= data/eval/error_analysis.md
+EVAL_ERROR_DIR ?= data/eval/errors
 EVAL_LIMIT ?= 10
+EVAL_EXPERIMENT_NAME ?= event-v2-hybrid
+EVAL_EXPERIMENT_DIR ?= data/eval/$(EVAL_EXPERIMENT_NAME)
+EVAL_EXTRACT_OUTPUT_DIR ?= $(EVAL_EXPERIMENT_DIR)/extractions
+EVAL_POSTPROCESSED_DIR ?= $(EVAL_EXPERIMENT_DIR)/postprocessed
+EVAL_EXPERIMENT_REPORT ?= $(EVAL_EXPERIMENT_DIR)/report.json
+EVAL_EXPERIMENT_MARKDOWN_REPORT ?= $(EVAL_EXPERIMENT_DIR)/report.md
+EVAL_EXPERIMENT_ERROR_ANALYSIS ?= $(EVAL_EXPERIMENT_DIR)/error_analysis.md
+EVAL_EXPERIMENT_ERROR_DIR ?= $(EVAL_EXPERIMENT_DIR)/errors
+EVAL_CASE_REVIEW_DIR ?= $(EVAL_EXPERIMENT_DIR)/case_review
+EVAL_EXPERIMENT_LOG_LABEL ?= $(EVAL_EXPERIMENT_NAME)
+EVAL_EXPERIMENT_LOG_NOTES ?= hybrid event-v1 candidates with per-event verifier and deterministic relation repair
 EVAL_ARTICLES ?= data/normalized/articles.jsonl
+HYBRID_CANDIDATES ?= data/extractions_event_v1/article_extractions.jsonl
+HYBRID_EXTRACT_ARGS ?=
 EVAL_PACKET_DIR ?= data/eval/annotation_packets
 EVAL_REVIEW_DIR ?= data/eval/model_review
 EVAL_MODEL_JSONL ?= data/eval/model_review/event_mentions.model_reviewed.jsonl
@@ -31,8 +46,13 @@ EVAL_RUN_LABEL ?= baseline
 EVAL_RUN_NOTES ?=
 OPENAI_API_KEY_FILE ?= OpenAI_key.txt
 OPENAI_ANNOTATION_MODEL ?= gpt-5.4
+LEANBABEL_PYTHON ?= /dcs/large/u5728153/envs/promptgraph_vllm/bin/python3.11
+LEANBABEL_GPUS ?= 2
+LEANBABEL_OLLAMA_PORT ?= 11434
+LEANBABEL_DIRECT_ARGS ?=
+STAGED_EXTRACT_ARGS ?=
 
-.PHONY: help install test crawl normalize extract postprocess-offline postprocess-live graph graph-networkx eval-candidates eval-packets eval-model-drafts eval-gold-from-reviewed eval eval-log eval-and-log frontend-install frontend-dev frontend-build pipeline-from-extractions
+.PHONY: help install test crawl normalize extract postprocess-offline postprocess-live graph graph-networkx eval-candidates eval-packets eval-model-drafts eval-gold-from-reviewed eval-extract-gold eval-extract-gold-leanbabel eval-extract-gold-hybrid eval-extract-gold-hybrid-leanbabel eval-extract-gold-staged eval-extract-gold-staged-leanbabel eval-postprocess-experiment eval-score-experiment eval-error-analysis-experiment eval-case-review-experiment eval-log-experiment eval-experiment-from-extractions eval-experiment eval-hybrid-experiment eval-staged-experiment eval eval-error-analysis eval-log eval-and-log frontend-install frontend-dev frontend-build pipeline-from-extractions
 
 help:
 	@printf '%s\n' 'GeoEventGraph workflow targets:'
@@ -49,7 +69,19 @@ help:
 	@printf '%s\n' '  make eval-packets            Build per-article model annotation packets'
 	@printf '%s\n' '  make eval-model-drafts       Ask OpenAI model to draft final-format annotations'
 	@printf '%s\n' '  make eval-gold-from-reviewed Combine human-reviewed model drafts into gold JSONL'
+	@printf '%s\n' '  make eval-extract-gold       Extract only curated gold-set articles'
+	@printf '%s\n' '  make eval-extract-gold-leanbabel  Start Ollama on LeanBabel and extract gold-set articles'
+	@printf '%s\n' '  make eval-extract-gold-hybrid  Run hybrid event-v1 candidate repair on curated gold-set articles'
+	@printf '%s\n' '  make eval-extract-gold-hybrid-leanbabel  Start Ollama on LeanBabel and run hybrid gold extraction'
+	@printf '%s\n' '  make eval-extract-gold-staged  Run staged extraction on curated gold-set articles'
+	@printf '%s\n' '  make eval-extract-gold-staged-leanbabel  Start Ollama on LeanBabel and run staged gold extraction'
+	@printf '%s\n' '  make eval-experiment-from-extractions  Postprocess, score, analyze, and log experiment outputs'
+	@printf '%s\n' '  make eval-case-review-experiment  Build manual gold-vs-experiment review packets'
+	@printf '%s\n' '  make eval-experiment         Extract gold articles, then postprocess, score, analyze, and log'
+	@printf '%s\n' '  make eval-hybrid-experiment  Run hybrid gold extraction, then postprocess, score, analyze, and log'
+	@printf '%s\n' '  make eval-staged-experiment  Run staged gold extraction, then postprocess, score, analyze, and log'
 	@printf '%s\n' '  make eval                    Score predictions against curated gold data'
+	@printf '%s\n' '  make eval-error-analysis     Generate detailed eval error analysis Markdown and CSVs'
 	@printf '%s\n' '  make eval-log                Append data/eval/report.json to EVALUATION_LOG.md'
 	@printf '%s\n' '  make eval-and-log            Run eval, then append the result to the log'
 	@printf '%s\n' '  make frontend-install        Install frontend dependencies'
@@ -137,12 +169,136 @@ eval-gold-from-reviewed:
 		--review-dir $(EVAL_REVIEW_DIR) \
 		--output $(EVAL_GOLD)
 
+eval-extract-gold:
+	GEOKG_OLLAMA_BASE_URL=$(OLLAMA_BASE_URL) \
+	GEOKG_OLLAMA_MODEL=$(OLLAMA_MODEL) \
+	PYTHONPATH=$(PYTHONPATH) \
+	$(PYTHON) -m geokg.extract_relations \
+		--input $(EVAL_ARTICLES) \
+		--output-dir $(EVAL_EXTRACT_OUTPUT_DIR) \
+		--base-url $(OLLAMA_BASE_URL) \
+		--model $(OLLAMA_MODEL) \
+		--article-ids-file $(EVAL_GOLD) \
+		$(EXTRACT_ARGS)
+
+eval-extract-gold-leanbabel:
+	PYTHON_BIN_OVERRIDE=$(LEANBABEL_PYTHON) \
+	bash run_extract_leanbabel_direct.sh \
+		--input $(EVAL_ARTICLES) \
+		--output-dir $(EVAL_EXTRACT_OUTPUT_DIR) \
+		--model $(OLLAMA_MODEL) \
+		--ollama-port $(LEANBABEL_OLLAMA_PORT) \
+		--gpus $(LEANBABEL_GPUS) \
+		--article-ids-file $(EVAL_GOLD) $(LEANBABEL_DIRECT_ARGS)
+
+eval-extract-gold-hybrid:
+	GEOKG_OLLAMA_BASE_URL=$(OLLAMA_BASE_URL) \
+	GEOKG_OLLAMA_MODEL=$(OLLAMA_MODEL) \
+	PYTHONPATH=$(PYTHONPATH) \
+	$(PYTHON) -m geokg.hybrid_extraction \
+		--input $(HYBRID_CANDIDATES) \
+		--articles $(EVAL_ARTICLES) \
+		--output-dir $(EVAL_EXTRACT_OUTPUT_DIR) \
+		--base-url $(OLLAMA_BASE_URL) \
+		--model $(OLLAMA_MODEL) \
+		--article-ids-file $(EVAL_GOLD) \
+		$(EXTRACT_ARGS) \
+		$(HYBRID_EXTRACT_ARGS)
+
+eval-extract-gold-hybrid-leanbabel:
+	PYTHON_BIN_OVERRIDE=$(LEANBABEL_PYTHON) \
+	bash run_extract_leanbabel_direct.sh \
+		--module geokg.hybrid_extraction \
+		--input $(HYBRID_CANDIDATES) \
+		--output-dir $(EVAL_EXTRACT_OUTPUT_DIR) \
+		--model $(OLLAMA_MODEL) \
+		--ollama-port $(LEANBABEL_OLLAMA_PORT) \
+		--gpus $(LEANBABEL_GPUS) \
+		--article-ids-file $(EVAL_GOLD) $(LEANBABEL_DIRECT_ARGS)
+
+eval-extract-gold-staged:
+	GEOKG_OLLAMA_BASE_URL=$(OLLAMA_BASE_URL) \
+	GEOKG_OLLAMA_MODEL=$(OLLAMA_MODEL) \
+	PYTHONPATH=$(PYTHONPATH) \
+	$(PYTHON) -m geokg.staged_extraction \
+		--input $(EVAL_ARTICLES) \
+		--output-dir $(EVAL_EXTRACT_OUTPUT_DIR) \
+		--base-url $(OLLAMA_BASE_URL) \
+		--model $(OLLAMA_MODEL) \
+		--article-ids-file $(EVAL_GOLD) \
+		$(EXTRACT_ARGS) \
+		$(STAGED_EXTRACT_ARGS)
+
+eval-extract-gold-staged-leanbabel:
+	PYTHON_BIN_OVERRIDE=$(LEANBABEL_PYTHON) \
+	bash run_extract_leanbabel_direct.sh \
+		--module geokg.staged_extraction \
+		--input $(EVAL_ARTICLES) \
+		--output-dir $(EVAL_EXTRACT_OUTPUT_DIR) \
+		--model $(OLLAMA_MODEL) \
+		--ollama-port $(LEANBABEL_OLLAMA_PORT) \
+		--gpus $(LEANBABEL_GPUS) \
+		--article-ids-file $(EVAL_GOLD) $(LEANBABEL_DIRECT_ARGS)
+
+eval-postprocess-experiment:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.postprocess_extractions \
+		--input $(EVAL_EXTRACT_OUTPUT_DIR)/article_extractions.jsonl \
+		--article-metadata $(EVAL_ARTICLES) \
+		--output-dir $(EVAL_POSTPROCESSED_DIR) \
+		--offline-geocoding
+
+eval-score-experiment:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.evaluate score \
+		--gold $(EVAL_GOLD) \
+		--predictions $(EVAL_POSTPROCESSED_DIR)/article_extractions_clean.jsonl \
+		--output $(EVAL_EXPERIMENT_REPORT) \
+		--markdown-output $(EVAL_EXPERIMENT_MARKDOWN_REPORT)
+
+eval-error-analysis-experiment:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.error_analysis \
+		--gold $(EVAL_GOLD) \
+		--predictions $(EVAL_POSTPROCESSED_DIR)/article_extractions_clean.jsonl \
+		--report $(EVAL_EXPERIMENT_REPORT) \
+		--output $(EVAL_EXPERIMENT_ERROR_ANALYSIS) \
+		--error-dir $(EVAL_EXPERIMENT_ERROR_DIR)
+
+eval-case-review-experiment:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.case_review \
+		--gold $(EVAL_GOLD) \
+		--predictions $(EVAL_POSTPROCESSED_DIR)/article_extractions_clean.jsonl \
+		--articles $(EVAL_ARTICLES) \
+		--report $(EVAL_EXPERIMENT_REPORT) \
+		--output-dir $(EVAL_CASE_REVIEW_DIR)
+
+eval-log-experiment:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.eval_log \
+		--report $(EVAL_EXPERIMENT_REPORT) \
+		--log $(EVAL_LOG) \
+		--label "$(EVAL_EXPERIMENT_LOG_LABEL)" \
+		--notes "$(EVAL_EXPERIMENT_LOG_NOTES)"
+
+eval-experiment-from-extractions: eval-postprocess-experiment eval-score-experiment eval-error-analysis-experiment eval-log-experiment
+
+eval-experiment: eval-extract-gold eval-experiment-from-extractions
+
+eval-hybrid-experiment: eval-extract-gold-hybrid eval-experiment-from-extractions
+
+eval-staged-experiment: eval-extract-gold-staged eval-experiment-from-extractions
+
 eval:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.evaluate score \
 		--gold $(EVAL_GOLD) \
 		--predictions $(EVAL_PREDICTIONS) \
 		--output $(EVAL_REPORT) \
 		--markdown-output $(EVAL_MARKDOWN_REPORT)
+
+eval-error-analysis:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.error_analysis \
+		--gold $(EVAL_GOLD) \
+		--predictions $(EVAL_PREDICTIONS) \
+		--report $(EVAL_REPORT) \
+		--output $(EVAL_ERROR_ANALYSIS) \
+		--error-dir $(EVAL_ERROR_DIR)
 
 eval-log:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.eval_log \

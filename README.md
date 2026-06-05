@@ -154,7 +154,87 @@ Or run scoring and logging together:
 make eval-and-log EVAL_RUN_LABEL="event-v1 baseline"
 ```
 
-See `data/gold/README.md` for annotation details.
+Generate detailed error-analysis files after scoring:
+
+```bash
+make eval-error-analysis
+```
+
+This writes `data/eval/error_analysis.md` plus CSVs under
+`data/eval/errors/` for article summaries, entity errors, relation errors,
+event errors, participant errors, event-relation errors, and geocoding errors.
+
+See `data/gold/README.md` and `docs/ANNOTATION_GUIDELINES.md` for annotation
+details.
+
+### Phase 1 Extraction Experiments
+
+Use the experiment targets when testing a new extraction method against only the
+curated gold articles. This keeps the run small enough for iteration and makes
+the result directly comparable in `EVALUATION_LOG.md`.
+
+The current best extractor remains the `event-v1` baseline artifacts under
+`data/extractions_event_v1/` and `data/postprocessed_event_v1/`. The recommended
+next experiment is the hybrid extractor documented in
+`docs/HYBRID_EXTRACTION.md`. It uses the event-v1 output as candidate events,
+then runs one verifier/repair pass per event and rebuilds event relations
+deterministically after participants are stable.
+
+Run extraction on the LeanBabel server:
+
+```bash
+make eval-extract-gold-hybrid-leanbabel \
+  OLLAMA_MODEL=gpt-oss:120b \
+  EVAL_EXPERIMENT_NAME=event-v2-hybrid
+```
+
+`eval-extract-gold-hybrid-leanbabel` starts a local Ollama server before
+extraction. Use `eval-extract-gold-hybrid` only when Ollama is already running
+and reachable at `OLLAMA_BASE_URL`. The default candidate file is
+`data/extractions_event_v1/article_extractions.jsonl`; override
+`HYBRID_CANDIDATES` to test a different one-shot candidate source.
+
+This writes raw outputs under `data/eval/event-v2-hybrid/extractions/`. If
+extraction runs on a different machine, bring that experiment directory back to
+this checkout before scoring.
+
+Then postprocess, score, generate error analysis, and append the compact result
+to `EVALUATION_LOG.md`:
+
+```bash
+make eval-experiment-from-extractions \
+  EVAL_EXPERIMENT_NAME=event-v2-hybrid \
+  EVAL_EXPERIMENT_LOG_LABEL="event-v2-hybrid LeanBabel" \
+  EVAL_EXPERIMENT_LOG_NOTES="event-v1 candidates with per-event verifier and deterministic relation repair"
+```
+
+The main generated files are:
+
+- `data/eval/event-v2-hybrid/report.json`
+- `data/eval/event-v2-hybrid/report.md`
+- `data/eval/event-v2-hybrid/error_analysis.md`
+- `data/eval/event-v2-hybrid/errors/*.csv`
+
+For manual case-by-case review of gold vs hybrid events, build review packets:
+
+```bash
+make eval-case-review-experiment EVAL_EXPERIMENT_NAME=event-v2-hybrid
+```
+
+This writes `data/eval/event-v2-hybrid/case_review/index.md`,
+per-article Markdown files under `case_review/articles/`, a structured
+`case_review.json`, and an editable `case_review.csv` with blank
+`review_decision` and `review_notes` columns.
+
+If the same machine can run both extraction and evaluation, use the combined
+target:
+
+```bash
+make eval-hybrid-experiment EVAL_EXPERIMENT_NAME=event-v2-hybrid
+```
+
+The older staged experiment target is still available for reference, but it is
+not the recommended next direction as-is.
 
 ## Makefile Shortcuts
 
@@ -171,6 +251,14 @@ make postprocess-offline
 make graph
 make eval-candidates
 make eval
+make eval-extract-gold
+make eval-extract-gold-leanbabel
+make eval-extract-gold-hybrid
+make eval-extract-gold-hybrid-leanbabel
+make eval-extract-gold-staged
+make eval-extract-gold-staged-leanbabel
+make eval-experiment-from-extractions
+make eval-case-review-experiment
 make frontend-build
 ```
 
@@ -179,6 +267,8 @@ Useful variables can be overridden at runtime:
 ```bash
 make crawl SINCE=2026-02-01 UNTIL=2026-04-15
 make extract OLLAMA_BASE_URL=http://127.0.0.1:11434 OLLAMA_MODEL=gpt-oss:120b
+make eval-extract-gold-hybrid EVAL_EXPERIMENT_NAME=event-v2-hybrid OLLAMA_MODEL=gpt-oss:120b
+make eval-extract-gold-hybrid-leanbabel EVAL_EXPERIMENT_NAME=event-v2-hybrid OLLAMA_MODEL=gpt-oss:120b
 make postprocess-live GEOCODE_USER_AGENT="GeoEventGraph/0.1 (contact@example.com)"
 ```
 
@@ -257,6 +347,17 @@ python3 -m geokg.postprocess_extractions \
 ```
 
 Review `data/postprocessed/location_review.csv` before treating the graph as spatially final.
+
+`postprocess_extractions` also writes `data/postprocessed/geocode_review.csv`
+for manual event-coordinate review. It has these columns:
+
+```text
+location_name,article_id,event_summary,source_url,current_latitude,current_longitude,suggested_latitude,suggested_longitude
+```
+
+Leave `suggested_latitude` and `suggested_longitude` blank until you manually
+review a location. When those values are present, downstream graph/event
+artifacts prefer them over the current geocoder coordinates.
 
 `postprocess_extractions` also reads `data/normalized/articles.jsonl` by default to backfill article URLs into event provenance. Use `--article-metadata <path>` if your normalized article metadata lives elsewhere.
 

@@ -5,6 +5,9 @@ answer key used by `make eval`.
 
 ## Workflow
 
+Use `docs/ANNOTATION_GUIDELINES.md` when reviewing model-assisted annotations or
+editing gold rows.
+
 1. Generate draft annotation candidates:
 
    ```bash
@@ -67,6 +70,47 @@ answer key used by `make eval`.
 
    This updates `EVALUATION_LOG.md`. Use a short label and note so future
    ontology, prompt, geocoder, and model changes can be compared.
+
+6. Generate detailed error analysis:
+
+   ```bash
+   make eval-error-analysis
+   ```
+
+   This writes:
+
+   ```text
+   data/eval/error_analysis.md
+   data/eval/errors/
+   ```
+
+   Inspect these files before changing prompts, ontology, geocoding, or model
+   settings. They show which gold events were missed, which predictions were
+   extra, where participant roles differ, and where located events still lack
+   coordinates.
+
+7. For the recommended hybrid extraction experiment on only the curated gold
+   articles, run:
+
+   ```bash
+   make eval-extract-gold-hybrid-leanbabel EVAL_EXPERIMENT_NAME=event-v2-hybrid OLLAMA_MODEL=gpt-oss:120b
+   ```
+
+   Then score and log the experiment:
+
+   ```bash
+   make eval-experiment-from-extractions \
+     EVAL_EXPERIMENT_NAME=event-v2-hybrid \
+     EVAL_EXPERIMENT_LOG_LABEL="event-v2-hybrid LeanBabel" \
+     EVAL_EXPERIMENT_LOG_NOTES="event-v1 candidates with per-event verifier and deterministic relation repair"
+   ```
+
+   This appends the compact comparison row to `EVALUATION_LOG.md` and writes
+   detailed generated reports under `data/eval/event-v2-hybrid/`.
+
+   See `docs/HYBRID_EXTRACTION.md` for the method and diagram. The older staged
+   extractor remains documented in `docs/MULTI_STAGE_EXTRACTION.md`, but it is
+   not the current recommended direction as-is.
 
 ## Format
 

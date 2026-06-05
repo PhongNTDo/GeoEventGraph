@@ -23,6 +23,8 @@ Run:
 ```bash
 make eval
 make eval-log EVAL_RUN_LABEL="short label" EVAL_RUN_NOTES="what changed"
+make eval-experiment-from-extractions EVAL_EXPERIMENT_LOG_LABEL="experiment label"
+make eval-staged-experiment EVAL_EXPERIMENT_LOG_LABEL="staged experiment"
 ```
 
 | Timestamp UTC | Label | Gold Articles | Gold Events | Pred Events | Entity F1 | Relation F1 | Event Exact F1 | Event Soft F1 | Participant F1 | Event Relation F1 | Event Type Acc | Date Acc | Evidence Exact | Evidence Fuzzy | Geocode Rate | Notes |

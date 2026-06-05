@@ -30,6 +30,7 @@ OUTPUT_DIR="${OUTPUT_DIR_OVERRIDE:-$PROJECT_ROOT/data/extractions}"
 CORPUS_DIR="${CORPUS_DIR_OVERRIDE:-$PROJECT_ROOT/corpus}"
 NORMALIZED_OUTPUT_DIR="${NORMALIZED_OUTPUT_DIR_OVERRIDE:-$PROJECT_ROOT/data/normalized}"
 RUN_INGESTION="${RUN_INGESTION_OVERRIDE:-0}"
+EXTRACT_MODULE="${EXTRACT_MODULE_OVERRIDE:-geokg.extract_relations}"
 
 OLLAMA_PORT="${OLLAMA_PORT_OVERRIDE:-11434}"
 OLLAMA_BASE_URL="${OLLAMA_BASE_URL_OVERRIDE:-http://127.0.0.1:${OLLAMA_PORT}}"
@@ -45,6 +46,7 @@ EXTRACT_MAX_RETRIES="${EXTRACT_MAX_RETRIES_OVERRIDE:-2}"
 EXTRACT_TIMEOUT_SECONDS="${EXTRACT_TIMEOUT_SECONDS_OVERRIDE:-1800}"
 EXTRACT_TEMPERATURE="${EXTRACT_TEMPERATURE_OVERRIDE:-0}"
 EXTRACT_NUM_CTX="${EXTRACT_NUM_CTX_OVERRIDE:-16384}"
+EXTRACT_ARTICLE_IDS_FILE="${EXTRACT_ARTICLE_IDS_FILE_OVERRIDE:-}"
 
 LOG_DIR="${LOG_DIR_OVERRIDE:-$PROJECT_ROOT/logs_runner}"
 RUN_ID="${SLURM_JOB_ID:-$$}"
@@ -187,12 +189,12 @@ run_ingestion_if_requested() {
 
 run_extraction() {
   if [[ ! -f "$INPUT_JSONL" ]]; then
-    echo "Normalized input not found: $INPUT_JSONL" >&2
+    echo "Extraction input not found: $INPUT_JSONL" >&2
     exit 1
   fi
 
   local cmd=(
-    "$PYTHON_BIN" -m geokg.extract_relations
+    "$PYTHON_BIN" -m "$EXTRACT_MODULE"
     --input "$INPUT_JSONL"
     --output-dir "$OUTPUT_DIR"
     --base-url "$OLLAMA_BASE_URL"
@@ -209,6 +211,13 @@ run_extraction() {
   if [[ -n "$EXTRACT_LIMIT" ]]; then
     cmd+=(--limit "$EXTRACT_LIMIT")
   fi
+  if [[ -n "$EXTRACT_ARTICLE_IDS_FILE" ]]; then
+    if [[ ! -f "$EXTRACT_ARTICLE_IDS_FILE" ]]; then
+      echo "Article IDs file not found: $EXTRACT_ARTICLE_IDS_FILE" >&2
+      exit 1
+    fi
+    cmd+=(--article-ids-file "$EXTRACT_ARTICLE_IDS_FILE")
+  fi
 
   echo "[geokg-leanbabel] Running extraction command:"
   printf ' %q' "${cmd[@]}"
@@ -224,8 +233,10 @@ echo "[geokg-leanbabel] ollama_model=$OLLAMA_MODEL"
 echo "[geokg-leanbabel] cuda_visible_devices=${CUDA_VISIBLE_DEVICES:-<unset>}"
 echo "[geokg-leanbabel] ollama_models=$OLLAMA_MODELS"
 echo "[geokg-leanbabel] run_ingestion=$RUN_INGESTION"
+echo "[geokg-leanbabel] extract_module=$EXTRACT_MODULE"
 echo "[geokg-leanbabel] extract_resume=$EXTRACT_RESUME"
 echo "[geokg-leanbabel] extract_limit=${EXTRACT_LIMIT:-<unset>}"
+echo "[geokg-leanbabel] extract_article_ids_file=${EXTRACT_ARTICLE_IDS_FILE:-<unset>}"
 
 echo "[geokg-leanbabel] GPU status:"
 nvidia-smi || true

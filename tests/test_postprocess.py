@@ -7,7 +7,13 @@ from urllib.error import HTTPError
 
 from geokg.geocoding import GeocodeRecord, Geocoder, review_geocode_result
 from geokg.postprocess import clean_extraction_record, load_aliases
-from geokg.postprocess_extractions import _flatten_events, _merge_article_metadata
+from geokg.postprocess_extractions import (
+    _attach_geocodes,
+    _flatten_events,
+    _load_geocode_review_suggestions,
+    _merge_article_metadata,
+    _write_geocode_review_csv,
+)
 
 
 class PostprocessTest(unittest.TestCase):
@@ -250,6 +256,73 @@ class PostprocessTest(unittest.TestCase):
             mocked_urlopen.assert_not_called()
             self.assertEqual(result.source, "missing")
             self.assertEqual(result.notes, "Remote geocoding disabled.")
+
+    def test_geocode_review_csv_preserves_suggested_coordinates(self) -> None:
+        event = {
+            "article_id": "a1",
+            "source_url": "https://example.invalid/a1",
+            "location": "Strait of Hormuz",
+            "summary": "Iran threatened the Strait of Hormuz.",
+            "location_geocode": {
+                "current_latitude": 26.0,
+                "current_longitude": 56.0,
+            },
+        }
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir) / "geocode_review.csv"
+            path.write_text(
+                "location_name,article_id,event_summary,source_url,current_latitude,current_longitude,suggested_latitude,suggested_longitude\n"
+                "Strait of Hormuz,a1,Iran threatened the Strait of Hormuz.,https://example.invalid/a1,26.0,56.0,26.5667,56.25\n",
+                encoding="utf-8",
+            )
+            suggestions = _load_geocode_review_suggestions(path)
+
+            _write_geocode_review_csv(path, [event], suggestions)
+
+            output = path.read_text(encoding="utf-8")
+            self.assertIn("suggested_latitude,suggested_longitude", output.splitlines()[0])
+            self.assertIn("26.5667,56.25", output)
+
+    def test_attach_geocodes_prefers_manual_suggestion(self) -> None:
+        records = [
+            {
+                "article_id": "a1",
+                "entities": [{"name": "Strait of Hormuz", "type": "StrategicLocation"}],
+                "events": [
+                    {
+                        "location": "Strait of Hormuz",
+                        "summary": "Iran threatened the Strait of Hormuz.",
+                    }
+                ],
+            }
+        ]
+        geocoded_locations = {
+            "strait of hormuz": {
+                "name": "Strait of Hormuz",
+                "latitude": 26.0,
+                "longitude": 56.0,
+                "display_name": "Strait of Hormuz",
+                "geocode_source": "nominatim",
+                "review_flags": [],
+            }
+        }
+        suggestions = {
+            (
+                "strait of hormuz",
+                "a1",
+                "iran threatened the strait of hormuz.",
+            ): (26.5667, 56.25)
+        }
+
+        enriched = _attach_geocodes(records, geocoded_locations, suggestions)
+
+        entity = enriched[0]["entities"][0]
+        event_geo = enriched[0]["events"][0]["location_geocode"]
+        self.assertEqual(entity["latitude"], 26.5667)
+        self.assertEqual(entity["current_latitude"], 26.0)
+        self.assertEqual(event_geo["latitude"], 26.5667)
+        self.assertEqual(event_geo["current_longitude"], 56.0)
 
 
 if __name__ == "__main__":

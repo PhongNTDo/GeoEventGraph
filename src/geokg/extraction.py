@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from typing import Any
 
@@ -18,7 +18,59 @@ from geokg.ontology import (
 )
 
 
-PROMPT_VERSION = "event-v1"
+PROMPT_VERSION = "event-v1.2"
+
+
+EVENT_ROLE_GUIDANCE = {
+    "AttackEvent": {
+        "include_when_stated": [
+            "initiator",
+            "target",
+            "affected_location",
+            "military_asset",
+            "participant",
+        ],
+        "relation_type": "ATTACKED",
+        "notes": "Include target countries, named places/facilities hit, and named weapons/assets when the article states them.",
+    },
+    "ThreatEvent": {
+        "include_when_stated": ["initiator", "target", "affected_location", "participant"],
+        "relation_type": "THREATENED",
+        "notes": "Include the threatened actor or place, and the location/route affected by the threat when stated.",
+    },
+    "NegotiationEvent": {
+        "include_when_stated": ["participant", "mediator", "affected_location"],
+        "relation_type": "NEGOTIATED_WITH",
+        "notes": "Include direct negotiating sides, mediators/hosts, and the place of talks when stated.",
+    },
+    "SupportEvent": {
+        "include_when_stated": [
+            "supporter",
+            "target",
+            "participant",
+            "military_asset",
+            "affected_location",
+        ],
+        "relation_type": "SUPPORTED",
+        "notes": "Use only for geopolitical support. Do not extract domestic policing, rescue logistics, or unrelated civic support.",
+    },
+    "SanctionEvent": {
+        "include_when_stated": ["sanctioning_actor", "target", "participant"],
+        "relation_type": "SANCTIONED",
+        "notes": "Include both the actor imposing sanctions and the actor targeted by sanctions when stated.",
+    },
+    "BlockadeEvent": {
+        "include_when_stated": [
+            "initiator",
+            "affected_location",
+            "target",
+            "military_asset",
+            "participant",
+        ],
+        "relation_type": "BLOCKADED",
+        "notes": "Use affected_location for a route, strait, port, or waterway being blocked. Use target for an actor being coerced.",
+    },
+}
 
 
 SYSTEM_PROMPT = """You extract geopolitical entities, events, and compatibility relations from news articles.
@@ -38,12 +90,15 @@ Rules:
 - Extract events directly. Use relations only as compatibility edges inside each event and in the top-level relations list.
 - Each event must describe one concrete geopolitical happening or claim in the article.
 - If an event is implied but not explicit enough for a short supporting quote, omit it.
+- If the article reports a claim, keep attribution in the summary, for example "Israel said..." or "Iran warned...".
 - Use canonical English names where obvious, for example United States instead of US.
 - Include every entity referenced by an event participant, event location, or relation in the entities list.
+- Event participants must include explicitly stated core actors, targets, affected locations, important military assets, mediators, and central attributed speakers when they define the event or claim.
+- Do not add unrelated nearby named entities, domestic-only incidents, rescue logistics, or background context as events.
 - Event location must be an extracted entity name or an empty string if no concrete location is stated.
-- Use the article published date with date_precision=article_date when the article does not state a more specific event date.
+- Use the most specific event date stated in the article. Use article_date only when no event date is stated and the event is presented as current/recent.
 - The top-level relations array must contain the union of the relation edges found inside events.
-- Evidence must be an exact short quote copied from the article text.
+- Evidence must be an exact short quote copied from the article text. Prefer a sentence that contains the actor, action, and target/location.
 - If no valid entities, relations, or events exist, return empty arrays.
 """
 
@@ -183,13 +238,21 @@ def build_extraction_prompt(article: dict[str, Any]) -> str:
         f"Allowed participant roles: {', '.join(ALLOWED_EVENT_PARTICIPANT_ROLES)}\n\n"
         "Event-to-relation compatibility mapping:\n"
         f"{json.dumps(EVENT_TYPE_TO_RELATION_TYPE, indent=2)}\n\n"
+        "Event role templates:\n"
+        f"{json.dumps(EVENT_ROLE_GUIDANCE, indent=2)}\n\n"
         "Important output rules:\n"
         "- Extract events directly. Do not only extract flat relations.\n"
         "- Keep relations inside each event, and repeat those relation edges in the top-level relations array.\n"
         "- Every participant, location, relation source, and relation target must appear in entities.\n"
-        "- Every evidence field must be an exact quote from the article text.\n"
+        "- Include every explicitly stated core participant needed to score the event: initiator, target, affected country/place/route, named military asset, mediator, and central attributed speaker when relevant.\n"
+        "- Follow the event role templates as inclusion guidance, not as a reason to drop stated participants. Omit only participants that are not stated or are unrelated context.\n"
+        "- Every evidence field must be an exact quote from the article text, not a paraphrase.\n"
+        "- If you cannot copy an exact quote for a relation, omit that relation but keep other valid event details.\n"
+        "- If the event is a claim, warning, or allegation, keep the attribution in the summary.\n"
+        "- Do not extract domestic policing, rescue logistics, market reaction, or lifestyle details unless directly tied to an allowed geopolitical event.\n"
         "- Use an empty string for event location only when no concrete location is stated.\n"
-        "- Use date_precision=article_date and the article published date when no event date is stated.\n\n"
+        "- Use date_precision=article_date and the article published date only when no event date is stated and the event is current/recent.\n"
+        "- Historical background events should keep their stated historical date.\n\n"
         "Article metadata:\n"
         f"- article_id: {article['article_id']}\n"
         f"- source: {article.get('source', '')}\n"
@@ -217,6 +280,9 @@ def build_repair_prompt(validation_errors: list[str]) -> str:
     bullet_errors = "\n".join(f"- {item}" for item in validation_errors)
     return (
         "Your previous JSON response was invalid. Return corrected JSON only.\n"
+        "If an evidence string is not an exact contiguous quote from the article, "
+        "replace it with an exact quote or delete that relation/event.\n"
+        "Do not paraphrase evidence and do not add replacement facts.\n"
         "Fix these issues exactly:\n"
         f"{bullet_errors}\n"
     )
@@ -226,6 +292,7 @@ def build_repair_prompt(validation_errors: list[str]) -> str:
 class ValidationResult:
     normalized: dict[str, Any] | None
     errors: list[str]
+    dropped_errors: list[str] = field(default_factory=list)
 
     @property
     def ok(self) -> bool:
@@ -235,8 +302,11 @@ class ValidationResult:
 def validate_extraction_payload(
     payload: dict[str, Any],
     article: dict[str, Any],
+    *,
+    allow_partial: bool = False,
 ) -> ValidationResult:
     errors: list[str] = []
+    dropped_errors: list[str] = []
     if not isinstance(payload, dict):
         return ValidationResult(None, ["Top-level response must be a JSON object."])
 
@@ -256,30 +326,36 @@ def validate_extraction_payload(
     entity_index: dict[str, str] = {}
 
     for idx, entity in enumerate(entities):
+        entity_errors: list[str] = []
         path = f"entities[{idx}]"
         if not isinstance(entity, dict):
-            errors.append(f"{path} must be an object.")
+            entity_errors.append(f"{path} must be an object.")
+            _record_item_errors(entity_errors, errors, dropped_errors, allow_partial)
             continue
 
         extra_keys = sorted(set(entity.keys()) - {"name", "type"})
         if extra_keys:
-            errors.append(f"{path} has unsupported keys: {', '.join(extra_keys)}.")
+            entity_errors.append(f"{path} has unsupported keys: {', '.join(extra_keys)}.")
 
         name = _normalize_space(entity.get("name"))
         entity_type = entity.get("type")
         if not name:
-            errors.append(f"{path}.name must be a non-empty string.")
+            entity_errors.append(f"{path}.name must be a non-empty string.")
+            _record_item_errors(entity_errors, errors, dropped_errors, allow_partial)
             continue
         if entity_type not in ALLOWED_ENTITY_TYPES:
-            errors.append(
+            entity_errors.append(
                 f"{path}.type must be one of {', '.join(ALLOWED_ENTITY_TYPES)}."
             )
+            _record_item_errors(entity_errors, errors, dropped_errors, allow_partial)
             continue
 
         dedupe_key = name.casefold()
         if dedupe_key not in entity_index:
             entity_index[dedupe_key] = entity_type
             normalized_entities.append({"name": name, "type": entity_type})
+        if entity_errors:
+            _record_item_errors(entity_errors, errors, dropped_errors, allow_partial)
 
     article_text = article.get("text", "")
     normalized_article_text = _normalize_space(article_text)
@@ -287,29 +363,36 @@ def validate_extraction_payload(
     seen_relations: set[tuple[str, str, str, str]] = set()
 
     for idx, relation in enumerate(relations):
+        relation_errors: list[str] = []
         normalized = _validate_relation(
             relation,
             path=f"relations[{idx}]",
             entity_index=entity_index,
             normalized_article_text=normalized_article_text,
-            errors=errors,
+            errors=relation_errors,
         )
         if normalized is None:
+            _record_item_errors(relation_errors, errors, dropped_errors, allow_partial)
             continue
         _append_unique_relation(normalized_relations, seen_relations, normalized)
+        if relation_errors:
+            _record_item_errors(relation_errors, errors, dropped_errors, allow_partial)
 
     normalized_events: list[dict[str, Any]] = []
     seen_events: set[tuple[Any, ...]] = set()
     for idx, event in enumerate(events):
+        event_errors: list[str] = []
         normalized = _validate_event(
             event,
             event_index=idx,
             article=article,
             entity_index=entity_index,
             normalized_article_text=normalized_article_text,
-            errors=errors,
+            errors=event_errors,
+            allow_partial=allow_partial,
         )
         if normalized is None:
+            _record_item_errors(event_errors, errors, dropped_errors, allow_partial)
             continue
         for relation in normalized["relations"]:
             _append_unique_relation(normalized_relations, seen_relations, relation)
@@ -319,16 +402,20 @@ def validate_extraction_payload(
             continue
         seen_events.add(event_key)
         normalized_events.append(normalized)
+        if event_errors:
+            _record_item_errors(event_errors, errors, dropped_errors, allow_partial)
 
     if errors:
-        return ValidationResult(None, errors)
+        return ValidationResult(None, errors, dropped_errors)
 
     normalized = {
         "entities": normalized_entities,
         "relations": normalized_relations,
         "events": normalized_events,
     }
-    return ValidationResult(normalized, [])
+    if dropped_errors and not allow_partial:
+        return ValidationResult(None, dropped_errors)
+    return ValidationResult(normalized, [], dropped_errors)
 
 
 def attach_extraction_metadata(
@@ -349,6 +436,20 @@ def attach_extraction_metadata(
         "relations": extraction["relations"],
         "events": extraction.get("events", []),
     }
+
+
+def _record_item_errors(
+    item_errors: list[str],
+    errors: list[str],
+    dropped_errors: list[str],
+    allow_partial: bool,
+) -> None:
+    if not item_errors:
+        return
+    if allow_partial:
+        dropped_errors.extend(item_errors)
+    else:
+        errors.extend(item_errors)
 
 
 def _validate_relation(
@@ -409,6 +510,7 @@ def _validate_event(
     entity_index: dict[str, str],
     normalized_article_text: str,
     errors: list[str],
+    allow_partial: bool = False,
 ) -> dict[str, Any] | None:
     path = f"events[{event_index}]"
     if not isinstance(event, dict):
@@ -470,14 +572,18 @@ def _validate_event(
             errors.append(f"{path}.confidence must be a number between 0 and 1.")
 
     participants = event.get("participants")
+    participant_errors: list[str] = []
     normalized_participants = _validate_event_participants(
         participants,
         path=f"{path}.participants",
         entity_index=entity_index,
-        errors=errors,
+        errors=participant_errors,
     )
+    if participant_errors and (not allow_partial or not normalized_participants):
+        errors.extend(participant_errors)
 
     event_relations = event.get("relations")
+    dropped_relation_errors: list[str] = []
     if not isinstance(event_relations, list):
         errors.append(f"{path}.relations must be an array.")
         normalized_relations = []
@@ -485,12 +591,13 @@ def _validate_event(
         normalized_relations = []
         seen_relations: set[tuple[str, str, str, str]] = set()
         for relation_index, relation in enumerate(event_relations):
+            relation_errors: list[str] = []
             normalized_relation = _validate_relation(
                 relation,
                 path=f"{path}.relations[{relation_index}]",
                 entity_index=entity_index,
                 normalized_article_text=normalized_article_text,
-                errors=errors,
+                errors=relation_errors,
             )
             if normalized_relation is not None:
                 _append_unique_relation(
@@ -498,7 +605,13 @@ def _validate_event(
                     seen_relations,
                     normalized_relation,
                 )
+            if relation_errors and not allow_partial:
+                errors.extend(relation_errors)
+            elif relation_errors:
+                dropped_relation_errors.extend(relation_errors)
     if not normalized_relations:
+        if allow_partial:
+            errors.extend(dropped_relation_errors)
         errors.append(f"{path}.relations must contain at least one valid relation.")
 
     if errors:

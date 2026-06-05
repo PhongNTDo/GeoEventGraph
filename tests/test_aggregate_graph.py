@@ -141,6 +141,59 @@ class AggregateGraphTest(unittest.TestCase):
         self.assertEqual(event["participants"][0]["node_id"], "NationState:iran")
         self.assertEqual(event["relations"][0]["target_id"], "StrategicLocation:strait-of-hormuz")
 
+    def test_event_payload_prefers_suggested_coordinates(self) -> None:
+        records = [
+            {
+                "article_id": "a1",
+                "published_at": "2026-04-10T10:00:00+00:00",
+                "title": "Article One",
+                "source": "BBC News",
+                "url": "https://example.invalid/a1",
+                "entities": [
+                    {
+                        "name": "Strait of Hormuz",
+                        "type": "StrategicLocation",
+                        "latitude": 26.4,
+                        "longitude": 56.2,
+                    },
+                ],
+                "relations": [],
+                "events": [
+                    {
+                        "event_id": "event:a1:001:blockadeevent",
+                        "event_type": "BlockadeEvent",
+                        "event_date": "2026-04-10",
+                        "date_precision": "day",
+                        "location": "Strait of Hormuz",
+                        "participants": [],
+                        "relations": [],
+                        "summary": "Iran blockaded the Strait of Hormuz.",
+                        "evidence": "blockade one",
+                        "confidence": 0.8,
+                        "location_geocode": {
+                            "latitude": 26.0,
+                            "longitude": 56.0,
+                            "current_latitude": 26.0,
+                            "current_longitude": 56.0,
+                            "suggested_latitude": 26.5667,
+                            "suggested_longitude": 56.25,
+                            "geocode_source": "nominatim",
+                            "geocode_display_name": "Strait of Hormuz",
+                        },
+                    }
+                ],
+            }
+        ]
+
+        graph_payload = build_graph_payload(records)
+        event_payload = build_events_payload(records, graph_payload["nodes"])
+        event = event_payload["events"][0]
+
+        self.assertEqual(event["latitude"], 26.5667)
+        self.assertEqual(event["longitude"], 56.25)
+        self.assertEqual(event["current_latitude"], 26.0)
+        self.assertEqual(event["suggested_longitude"], 56.25)
+
 
 if __name__ == "__main__":
     unittest.main()

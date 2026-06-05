@@ -267,8 +267,27 @@ def build_events_payload(
             location = event.get("location") if isinstance(event.get("location"), str) else ""
             location_node = node_by_name.get(location.casefold()) if location else None
             location_geocode = event.get("location_geocode", {})
-            latitude = _pick_coordinate(None, location_geocode.get("latitude") if isinstance(location_geocode, dict) else None)
-            longitude = _pick_coordinate(None, location_geocode.get("longitude") if isinstance(location_geocode, dict) else None)
+            latitude, longitude = _reviewed_location_coordinates(location_geocode)
+            current_latitude = (
+                _pick_coordinate(None, location_geocode.get("current_latitude"))
+                if isinstance(location_geocode, dict)
+                else None
+            )
+            current_longitude = (
+                _pick_coordinate(None, location_geocode.get("current_longitude"))
+                if isinstance(location_geocode, dict)
+                else None
+            )
+            suggested_latitude = (
+                _pick_coordinate(None, location_geocode.get("suggested_latitude"))
+                if isinstance(location_geocode, dict)
+                else None
+            )
+            suggested_longitude = (
+                _pick_coordinate(None, location_geocode.get("suggested_longitude"))
+                if isinstance(location_geocode, dict)
+                else None
+            )
             location_geocode_source = (
                 location_geocode.get("geocode_source") if isinstance(location_geocode, dict) else None
             )
@@ -299,6 +318,10 @@ def build_events_payload(
                     "location_node_id": location_node.get("id") if location_node else None,
                     "latitude": latitude,
                     "longitude": longitude,
+                    "current_latitude": current_latitude,
+                    "current_longitude": current_longitude,
+                    "suggested_latitude": suggested_latitude,
+                    "suggested_longitude": suggested_longitude,
                     "location_geocode_source": location_geocode_source,
                     "location_geocode_display_name": location_geocode_display_name,
                     "participants": _enrich_event_participants(
@@ -521,6 +544,25 @@ def _pick_coordinate(current: float | None, candidate: Any) -> float | None:
     if isinstance(candidate, (int, float)):
         return float(candidate)
     return None
+
+
+def _reviewed_location_coordinates(location_geocode: Any) -> tuple[float | None, float | None]:
+    if not isinstance(location_geocode, dict):
+        return None, None
+
+    suggested_latitude = _pick_coordinate(None, location_geocode.get("suggested_latitude"))
+    suggested_longitude = _pick_coordinate(None, location_geocode.get("suggested_longitude"))
+    if suggested_latitude is not None and suggested_longitude is not None:
+        return suggested_latitude, suggested_longitude
+
+    latitude = _pick_coordinate(None, location_geocode.get("latitude"))
+    longitude = _pick_coordinate(None, location_geocode.get("longitude"))
+    if latitude is not None and longitude is not None:
+        return latitude, longitude
+
+    current_latitude = _pick_coordinate(None, location_geocode.get("current_latitude"))
+    current_longitude = _pick_coordinate(None, location_geocode.get("current_longitude"))
+    return current_latitude, current_longitude
 
 
 def _merge_flags(
