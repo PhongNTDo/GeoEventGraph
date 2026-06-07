@@ -163,6 +163,25 @@ data/eval/event-v2-hybrid/case_review/case_review.csv
 Use `review_decision` values such as `gold_correct`, `hybrid_better`,
 `merge_needed`, `both_wrong`, or `uncertain`.
 
+If you reviewed the workbook form, apply those decisions and rescore:
+
+```bash
+make eval-reviewed-experiment \
+  EVAL_EXPERIMENT_NAME=event-v2-hybrid
+```
+
+This writes the adjudicated gold file:
+
+```text
+data/gold/event_mentions.hybrid_reviewed.gold.jsonl
+```
+
+The adjudication summary is saved at:
+
+```text
+data/eval/event-v2-hybrid/case_review/adjudication_summary.json
+```
+
 If Ollama is already running locally:
 
 ```bash

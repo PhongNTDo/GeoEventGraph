@@ -226,6 +226,19 @@ per-article Markdown files under `case_review/articles/`, a structured
 `case_review.json`, and an editable `case_review.csv` with blank
 `review_decision` and `review_notes` columns.
 
+After reviewing the workbook version of the case table, apply the decisions and
+rescore against the adjudicated gold file:
+
+```bash
+make eval-reviewed-experiment \
+  EVAL_EXPERIMENT_NAME=event-v2-hybrid
+```
+
+This syncs `case_review.xlsx` back to `case_review.csv`, writes
+`data/gold/event_mentions.hybrid_reviewed.gold.jsonl`, writes
+`reviewed_report.json` / `reviewed_report.md`, and appends the reviewed result
+to `EVALUATION_LOG.md`.
+
 If the same machine can run both extraction and evaluation, use the combined
 target:
 

@@ -33,6 +33,14 @@ EVAL_EXPERIMENT_MARKDOWN_REPORT ?= $(EVAL_EXPERIMENT_DIR)/report.md
 EVAL_EXPERIMENT_ERROR_ANALYSIS ?= $(EVAL_EXPERIMENT_DIR)/error_analysis.md
 EVAL_EXPERIMENT_ERROR_DIR ?= $(EVAL_EXPERIMENT_DIR)/errors
 EVAL_CASE_REVIEW_DIR ?= $(EVAL_EXPERIMENT_DIR)/case_review
+EVAL_CASE_REVIEW_XLSX ?= $(EVAL_CASE_REVIEW_DIR)/case_review.xlsx
+EVAL_REVIEWED_GOLD ?= data/gold/event_mentions.hybrid_reviewed.gold.jsonl
+EVAL_REVIEWED_REPORT ?= $(EVAL_EXPERIMENT_DIR)/reviewed_report.json
+EVAL_REVIEWED_MARKDOWN_REPORT ?= $(EVAL_EXPERIMENT_DIR)/reviewed_report.md
+EVAL_REVIEWED_ERROR_ANALYSIS ?= $(EVAL_EXPERIMENT_DIR)/reviewed_error_analysis.md
+EVAL_REVIEWED_ERROR_DIR ?= $(EVAL_EXPERIMENT_DIR)/reviewed_errors
+EVAL_REVIEWED_LOG_LABEL ?= $(EVAL_EXPERIMENT_NAME) reviewed gold
+EVAL_REVIEWED_LOG_NOTES ?= adjudicated from $(EVAL_CASE_REVIEW_XLSX); both_correct matched rows use hybrid event; merge_needed keeps gold unless manually merged
 EVAL_EXPERIMENT_LOG_LABEL ?= $(EVAL_EXPERIMENT_NAME)
 EVAL_EXPERIMENT_LOG_NOTES ?= hybrid event-v1 candidates with per-event verifier and deterministic relation repair
 EVAL_ARTICLES ?= data/normalized/articles.jsonl
@@ -52,7 +60,7 @@ LEANBABEL_OLLAMA_PORT ?= 11434
 LEANBABEL_DIRECT_ARGS ?=
 STAGED_EXTRACT_ARGS ?=
 
-.PHONY: help install test crawl normalize extract postprocess-offline postprocess-live graph graph-networkx eval-candidates eval-packets eval-model-drafts eval-gold-from-reviewed eval-extract-gold eval-extract-gold-leanbabel eval-extract-gold-hybrid eval-extract-gold-hybrid-leanbabel eval-extract-gold-staged eval-extract-gold-staged-leanbabel eval-postprocess-experiment eval-score-experiment eval-error-analysis-experiment eval-case-review-experiment eval-log-experiment eval-experiment-from-extractions eval-experiment eval-hybrid-experiment eval-staged-experiment eval eval-error-analysis eval-log eval-and-log frontend-install frontend-dev frontend-build pipeline-from-extractions
+.PHONY: help install test crawl normalize extract postprocess-offline postprocess-live graph graph-networkx eval-candidates eval-packets eval-model-drafts eval-gold-from-reviewed eval-extract-gold eval-extract-gold-leanbabel eval-extract-gold-hybrid eval-extract-gold-hybrid-leanbabel eval-extract-gold-staged eval-extract-gold-staged-leanbabel eval-postprocess-experiment eval-score-experiment eval-error-analysis-experiment eval-case-review-experiment eval-apply-case-review eval-score-reviewed-experiment eval-error-analysis-reviewed-experiment eval-log-reviewed-experiment eval-reviewed-experiment eval-log-experiment eval-experiment-from-extractions eval-experiment eval-hybrid-experiment eval-staged-experiment eval eval-error-analysis eval-log eval-and-log frontend-install frontend-dev frontend-build pipeline-from-extractions
 
 help:
 	@printf '%s\n' 'GeoEventGraph workflow targets:'
@@ -77,6 +85,7 @@ help:
 	@printf '%s\n' '  make eval-extract-gold-staged-leanbabel  Start Ollama on LeanBabel and run staged gold extraction'
 	@printf '%s\n' '  make eval-experiment-from-extractions  Postprocess, score, analyze, and log experiment outputs'
 	@printf '%s\n' '  make eval-case-review-experiment  Build manual gold-vs-experiment review packets'
+	@printf '%s\n' '  make eval-reviewed-experiment  Apply reviewed case workbook, rescore, analyze, and log'
 	@printf '%s\n' '  make eval-experiment         Extract gold articles, then postprocess, score, analyze, and log'
 	@printf '%s\n' '  make eval-hybrid-experiment  Run hybrid gold extraction, then postprocess, score, analyze, and log'
 	@printf '%s\n' '  make eval-staged-experiment  Run staged gold extraction, then postprocess, score, analyze, and log'
@@ -269,6 +278,39 @@ eval-case-review-experiment:
 		--articles $(EVAL_ARTICLES) \
 		--report $(EVAL_EXPERIMENT_REPORT) \
 		--output-dir $(EVAL_CASE_REVIEW_DIR)
+
+eval-apply-case-review:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.adjudicate_case_review \
+		--review-xlsx $(EVAL_CASE_REVIEW_XLSX) \
+		--gold $(EVAL_GOLD) \
+		--predictions $(EVAL_POSTPROCESSED_DIR)/article_extractions_clean.jsonl \
+		--output-gold $(EVAL_REVIEWED_GOLD) \
+		--synced-csv $(EVAL_CASE_REVIEW_DIR)/case_review.csv \
+		--summary-output $(EVAL_CASE_REVIEW_DIR)/adjudication_summary.json
+
+eval-score-reviewed-experiment:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.evaluate score \
+		--gold $(EVAL_REVIEWED_GOLD) \
+		--predictions $(EVAL_POSTPROCESSED_DIR)/article_extractions_clean.jsonl \
+		--output $(EVAL_REVIEWED_REPORT) \
+		--markdown-output $(EVAL_REVIEWED_MARKDOWN_REPORT)
+
+eval-error-analysis-reviewed-experiment:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.error_analysis \
+		--gold $(EVAL_REVIEWED_GOLD) \
+		--predictions $(EVAL_POSTPROCESSED_DIR)/article_extractions_clean.jsonl \
+		--report $(EVAL_REVIEWED_REPORT) \
+		--output $(EVAL_REVIEWED_ERROR_ANALYSIS) \
+		--error-dir $(EVAL_REVIEWED_ERROR_DIR)
+
+eval-log-reviewed-experiment:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.eval_log \
+		--report $(EVAL_REVIEWED_REPORT) \
+		--log $(EVAL_LOG) \
+		--label "$(EVAL_REVIEWED_LOG_LABEL)" \
+		--notes "$(EVAL_REVIEWED_LOG_NOTES)"
+
+eval-reviewed-experiment: eval-apply-case-review eval-score-reviewed-experiment eval-error-analysis-reviewed-experiment eval-log-reviewed-experiment
 
 eval-log-experiment:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m geokg.eval_log \
