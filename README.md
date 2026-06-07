@@ -1,5 +1,14 @@
 # GeoEventGraph
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+*An open-source system that parses news articles into spatiotemporal event signals to build dynamic geospatial knowledge graphs.*
+
+<div align="center">
+  <img src="docs/img/GeoEventGraph.png" alt="GeoEventGraph Architecture and Pipeline" width="100%">
+</div>
+
+
 Event-driven geospatial knowledge graph pipeline for extracting, validating, aggregating, and visualizing geopolitical relationships from news corpora.
 
 GeoEventGraph currently demonstrates the workflow on a curated BBC News topic corpus about Middle East conflict dynamics. The design is intentionally broader than this first dataset: new sources, ontologies, extraction models, geocoders, and visual analytics views can be added without changing the core pipeline shape.
